@@ -20,7 +20,7 @@ Met behulp van datavisualisatie worden deze aspecten beeldgegeven. Er wordt een 
  
 
 
-Hierbij worden verschillende verhalen laten zien van de verschillende delen van Amsterdammer, zoals de vorming van de Bijlmer of de ontwikkeling van Amsterdam centrum van Hollandse stadskern naar toeristenparadijs.
+Hierbij worden verschillende verhalen laten zien van de verschillende delen van Amsterdammer, zoals de vorming van de Bijlmer of de ontwikkeling van Amsterdam centrum van Hollandse stadskern naar toeristenparadijs. Bij dit punt als de visualisatie klaar is, wat onderzoek worden gepleegd.
 
 ### Bronnen
 
