@@ -1,5 +1,5 @@
 ## De visualisatie van Amsterdam
-# Inleiding
+### Inleiding
 
 Amsterdam is de hoofdstad van de Nederland heeft in totaal (de gemeente) 859 732 inwoners (born CBS). Die mensen willen weten wat voor mensen in de buurt leven, wat de samenstelling is van hun buurt, de hoeveelheid toeristen in de stad en nog meerdere zaken die invloed hebben op de algemene Amsterdammer. 
 
