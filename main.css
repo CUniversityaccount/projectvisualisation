@@ -1,0 +1,10 @@
+g.series {
+  position: absolute;
+}
+rect.bar{
+  position: relative;
+}
+.bar:click {
+  stroke: black;
+  stroke-width: 5px;
+}
