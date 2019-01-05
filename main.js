@@ -1,28 +1,27 @@
 function loadData(name) {
   d3.json(name).then(function(data) {
-    var coordinates = {}
-    console.log(data  )
+    var coordinates = {};
 
     data.features.forEach( function (dp) {
       if (dp.geometry.coordinates.length > 1) {
-        var tempArray = []
+        var tempArray = [];
         dp.geometry.coordinates.forEach(function (dp) {
-          tempArray.push(dp[0])
-        })
+          tempArray.push(dp[0]);
+        });
         coordinates[dp.properties.Gebied] = {coordinates: tempArray, gebiedCode: dp.properties.Gebied_code};
 
       }
       else {
-      coordinates[dp.properties.Gebied] = {coordinates: dp.geometry.coordinates, gebiedCode: dp.properties.Gebied_code}
-      }
-    })
+      coordinates[dp.properties.Gebied] = {coordinates: dp.geometry.coordinates, gebiedCode: dp.properties.Gebied_code};
+      };
+    });
 
     var information = makeSvg(coordinates)
     console.log(information)
     makeMap(information)
 
-  })
-}
+  });
+};
 
 function makeSvg(coordinates) {
 
@@ -30,9 +29,8 @@ function makeSvg(coordinates) {
   let maxLat = null
   let minLong = null
   let maxLong = null
-  console.log(true)
+
   // Get the minimum and maximum coordinates
-  console.log(coordinates)
   Object.keys(coordinates).forEach( function (dp) {
     coordinates[dp]["coordinates"].forEach( function (polygon) {
 
@@ -40,7 +38,6 @@ function makeSvg(coordinates) {
         if (minLat === null || minLat > coordinate[1]) {
           minLat = coordinate[1]
         }
-
         else if (maxLat === null || maxLat < coordinate[1]) {
           maxLat = coordinate[1]
         };
@@ -48,10 +45,10 @@ function makeSvg(coordinates) {
         if (minLong === null || minLong > coordinate[0]) {
           minLong = coordinate[0]
         }
-
         else if (maxLong === null || maxLong < coordinate[0]) {
           maxLong = coordinate[0]
         };
+
       });
     });
   });
@@ -68,7 +65,7 @@ function makeSvg(coordinates) {
     .attr("preserveAspectRatio", "xMidYMid meet");
 
   return {data: coordinates, extremes: minAndMax}
-}
+};
 
 function makeMap(data) {
   const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
@@ -76,7 +73,8 @@ function makeMap(data) {
 
   var svg = d3.select("body")
               .select("div.layout-map")
-              .select("svg.amsterdam")
+              .select("svg.amsterdam");
+
   // Make the text element for the countries
   d3.select("div.layout-map")
     .select("div#container")
@@ -97,11 +95,11 @@ function makeMap(data) {
           var string = ""
           data.data[dp].coordinates.forEach( function (d) {
             d.forEach( function (coordinate) {
-              var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"])
-              var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]))
-              string = string + percLong + "," + percLat + " "
-            })
-          })
+              var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"]);
+              var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]));
+              string = string + percLong + "," + percLat + " ";
+            });
+          });
           return string
 
         })
@@ -135,8 +133,8 @@ function makeMap(data) {
 
 function main() {
   loadData("data/GEBIEDEN23.json")
-}
+};
 
 window.onload = function() {
   main()
-}
+};
