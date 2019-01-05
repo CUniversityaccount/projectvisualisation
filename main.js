@@ -1,3 +1,21 @@
+function loadWebpageLayout() {
+  var navigationMenu = ["Home", "News", "Contact", "About"]
+  var navigation = d3.select("body")
+                     .append("div")
+                     .attr("class", "navigation");
+
+  navigation.selectAll("a")
+            .data(navigationMenu)
+            .enter()
+            .append("a")
+            .attr("href", function (dp) {
+              return "#" + dp.toLowerCase();
+            })
+            .text(function (dp) {
+              return dp
+            });
+};
+
 function loadData(name) {
   d3.json(name).then(function(data) {
     var coordinates = {};
@@ -132,6 +150,7 @@ function makeMap(data) {
 };
 
 function main() {
+  loadWebpageLayout()
   loadData("data/GEBIEDEN23.json")
 };
 
