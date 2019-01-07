@@ -45,3 +45,6 @@ Deze datasets moet ook worden gebruiken voor het grotere geheel Amsterdam over e
 Een extra visualisatie hierbij dat gebruikers verschillende gebruikers ook twee gebieden of meerdere kunnen kiezen en die met elkaar kan vergelijken.
 
 Verder moeten de grafieken interactief zijn met de gebruiker, zoals mensen aparte datapunten kunnen kiezen in de geselecteerde grafiek.
+
+### Lay-out van de visualisatie
+![alt text](https://github.com/CUniversityaccount/projectvisualisation/Afbeeldingen project/Uiterlijk.png)
