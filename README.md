@@ -47,4 +47,4 @@ Een extra visualisatie hierbij dat gebruikers verschillende gebruikers ook twee 
 Verder moeten de grafieken interactief zijn met de gebruiker, zoals mensen aparte datapunten kunnen kiezen in de geselecteerde grafiek.
 
 ### Lay-out van de visualisatie
-![alt text](https://github.com/CUniversityaccount/projectvisualisation/Afbeeldingen/Uiterlijk.png)
+![uiterlijk](https://user-images.githubusercontent.com/44020631/50766973-813c4980-127b-11e9-9ad4-90e1e547aa7d.png)
