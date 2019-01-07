@@ -1,6 +1,10 @@
 function loadWebpageLayout() {
+  d3.select("body")
+    .append("div")
+    .attr("class", "layout")
   var navigationMenu = ["Home", "News", "Contact", "About"]
   var navigation = d3.select("body")
+                     .select("div.layout")
                      .append("div")
                      .attr("class", "navigation");
 
@@ -14,12 +18,16 @@ function loadWebpageLayout() {
             .text(function (dp) {
               return dp
             });
+
+
+
 };
 
 function loadData(name) {
   d3.json(name).then(function(data) {
     var coordinates = {};
 
+    // Parse the data
     data.features.forEach( function (dp) {
       if (dp.geometry.coordinates.length > 1) {
         var tempArray = [];
@@ -35,7 +43,7 @@ function loadData(name) {
     });
 
     var information = makeSvg(coordinates)
-    console.log(information)
+
     makeMap(information)
 
   });
@@ -70,10 +78,12 @@ function makeSvg(coordinates) {
       });
     });
   });
+
   var minAndMax = {minlat: minLat, maxlat: maxLat, minlong: minLong, maxlong: maxLong}
+
+  // Make the container where the amsterdam file is putted
   d3.select("body")
-    .append("div")
-    .attr("class", "layout-map")
+    .select("div.layout")
     .append("div")
     .attr("id", "container")
     .append("svg")
@@ -85,16 +95,17 @@ function makeSvg(coordinates) {
   return {data: coordinates, extremes: minAndMax}
 };
 
+// Makes the amsterdam map
 function makeMap(data) {
   const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
   const ratioLong = data.extremes["maxlong"] - data.extremes["minlong"]
 
   var svg = d3.select("body")
-              .select("div.layout-map")
+              .select("div.layout")
               .select("svg.amsterdam");
 
   // Make the text element for the countries
-  d3.select("div.layout-map")
+  d3.select("div.layout")
     .select("div#container")
      .append("p")
      .attr("class", "stadsdeel");
