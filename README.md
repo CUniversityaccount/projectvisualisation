@@ -46,5 +46,10 @@ Een extra visualisatie hierbij dat gebruikers verschillende gebruikers ook twee 
 
 Verder moeten de grafieken interactief zijn met de gebruiker, zoals mensen aparte datapunten kunnen kiezen in de geselecteerde grafiek.
 
+Als laatste zou nuttig zijn dat men de gegevens die zijn gebruikt voor de visualisaties ook zelf kan downloaden zodat de gebruiker ook de informatie kan gebruiken voor eigen doeleinden.
+
 ### Lay-out van de visualisatie
+
 ![uiterlijk](https://user-images.githubusercontent.com/44020631/50766973-813c4980-127b-11e9-9ad4-90e1e547aa7d.png)
+
+De basisvisualisatie is hierboven te zien. Hierbij wordt ook een dropdown menu gemaakt voor de verschillende stadsdelen, zodat iemand die specefieke stadsdelen wil bekijken niet al teveel moet zoeken of te klikken om de gegevens op te zoeken.
