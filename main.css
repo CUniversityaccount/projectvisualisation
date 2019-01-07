@@ -5,6 +5,7 @@ html, body {
 
 /* Lay-out */
 div.layout {
+  position: relative;
   width:      100%;
   height: 100%;
   padding-top: 0;
@@ -12,8 +13,9 @@ div.layout {
 
 /* Style for the navigationmenu */
 div.navigation {
+  overflow: auto;
+  position: absolute;
   height: 100%;
-  overflow: hidden;
   background-color: pink;
   width: 90px;
   float: left;
