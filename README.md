@@ -50,6 +50,6 @@ Als laatste zou nuttig zijn dat men de gegevens die zijn gebruikt voor de visual
 
 ### Lay-out van de visualisatie
 
-![uiterlijk](https://user-images.githubusercontent.com/44020631/50766973-813c4980-127b-11e9-9ad4-90e1e547aa7d.png)
+![uiterlijk](https://user-images.githubusercontent.com/44020631/50771335-a2f0fd00-128a-11e9-98fa-c210c3315fc0.png)
 
 De basisvisualisatie is hierboven te zien. Hierbij wordt ook een dropdown menu gemaakt voor de verschillende stadsdelen, zodat iemand die specefieke stadsdelen wil bekijken niet al teveel moet zoeken of te klikken om de gegevens op te zoeken.
