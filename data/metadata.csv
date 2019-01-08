@@ -1,0 +1,159 @@
+Variabele;Label
+BEVTOTAAL;Bevolking totaal
+;
+;
+;
+;
+;
+;
+BEVMAN;Geslacht: mannen
+BEVVROUW;Geslacht: vrouwen
+BEVMAN_P;Geslacht: % mannen
+BEVVROUW_P;Geslacht: % vrouwen
+BEVDICHT;Bevolkingsdichtheid
+BEVBRIEF;Briefadreshoudenden
+BEVINST;Bewoners van instituten
+BEVINST_P;Bewoners instituten (%)
+BEVSTUD;Bewoners studentenwoningen
+;
+;
+;
+;
+;
+BEVSUR;Migratieachtergrond: Surinaams
+BEVANTIL;Migratieachtergrond: Antilliaans
+BEVTURK;Migratieachtergrond: Turks
+BEVMAROK;Migratieachtergrond: Marokkaans
+BEVOVNW;Migratieachtergrond: Overig niet-westers
+BEVWEST;Migratieachtergrond: Westers
+BEVAUTOCH;Migratieachtergrond: Nederlands
+BEVSUR_P;Migratieachtergrond: % Surinaams
+BEVANTIL_P;Migratieachtergrond: % Antilliaans
+BEVTURK_P;Migratieachtergrond: % Turks
+BEVMAROK_P;Migratieachtergrond: % Marokkaans
+BEVOVNW_P;Migratieachtergrond: % overig niet-westers
+BEVWEST_P;Migratieachtergrond: % Westers
+BEVAUTOCH_P;Migratieachtergrond: % Nederlands
+BEVNW;Migratieachtergrond: niet-westers
+BEVNW_P;Migratieachtergrond: % niet-westers
+BEVEGNW;Eerste generatie niet-westers
+BEVEGWEST;Eerste generatie westers
+BEVNSTEDELING;Nieuwe stedelingen
+BEVNSTEDELING_P;Nieuwe stedelingen (%)
+BEVOPLLAAG_P;Opleiding laag (%)
+BEVOPLMID_P;Opleiding middelbaar (%)
+BEVOPLHOOG_P;Opleiding hoog (%)
+BEVHUISHOUDENHH;Huishoudens: totaal
+BEVGEHZKINDHH;Huishoudens: gehuwd zonder kinderen
+BEVGEHMKINDHH;Huishoudens: gehuwd met kinderen
+BEVONGEHZKINDHH;Huishoudens: ongehuwd zonder kinderen
+BEVONGEHMKINDHH;Huishoudens: ongehuwd met kinderen
+BEVEENOUDERHH;Huishoudens: eenoudergezin
+BEVALLEENHH;Huishoudens: eenpersoonshuishoudens
+BEVOVERIGHH;Huishoudens: overig
+BEVEENOUDERHH_P;Huishoudens: % eenoudergezin
+BEVALLEENHH_P;Huishoudens: % eenpersoons
+BEVPAARZKINDHH_P;Huishoudens: % stel zonder kinderen
+BEVPAARMKINDHH_P;Huishoudens: % stel met kinderen
+BEVOVERIGHH_P;Huishoudens: % overig
+BEVHHMKIND;Huishoudens: met kinderen
+BEVHHMKIND_P;Huishoudens: % met kinderen
+BEV1P80PLUS;Alleenwonend 80+
+BEV1P80PLUS_P;Alleenwonend 80+ (%)
+BEV1P65_79V;Alleenwonend vrouw 65 t/m 79 jaar
+BEV1P65_79M;Alleenwonend man 65 t/m 79 jaar
+BEV1P80PLUSV;Alleenwonend vrouw 80+
+BEV1P80PLUSM;Alleenwonend man 80+
+BEVGEB;Bevolkingsloop: geboortes
+BEVSTERF;Bevolkingsloop: sterfgevallen
+BEVVEST;Bevolkingsloop: vestiging extern
+BEVVERT;Bevolkingsloop: vertrek extern
+BEVVESTINT;Bevolkingsloop: vestiging intern
+BEVVERTINT;Bevolkingsloop: vertrek intern
+BEVGELIJKINT;Bevolkingsloop: migratie binnen gebied
+BEVMUTNL_P;Mutatiegraad binnenlands
+BEVMUTTOT_P;Mutatiegraad totaal
+BEVWOONDUUR;Woonduur gemiddeld
+BEV0_4;0-4 jaar
+BEV5_9;5-9 jaar
+BEV10_14;10-14 jaar
+BEV15_19;15-19 jaar
+BEV20_24;20-24 jaar
+BEV25_29;25-29 jaar
+BEV30_34;30-34 jaar
+BEV35_39;35-39 jaar
+BEV40_44;40-44 jaar
+BEV45_49;45-49 jaar
+BEV50_54;50-54 jaar
+BEV55_59;55-59 jaar
+BEV60_64;60-64 jaar
+BEV65_69;65-69 jaar
+BEV70_74;70-74 jaar
+BEV75_79;75-79 jaar
+BEV80_84;80-84 jaar
+BEV85_89;85-89 jaar
+BEV90_94;90-94 jaar
+BEV95_99;95-99 jaar
+BEV100PLUS;100+
+BEV0_3_P;0-3 jaar (%)
+BEV0_3;0-3 jaar
+BEV4_11;4-11 jaar
+BEV12_17;12-17 jaar
+BEV18_22;18-22 jaar
+BEV23_39;23-39 jaar
+BEV40_64;40-64 jaar
+BEV65PLUS;65+
+BEV65PLUS_P;65+ (%)
+BEV4_12;4-12 jaar
+BEV4_12_P;4-12 jaar (%)
+BEV13_17;13-17 jaar
+BEV0_17;0-17 jaar
+BEV0_17_P;0-17 jaar (%)
+BEV0_18;0-18 jaar
+BEV0_18_P;0-18 jaar (%)
+BEV18PLUS;18+
+BEV18_64;18-64
+BEV5_11;5-11 jaar
+BEV15_26;15-26 jaar
+BEV65_74;65-74 jaar
+BEV65_79;65-79 jaar
+BEV75PLUS;75+
+BEV75PLUS_P;75+  (%)
+BEV80PLUS;80+
+BEV80PLUS_P;80+ (%)
+BEV17AUTO;NL 0-17 jaar
+BEV18_22NL;NL 18-22 jaar
+BEV23_39NL;NL 23-39 jaar
+BEV40_64NL;NL 40-64 jaar
+BEV65_79NL;NL 65-79 jaar
+BEV80PLUSNL;NL 80+
+BEV17W;Westers 0-17 jaar
+BEV18_22W;Westers 18-22 jaar
+BEV23_39W;Westers 23-39 jaar
+BEV40_64W;Westers 40-64 jaar
+BEV65_79W;Westers 65-79 jaar
+BEV80PLUSW;Westers 80+
+BEV17NW;Niet-westers 0-17 jaar
+BEV18_22NW;Niet-westers 18-22 jaar
+BEV23_39NW;Niet-westers  23-39 jaar
+BEV40_64NW;Niet-westers  40-64 jaar
+BEV65_79NW;Niet-westers  65-79 jaar
+BEV80PLUSNW;Niet-westers  80+
+BEV17AUTO_P;NL 0-17 jaar (%)
+BEV18_22NL_P;NL 18-22 jaar  (%)
+BEV23_39NL_P;NL 23-39 jaar (%)
+BEV40_64NL_P;NL 40-64 jaar (%)
+BEV65_79NL_P;NL 65-79 jaar (%)
+BEV80PLUSNL_P;NL 80+ (%)
+BEV17W_P;Westers 0-17 jaar (%)
+BEV18_22W_P;Westers 18-22 jaar (%)
+BEV23_39W_P;Westers 23-39 jaar (%)
+BEV40_64W_P;Westers 40-64 jaar (%)
+BEV65_79W_P;Westers 65-79 jaar (%)
+BEV80PLUSW_P;Westers 80+ (%)
+BEV17NW_P;Niet-westers 0-17 jaar (%)
+BEV18_22NW_P;Niet-westers 18-22 jaar (%)
+BEV23_39NW_P;Niet-westers  23-39 jaar (%)
+BEV40_64NW_P;Niet-westers  40-64 jaar (%)
+BEV65_79NW_P;Niet-westers  65-79 jaar (%)
+BEV80PLUSNW_P;Niet-westers  80+ (%)
