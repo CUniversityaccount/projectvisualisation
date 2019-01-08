@@ -8,8 +8,8 @@ BEVTOTAAL;Bevolking totaal
 ;
 BEVMAN;Geslacht: mannen
 BEVVROUW;Geslacht: vrouwen
-BEVMAN_P;Geslacht: % mannen
-BEVVROUW_P;Geslacht: % vrouwen
+;
+;
 BEVDICHT;Bevolkingsdichtheid
 BEVBRIEF;Briefadreshoudenden
 BEVINST;Bewoners van instituten
@@ -27,53 +27,53 @@ BEVMAROK;Migratieachtergrond: Marokkaans
 BEVOVNW;Migratieachtergrond: Overig niet-westers
 BEVWEST;Migratieachtergrond: Westers
 BEVAUTOCH;Migratieachtergrond: Nederlands
-BEVSUR_P;Migratieachtergrond: % Surinaams
-BEVANTIL_P;Migratieachtergrond: % Antilliaans
-BEVTURK_P;Migratieachtergrond: % Turks
-BEVMAROK_P;Migratieachtergrond: % Marokkaans
-BEVOVNW_P;Migratieachtergrond: % overig niet-westers
-BEVWEST_P;Migratieachtergrond: % Westers
-BEVAUTOCH_P;Migratieachtergrond: % Nederlands
+;
+;
+;
+;
+;
+;
+;
 BEVNW;Migratieachtergrond: niet-westers
-BEVNW_P;Migratieachtergrond: % niet-westers
-BEVEGNW;Eerste generatie niet-westers
-BEVEGWEST;Eerste generatie westers
-BEVNSTEDELING;Nieuwe stedelingen
-BEVNSTEDELING_P;Nieuwe stedelingen (%)
-BEVOPLLAAG_P;Opleiding laag (%)
-BEVOPLMID_P;Opleiding middelbaar (%)
-BEVOPLHOOG_P;Opleiding hoog (%)
-BEVHUISHOUDENHH;Huishoudens: totaal
-BEVGEHZKINDHH;Huishoudens: gehuwd zonder kinderen
-BEVGEHMKINDHH;Huishoudens: gehuwd met kinderen
-BEVONGEHZKINDHH;Huishoudens: ongehuwd zonder kinderen
-BEVONGEHMKINDHH;Huishoudens: ongehuwd met kinderen
-BEVEENOUDERHH;Huishoudens: eenoudergezin
-BEVALLEENHH;Huishoudens: eenpersoonshuishoudens
-BEVOVERIGHH;Huishoudens: overig
-BEVEENOUDERHH_P;Huishoudens: % eenoudergezin
-BEVALLEENHH_P;Huishoudens: % eenpersoons
-BEVPAARZKINDHH_P;Huishoudens: % stel zonder kinderen
-BEVPAARMKINDHH_P;Huishoudens: % stel met kinderen
-BEVOVERIGHH_P;Huishoudens: % overig
-BEVHHMKIND;Huishoudens: met kinderen
-BEVHHMKIND_P;Huishoudens: % met kinderen
-BEV1P80PLUS;Alleenwonend 80+
-BEV1P80PLUS_P;Alleenwonend 80+ (%)
-BEV1P65_79V;Alleenwonend vrouw 65 t/m 79 jaar
-BEV1P65_79M;Alleenwonend man 65 t/m 79 jaar
-BEV1P80PLUSV;Alleenwonend vrouw 80+
-BEV1P80PLUSM;Alleenwonend man 80+
-BEVGEB;Bevolkingsloop: geboortes
-BEVSTERF;Bevolkingsloop: sterfgevallen
-BEVVEST;Bevolkingsloop: vestiging extern
-BEVVERT;Bevolkingsloop: vertrek extern
-BEVVESTINT;Bevolkingsloop: vestiging intern
-BEVVERTINT;Bevolkingsloop: vertrek intern
-BEVGELIJKINT;Bevolkingsloop: migratie binnen gebied
-BEVMUTNL_P;Mutatiegraad binnenlands
-BEVMUTTOT_P;Mutatiegraad totaal
-BEVWOONDUUR;Woonduur gemiddeld
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
 BEV0_4;0-4 jaar
 BEV5_9;5-9 jaar
 BEV10_14;10-14 jaar
@@ -139,21 +139,3 @@ BEV23_39NW;Niet-westers  23-39 jaar
 BEV40_64NW;Niet-westers  40-64 jaar
 BEV65_79NW;Niet-westers  65-79 jaar
 BEV80PLUSNW;Niet-westers  80+
-BEV17AUTO_P;NL 0-17 jaar (%)
-BEV18_22NL_P;NL 18-22 jaar  (%)
-BEV23_39NL_P;NL 23-39 jaar (%)
-BEV40_64NL_P;NL 40-64 jaar (%)
-BEV65_79NL_P;NL 65-79 jaar (%)
-BEV80PLUSNL_P;NL 80+ (%)
-BEV17W_P;Westers 0-17 jaar (%)
-BEV18_22W_P;Westers 18-22 jaar (%)
-BEV23_39W_P;Westers 23-39 jaar (%)
-BEV40_64W_P;Westers 40-64 jaar (%)
-BEV65_79W_P;Westers 65-79 jaar (%)
-BEV80PLUSW_P;Westers 80+ (%)
-BEV17NW_P;Niet-westers 0-17 jaar (%)
-BEV18_22NW_P;Niet-westers 18-22 jaar (%)
-BEV23_39NW_P;Niet-westers  23-39 jaar (%)
-BEV40_64NW_P;Niet-westers  40-64 jaar (%)
-BEV65_79NW_P;Niet-westers  65-79 jaar (%)
-BEV80PLUSNW_P;Niet-westers  80+ (%)

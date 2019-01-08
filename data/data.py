@@ -1,5 +1,6 @@
 import json
 import csv
+import sys
 
 def load_data(name):
     area_codes = []
@@ -17,25 +18,43 @@ def parse_data(list, variables, file):
     count = 0
     temp_list = []
     variable = []
-    with open(variables, newline="") as file:
-        reader = csv.reader(file, delimiter=";", quotechar="|")
-        for row in reader:
-            variable.append(row[0])
 
-    with open(file, newline="") as file:
-        reader = csv.reader(file, delimiter=";", quotechar="|")
+    with open(variables, "r", newline="") as data:
+        reader = csv.reader(data, delimiter=";", quotechar="|")
+        for row in reader:
+            if row[0] != "":
+                variable.append(row[0])
+
+    with open(file, "r", newline="") as data_area:
+        reader = csv.reader(data_area, delimiter=" ", quotechar="|")
         for row in reader:
             if row[1] in list and int(row[0]) < 2019:
                 temp_list.append(row)
 
-    with open("data.csv", "w", newline="") as file:
-        writer= csv.writer(file,  delimiter=' ', quotechar='|')
+    with open("data.csv", "w", newline="") as write:
+        writer= csv.writer(write,  delimiter=' ', quotechar='|')
         for data in temp_list:
-            writer.writerow(data)
+            if data[2] in variable:
+                writer.writerow(data)
+
+def make_json(list):
+    dict = {}
+    years = []
+    for variable in list:
+        with open("data.csv", "r", newline="") as json:
+            reader = csv.reader(json, delimiter=" ", quotechar="|")
+            for row in reader:
+                if not int(row[0]) in years:
+                    years.append(int(row[0]))
+    print(years)
+
+
+
 
 
 
 
 if __name__ == "__main__":
     list = load_data('GEBIEDEN22.json')
-    parse_data(list, "metadata.csv", "data.csv")
+    # parse_data(list, "metadata.csv", "dataoftheareas.csv")
+    make_json(list)
