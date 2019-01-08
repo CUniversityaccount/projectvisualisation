@@ -12,10 +12,16 @@ Coordinatenbestand, Amsterdam
 ## Design
 ![uiterlijk](https://user-images.githubusercontent.com/44020631/50771335-a2f0fd00-128a-11e9-98fa-c210c3315fc0.png)
 
+Hierbij zal de naam van het gebied erbij worden gezet, waarbij de gebruiker weet welk gebied hij of zij heeft geselecteerd en waarvan de data is. Als er genoeg tijd is voor de deadline dan kan ook als niks is geselecteerd dat de gegevens van Amsterdam zelf wordt weergegeven.
+
+
 ## Implementatie
 Je kan op de Amsterdamse kaart klikken voor welke data je wilt zien of op de navigatie menu voor een beter overzicht.
-Als men op de kaart drukt, kan men een van de variables zien en dat wordt in een piechart of barchart duidelijk gemaakt.
-Verder is deze mogelijkheid ook te zien op de overzichtpagina's
+Als men op de kaart drukt, kan men een van de variables zien en dat wordt in een piechart of barchart duidelijk gemaakt aan de hand van deze variabelen.
+
+Dit kan nog verder worden geimplimenteerd, maar dit is voor als er meer tijd over is voor de deadline.
+
+Verder is deze mogelijkheid om de data sets apart te zien op de overzichtpagina van elke streek in het gebied. Hiermee voor gebruikers die niet meerdere kliks wilt uitvoeren de pagina niet te leidend.
 
 De overzicht pagina's bestaan uit de gebieden die te zien zijn uit de hoofdpagina en de stadzelf.
 
