@@ -13,9 +13,15 @@ def load_data(name):
 
     return area_codes
 
-def parse_data(list, file):
+def parse_data(list, variables, file):
     count = 0
     temp_list = []
+    variable = []
+    with open(variables, newline="") as file:
+        reader = csv.reader(file, delimiter=";", quotechar="|")
+        for row in reader:
+            variable.append(row[0])
+
     with open(file, newline="") as file:
         reader = csv.reader(file, delimiter=";", quotechar="|")
         for row in reader:
@@ -32,4 +38,4 @@ def parse_data(list, file):
 
 if __name__ == "__main__":
     list = load_data('GEBIEDEN22.json')
-    parse_data(list, "data.csv")
+    parse_data(list, "metadata.csv", "data.csv")

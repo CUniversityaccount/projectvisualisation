@@ -10,17 +10,15 @@ function loadData(name) {
           tempArray.push(dp[0]);
         });
         coordinates[dp.properties.Gebied] = {coordinates: tempArray, gebiedCode: dp.properties.Gebied_code};
-
       }
+
       else {
       coordinates[dp.properties.Gebied] = {coordinates: dp.geometry.coordinates, gebiedCode: dp.properties.Gebied_code};
       };
     });
-
     var information = makeSvg(coordinates)
 
     makeMap(information)
-
   });
 };
 
