@@ -24,3 +24,4 @@ De overzicht pagina's bestaan uit de gebieden die te zien zijn uit de hoofdpagin
 - Python
 - Tooltip
 - SVG voor Amsterdammap
+- Dropdown menu om de variables te kiezen
