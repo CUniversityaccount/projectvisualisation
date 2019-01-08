@@ -135,4 +135,4 @@ function makeMap(data) {
 
 };
 
-loadData("data/GEBIEDEN23.json")
+loadData("data/GEBIEDEN22.json")
