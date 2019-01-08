@@ -1,9 +1,13 @@
 ## Datasources
-CBS statestiek (website: http://statline.cbs.nl/Statweb/ )
-Algemeen databestand, Amsterdam (website: [links]https://data.amsterdam.nl/#?dte=dcatd%2Fdatasets%2Fbasisbestand-gebieden-amsterdam-bbga&dtfs=T&dsf=groups::bevolking&mpb=topografie&mpz=11&mpv=52.3731081:4.8932945)
+CBS statestiek 
+(website: http://statline.cbs.nl/Statweb/ )
+
+Algemeen databestand, Amsterdam 
+(website: [links]https://data.amsterdam.nl/#?dte=dcatd%2Fdatasets%2Fbasisbestand-gebieden-amsterdam-bbga&dtfs=T&dsf=groups::bevolking&mpb=topografie&mpz=11&mpv=52.3731081:4.8932945)
 Dit bestand is zeer knullig gemaakt door de gemeente, dus dit wordt geparsed met behulp van een python script.
 
-Coordinatenbestand, Amsterdam (website: [links]https://maps.amsterdam.nl/open_geodata/?LANG=en  )
+Coordinatenbestand, Amsterdam 
+(website: [links]https://maps.amsterdam.nl/open_geodata/?LANG=en  )
 
 ## Design
 
