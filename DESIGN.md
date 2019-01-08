@@ -10,6 +10,7 @@ Coordinatenbestand, Amsterdam
 (website: [links]https://maps.amsterdam.nl/open_geodata/?LANG=en  )
 
 ## Design
+![uiterlijk](https://user-images.githubusercontent.com/44020631/50771335-a2f0fd00-128a-11e9-98fa-c210c3315fc0.png)
 
 ## Implementatie
 Je kan op de Amsterdamse kaart klikken voor welke data je wilt zien of op de navigatie menu voor een beter overzicht.
