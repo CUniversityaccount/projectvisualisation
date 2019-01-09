@@ -2,7 +2,7 @@ function loadWebpageLayout() {
   d3.select("body")
     .append("div")
     .attr("class", "layout")
-  var navigationMenu = ["Home", "News", "Contact", "About"]
+  var navigationMenu = ["Home", "Specific", "About", "Sources"]
   var navigation = d3.select("body")
                      .select("div.layout")
                      .append("div")
@@ -16,7 +16,11 @@ function loadWebpageLayout() {
               return "/" + dp.toLowerCase() + ".html";
             })
             .text(function (dp) {
-              return dp
+              if (dp === "Specific") {
+                return dp + " info"
+              }
+              else { return dp }
+
             });
 };
 
