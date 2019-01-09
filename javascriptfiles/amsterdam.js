@@ -86,8 +86,6 @@ function makeMap(data) {
      .append("p")
      .attr("class", "stadsdeel");
 
-
-
   // makes all the polygons
   svg.selectAll("polygon.stadsdeel")
      .data(Object.keys(data.data))
@@ -153,14 +151,16 @@ function makeMap(data) {
 
 function informationGraph(name) {
 
-  const data = loadCityData("data/amsterdam.json", name);
+  const data = loadCityData("data/bev_amsterdam.json", name);
+
 }
 
 function loadCityData(fileName, name) {
   d3.json(fileName).then( function (data) {
     var data = data[name.gebiedCode]
     var maxYear = d3.max(Object.keys(data))
-    console.log(data[maxYear])
+    console.log(Object.keys(data[maxYear]).sort())
+
 
   });
 }

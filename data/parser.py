@@ -15,12 +15,16 @@ def load_data(name):
     return area_codes
 
 def parse_data(list, variables, file):
+
     count = 0
     temp_list = []
     variable = []
 
+    leeftijd = []
+    achtergrond = []
+
     with open(variables, "r", newline="") as data:
-        reader = csv.reader(data, delimiter=";", quotechar="|")
+        reader = csv.reader(data, delimiter=",", quotechar="|")
         for row in reader:
             if row[0] != "":
                 variable.append(row[0])
@@ -31,31 +35,54 @@ def parse_data(list, variables, file):
             if row[1] in list and int(row[0]) < 2019:
                 temp_list.append(row)
 
+
+
     with open("data.csv", "w", newline="") as write:
         writer= csv.writer(write,  delimiter=' ', quotechar='|')
         for data in temp_list:
             if data[2] in variable:
                 writer.writerow(data)
 
-def make_json(list):
+    general = variable[:3]
+    background = variable[3:11]
+    age = variable[11:]
+
+    return general, background, age
+def make_json(list, variables):
     dict = {}
+
     for variable in list:
         dict[variable] = {}
 
-    for variable in list:
-        with open("data.csv", "r", newline="") as parsed:
-            reader = csv.reader(parsed, delimiter=" ", quotechar="|")
-            for row in reader:
-                if not int(row[0]) in dict[row[1]].keys() and row[1] in list:
-                    dict[row[1]][int(row[0])] = {row[2]: float(row[-1])}
-                elif row[1] in list:
-                    dict[row[1]][int(row[0])][row[2]] = float(row[-1])
 
-    with open('amsterdam.json', 'w') as json_file:
+
+    with open("data.csv", "r", newline="") as parsed:
+        reader = csv.reader(parsed, delimiter=" ", quotechar="|")
+        for row in reader:
+            if not int(row[0]) in dict[row[1]].keys():
+                dict[row[1]][int(row[0])] = {}
+            if row[2] in variables[0]:
+                if not "general" in dict[row[1]][int(row[0])]:
+                    dict[row[1]][int(row[0])]["general"] = {}
+                dict[row[1]][int(row[0])]["general"][row[2]] = row[-1]
+
+
+            elif row[2] in variables[1]:
+                if not "background" in dict[row[1]][int(row[0])]:
+                    dict[row[1]][int(row[0])]["background"] = {}
+                dict[row[1]][int(row[0])]["background"][row[2]] = row[-1]
+
+            elif row[2] in variables[2]:
+                print(row[2], row[-1])
+                if not "age" in dict[row[1]][int(row[0])]:
+                    dict[row[1]][int(row[0])]["age"] = {}
+
+                dict[row[1]][int(row[0])]["age"][row[2]] = row[-1]
+    with open('bev_amsterdam.json', 'w') as json_file:
         json.dump(dict, json_file, sort_keys = True, indent = 4,
                ensure_ascii = False)
 
 if __name__ == "__main__":
     list = load_data('GEBIEDEN22.json')
-    parse_data(list, "metadata.csv", "dataoftheareas.csv")
-    make_json(list)
+    variables = parse_data(list, "metadata.csv", "dataoftheareas.csv")
+    make_json(list, variables)
