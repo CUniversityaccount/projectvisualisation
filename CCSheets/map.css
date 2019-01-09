@@ -1,21 +1,25 @@
 /* Style for the Amsterdam map */
-div.layout div#container {
+div.layout div#container.amsterdam {
   display:  inline-block;
   margin-left: 20%;
-  overflow-x: auto;
   position: absolute;
 
 }
 
-div.layout div#container p{
+div.layout div#container.amsterdam p{
   display:  block;
   text-align: center;
 
 }
 
-div.layout div#container svg.amsterdam{
+div.layout div#container.amsterdam svg.amsterdam{
   stroke:       black;
   stroke-width: 0.5px;
   fill:         pink;
 
-};
+}
+
+div.layout div#container.areavisual {
+  display: inline-block;
+  fill: green;
+}

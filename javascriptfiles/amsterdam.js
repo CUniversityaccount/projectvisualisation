@@ -1,8 +1,9 @@
+// loads data
 function loadData(name) {
-  d3.json(name).then(function(data) {
+  d3.json(name).then( function(data) {
     var coordinates = {};
 
-    // Parse the data
+    // parse the data to the correct format
     data.features.forEach( function (dp) {
       if (dp.geometry.coordinates.length > 1) {
         var tempArray = [];
@@ -22,6 +23,7 @@ function loadData(name) {
   });
 };
 
+// makes a svg to visualize Amsterdam
 function makeSvg(coordinates) {
 
   let minLat = null
@@ -29,7 +31,7 @@ function makeSvg(coordinates) {
   let minLong = null
   let maxLong = null
 
-  // Get the minimum and maximum coordinates
+  // get the extremes in the datasets
   Object.keys(coordinates).forEach( function (dp) {
     coordinates[dp]["coordinates"].forEach( function (polygon) {
 
@@ -59,6 +61,7 @@ function makeSvg(coordinates) {
     .select("div.layout")
     .append("div")
     .attr("id", "container")
+    .attr("class", "amsterdam")
     .append("svg")
     .attr("class", "amsterdam")
     .attr("width", "600px")
@@ -68,7 +71,7 @@ function makeSvg(coordinates) {
   return {data: coordinates, extremes: minAndMax}
 };
 
-// Makes the amsterdam map
+// makes the Amsterdam map
 function makeMap(data) {
   const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
   const ratioLong = data.extremes["maxlong"] - data.extremes["minlong"]
@@ -77,60 +80,89 @@ function makeMap(data) {
               .select("div.layout")
               .select("svg.amsterdam");
 
-  // Make the text element for the countries
+  // makes the text element to put the area names in
   d3.select("div.layout")
-    .select("div#container")
+    .select("div#container.amsterdam")
      .append("p")
      .attr("class", "stadsdeel");
 
 
 
-    // make all the polygons
-     svg.selectAll("polygon.stadsdeel")
-        .data(Object.keys(data.data))
-        .enter()
-        .append("polygon")
-        .attr("class", "stadsdeel")
-        .attr("click", false)
-        .attr("fill", "pink")
-        .attr("points", function(dp) {
-          var string = ""
-          data.data[dp].coordinates.forEach( function (d) {
-            d.forEach( function (coordinate) {
-              var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"]);
-              var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]));
-              string = string + percLong + "," + percLat + " ";
-            });
-          });
-          return string
+  // makes all the polygons
+  svg.selectAll("polygon.stadsdeel")
+     .data(Object.keys(data.data))
+     .enter()
+     .append("polygon")
+     .attr("class", "stadsdeel")
+     .attr("click", false)
+     .attr("fill", "pink")
+     .attr("points", function(dp) {
 
-        })
-        .on("click", function() {
-          if (d3.select(this).attr("click") === "true") {
-            d3.select(this)
-              .attr("click", false)
-              .attr("fill", "pink");
-          }
-          else {
+       // calculates the coordinates in the canvas
+        var string = ""
+        data.data[dp].coordinates.forEach( function (d) {
+          d.forEach( function (coordinate) {
+            var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"]);
+            var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]));
+            string = string + percLong + "," + percLat + " ";
+          });
+        });
+        return string
+
+      })
+      .on("click", function(dp) {
+        if (d3.select(this).attr("click") === "true") {
+
+          // refers it back to its original state
+          d3.select(this)
+            .attr("click", false)
+            .attr("fill", "pink");
+          d3.select("p.stadsdeel")
+            .text("");
+
+          d3.select("div#container.areavisual")
+            .attr("height", 0)
+        }
+        else {
+
+            // select the correct polygen and fill it.
+            // makes an extra visualisation
             d3.selectAll("polygon.stadsdeel")
               .attr("click", "false")
               .attr("fill", "pink");
 
             d3.select(this)
               .attr("fill", "orange")
-              .attr("click", true)
-            };
-        })
-        .on("mouseover", function (dp) {
-          d3.select("p.stadsdeel")
-            .text(dp)
-        })
-        .on("mouseout", function () {
-          d3.select("p.stadsdeel")
-            .text("");
+              .attr("click", true);
 
-        });
+            d3.select("p.stadsdeel")
+              .text(dp);
 
+            informationGraph(data.data[dp]);
+          };
+      });
+
+      // make a container where the datavisual is put in
+      d3.select("body")
+        .select("div.layout")
+        .append("div")
+        .attr("id", "container")
+        .attr("class", "areavisual")
+        .attr("height", 0)
 };
+
+function informationGraph(name) {
+
+  const data = loadCityData("data/amsterdam.json", name);
+}
+
+function loadCityData(fileName, name) {
+  d3.json(fileName).then( function (data) {
+    var data = data[name.gebiedCode]
+    var maxYear = d3.max(Object.keys(data))
+    console.log(data[maxYear])
+
+  });
+}
 
 loadData("data/GEBIEDEN22.json")
