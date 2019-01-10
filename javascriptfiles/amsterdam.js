@@ -119,7 +119,8 @@ function makeMap(data) {
             .text("");
 
           d3.select("div#container.areavisual")
-            .attr("height", 0)
+            .selectAll("svg")
+            .remove();
         }
         else {
 
@@ -136,7 +137,7 @@ function makeMap(data) {
             d3.select("p.stadsdeel")
               .text(dp);
 
-            informationGraph(data.data[dp]);
+            loadCityData("data/bev_amsterdam.json", data.data[dp]);
           };
       });
 
@@ -146,23 +147,74 @@ function makeMap(data) {
         .append("div")
         .attr("id", "container")
         .attr("class", "areavisual")
-        .attr("height", 0)
 };
 
-function informationGraph(name) {
+function informationGraph(data) {
+  const stack = d3.stack().offset(d3.stackOffsetExpand);
+  var stackData = stack.keys(Object.keys(data.general))([data.general])
+  const height = 300;
+  const width = 300;
 
-  const data = loadCityData("data/bev_amsterdam.json", name);
+  const svg = d3.select("div#container.areavisual")
+                .append("svg")
+
+        g = svg.append("g").attr("id", "barchart")
+
+  var y = d3.scaleLinear()
+            .range([0, height]);
+
+  var x = d3.scaleLinear()
+            .domain([0, data.BEVTOTAAL])
+            .range([0, width]);
+
+  var z = d3.scaleLinear()
+            .range(["#87ceeb", "#FFB6C1"]);
+
+  var serie = g.selectAll(".series")
+               .data(stackData)
+               .enter()
+               .append("g")
+               .attr("class", "series")
+               .attr("fill", function(d, i) { console.log(z(i))
+                                              return z(i) })
+               .attr("key", function (d) { return d.key });
+  serie.selectAll(".series")
+       .data( function(d) { return d })
+       .enter()
+       .append("rect")
+       .attr("class", "bar")
+       .attr("x", function (d) { console.log(d) })
+
+  // append xAxis
+  svg.append("g")
+     .attr("class", "xAxis")
+     .attr("transform", "translate(0, " + height + ")")
+     .call(d3.axisBottom(x));
+
+  // append yAxis
+  svg.append("g")
+     .attr("class", "yAxis")
+     .call(d3.axisLeft(y));
+
+
+  var z = d3.scaleOrdinal()
+            .range(["pink", "blue"]);
+
+
+
 
 }
 
 function loadCityData(fileName, name) {
+
   d3.json(fileName).then( function (data) {
     var data = data[name.gebiedCode]
-    var maxYear = d3.max(Object.keys(data))
-    console.log(Object.keys(data[maxYear]).sort())
 
+    var maxYear = d3.max(Object.keys(data));
 
+    informationGraph(data[maxYear]);
   });
+
 }
 
 loadData("data/GEBIEDEN22.json")

@@ -43,11 +43,12 @@ def parse_data(list, variables, file):
             if data[2] in variable:
                 writer.writerow(data)
 
-    general = variable[:3]
+    totaal = variable[0]
+    general = variable[1:3]
     background = variable[3:11]
     age = variable[11:]
 
-    return general, background, age
+    return general, background, age, totaal
 def make_json(list, variables):
     dict = {}
 
@@ -73,11 +74,13 @@ def make_json(list, variables):
                 dict[row[1]][int(row[0])]["background"][row[2]] = row[-1]
 
             elif row[2] in variables[2]:
-                print(row[2], row[-1])
                 if not "age" in dict[row[1]][int(row[0])]:
                     dict[row[1]][int(row[0])]["age"] = {}
 
                 dict[row[1]][int(row[0])]["age"][row[2]] = row[-1]
+            elif row[2] in variables[-1]:
+                dict[row[1]][int(row[0])][row[2]] = row[-1]
+
     with open('bev_amsterdam.json', 'w') as json_file:
         json.dump(dict, json_file, sort_keys = True, indent = 4,
                ensure_ascii = False)
