@@ -155,11 +155,11 @@ function informationGraph(data) {
   const height = 300;
   const width = 300;
 
-  const svg = d3.select("div#container.areavisual")
-                .append("svg")
-                .attr("id", "barchart")
-
-        g = svg.append("g").attr("id", "barchart")
+  // const svg = d3.select("div#container.areavisual")
+  //               .append("svg")
+  //               .attr("id", "barchart")
+  //
+  //       g = svg.append("g").attr("id", "barchart")
 
   var y = d3.scaleBand()
             .rangeRound([0, height])
@@ -171,44 +171,76 @@ function informationGraph(data) {
 
   var z = d3.scaleLinear()
             .range(["#87ceeb", "#FFB6C1"]);
+  console.log(d3.selectAll("svg#barchart")._groups[0])
+  if (d3.selectAll("svg#barchart")._groups[0].length === 0) {
+    const svg = d3.select("div#container.areavisual")
+                  .append("svg")
+                  .attr("id", "barchart")
+                  .attr("height", height + 50)
+                  .attr("width", width + 50)
+                  .attr("padding", 5)
 
-  var serie = g.selectAll(".series")
-               .data(stackData)
-               .enter()
-               .append("g")
-               .attr("class", "series")
-               .attr("fill", function(d, i) { return z(i) })
-               .attr("key", function (d) { return d.key });
+    g = svg.append("g")
+           .attr("id", "barchart")
 
-  serie.selectAll(".series")
-       .data( function(d) { console.log(d)
-                            return d })
-       .enter()
-       .append("rect")
-       .attr("class", "bar")
-       .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL)) })
-       .attr("y", y("1"))
-       .attr("height", y.bandwidth())
-       .attr("width", function(d) { return x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL))})
+   var serie = g.selectAll(".series")
+                .data(stackData)
+                .enter()
+                .append("g")
+                .attr("class", "series")
+                .attr("fill", function(d, i) { return z(i) })
+                .attr("key", function (d) { return d.key });
+
+   serie.selectAll(".series")
+        .data( function(d) { return d })
+        .enter()
+        .append("rect")
+        .attr("class", "bar")
+        .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL))})
+        .attr("y", y("1") + 50)
+        .attr("height", y.bandwidth() - 100)
+        .attr("width", function(d) { return (x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL)))})
+        .attr("transform", "translate(25, 0)")
+
+   // append xAxis
+   d3.select("svg#barchart").append("g")
+      .attr("class", "xAxis")
+      .attr("transform", "translate(25, " + height + ")")
+      .call(d3.axisBottom(x));
+
+   // append yAxis
+   d3.select("svg#barchart").append("g")
+      .attr("transform", "translate(25, 0)")
+      .attr("class", "yAxis")
+      .call(d3.axisLeft(y));
+
+  }
+  else { console.log(true)
+         const svg = d3.selectAll("svg#barchart")
+                 g = d3.select("g#barchart")
+
+         var serie = g.selectAll("g.series")
+                      .data(stackData)
+                      .enter()
 
 
-  // append xAxis
-  svg.append("g")
-     .attr("class", "xAxis")
-     .attr("transform", "translate(0, " + height + ")")
-     .call(d3.axisBottom(x));
+         serie.data( function (d) { return d})
+              .enter()
+              .selectAll("rect.bar")
+              .transition()
+              .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL))})
+              .attr("y", y("1") + 50)
+              .attr("height", y.bandwidth() - 100)
+              .attr("width", function(d) { return (x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL)))})
 
-  // append yAxis
-  svg.append("g")
-     .attr("transform", "translate(0,0)")
-     .attr("class", "yAxis")
-     .call(d3.axisLeft(y));
+          d3.select("g.yAxis")
+            .transition()
+            .call(d3.axisLeft(y));
 
-
-  var z = d3.scaleOrdinal()
-            .range(["pink", "blue"]);
-
-
+          d3.select("g.xAxis")
+            .transition()
+            .call(d3.axisLeft(x))
+       }
 
 
 }
