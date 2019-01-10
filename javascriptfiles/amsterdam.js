@@ -157,11 +157,13 @@ function informationGraph(data) {
 
   const svg = d3.select("div#container.areavisual")
                 .append("svg")
+                .attr("id", "barchart")
 
         g = svg.append("g").attr("id", "barchart")
 
-  var y = d3.scaleLinear()
-            .range([0, height]);
+  var y = d3.scaleBand()
+            .rangeRound([0, height])
+            .domain(["1"]);
 
   var x = d3.scaleLinear()
             .domain([0, data.BEVTOTAAL])
@@ -175,15 +177,20 @@ function informationGraph(data) {
                .enter()
                .append("g")
                .attr("class", "series")
-               .attr("fill", function(d, i) { console.log(z(i))
-                                              return z(i) })
+               .attr("fill", function(d, i) { return z(i) })
                .attr("key", function (d) { return d.key });
+
   serie.selectAll(".series")
-       .data( function(d) { return d })
+       .data( function(d) { console.log(d)
+                            return d })
        .enter()
        .append("rect")
        .attr("class", "bar")
-       .attr("x", function (d) { console.log(d) })
+       .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL)) })
+       .attr("y", y("1"))
+       .attr("height", y.bandwidth())
+       .attr("width", function(d) { return x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL))})
+
 
   // append xAxis
   svg.append("g")
@@ -193,6 +200,7 @@ function informationGraph(data) {
 
   // append yAxis
   svg.append("g")
+     .attr("transform", "translate(0,0)")
      .attr("class", "yAxis")
      .call(d3.axisLeft(y));
 
