@@ -1,7 +1,8 @@
 /* Style for the Amsterdam map */
 div.layout div#container.amsterdam {
   display:  inline-block;
-  margin-left: 20%;
+  margin-left: 90px;
+  float: left;
   position: absolute;
 
 }
@@ -21,5 +22,7 @@ div.layout div#container.amsterdam svg.amsterdam{
 
 div.layout div#container.areavisual {
   display: inline-block;
-  float: right;
+  position: absolute;
+  margin-left: 100vh;
+  margin-top: 90px;
 }

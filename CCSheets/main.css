@@ -21,6 +21,7 @@ div.navigation {
   width: 90px;
   float: left;
   border-right: 5px black solid;
+  z-index: 1;
 
 }
 
