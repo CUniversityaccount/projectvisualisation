@@ -1,7 +1,6 @@
 {
     "DX01": {
         "2005": {
-            "BEVTOTAAL": "40795",
             "age": {
                 "BEV0_17": "4151",
                 "BEV18_22": "2034",
@@ -19,13 +18,13 @@
                 "BEVTURK": "314",
                 "BEVWEST": "9631"
             },
+            "bevtotaal": "40795",
             "general": {
                 "BEVMAN": "21782",
                 "BEVVROUW": "19013"
             }
         },
         "2006": {
-            "BEVTOTAAL": "41079",
             "age": {
                 "BEV0_17": "4143",
                 "BEV18_22": "2219",
@@ -43,13 +42,13 @@
                 "BEVTURK": "332",
                 "BEVWEST": "9851"
             },
+            "bevtotaal": "41079",
             "general": {
                 "BEVMAN": "21959",
                 "BEVVROUW": "19120"
             }
         },
         "2007": {
-            "BEVTOTAAL": "40711",
             "age": {
                 "BEV0_17": "4095",
                 "BEV18_22": "2295",
@@ -67,13 +66,13 @@
                 "BEVTURK": "322",
                 "BEVWEST": "9657"
             },
+            "bevtotaal": "40711",
             "general": {
                 "BEVMAN": "21719",
                 "BEVVROUW": "18992"
             }
         },
         "2008": {
-            "BEVTOTAAL": "40765",
             "age": {
                 "BEV0_17": "4051",
                 "BEV18_22": "2476",
@@ -91,13 +90,13 @@
                 "BEVTURK": "342",
                 "BEVWEST": "9614"
             },
+            "bevtotaal": "40765",
             "general": {
                 "BEVMAN": "21759",
                 "BEVVROUW": "19006"
             }
         },
         "2009": {
-            "BEVTOTAAL": "40431",
             "age": {
                 "BEV0_17": "4154",
                 "BEV18_22": "2516",
@@ -115,13 +114,13 @@
                 "BEVTURK": "330",
                 "BEVWEST": "9790"
             },
+            "bevtotaal": "40431",
             "general": {
                 "BEVMAN": "21204",
                 "BEVVROUW": "19227"
             }
         },
         "2010": {
-            "BEVTOTAAL": "41907",
             "age": {
                 "BEV0_17": "4390",
                 "BEV18_22": "2653",
@@ -139,13 +138,13 @@
                 "BEVTURK": "336",
                 "BEVWEST": "10146"
             },
+            "bevtotaal": "41907",
             "general": {
                 "BEVMAN": "22006",
                 "BEVVROUW": "19901"
             }
         },
         "2011": {
-            "BEVTOTAAL": "42316",
             "age": {
                 "BEV0_17": "4401",
                 "BEV18_22": "2645",
@@ -163,13 +162,13 @@
                 "BEVTURK": "338",
                 "BEVWEST": "10463"
             },
+            "bevtotaal": "42316",
             "general": {
                 "BEVMAN": "22109",
                 "BEVVROUW": "20207"
             }
         },
         "2012": {
-            "BEVTOTAAL": "42599",
             "age": {
                 "BEV0_17": "4451",
                 "BEV18_22": "2605",
@@ -187,13 +186,13 @@
                 "BEVTURK": "335",
                 "BEVWEST": "10560"
             },
+            "bevtotaal": "42599",
             "general": {
                 "BEVMAN": "22203",
                 "BEVVROUW": "20396"
             }
         },
         "2013": {
-            "BEVTOTAAL": "42823",
             "age": {
                 "BEV0_17": "4491",
                 "BEV18_22": "2586",
@@ -211,13 +210,13 @@
                 "BEVTURK": "339",
                 "BEVWEST": "10652"
             },
+            "bevtotaal": "42823",
             "general": {
                 "BEVMAN": "22204",
                 "BEVVROUW": "20619"
             }
         },
         "2014": {
-            "BEVTOTAAL": "43356",
             "age": {
                 "BEV0_17": "4637",
                 "BEV18_22": "2568",
@@ -235,13 +234,13 @@
                 "BEVTURK": "343",
                 "BEVWEST": "10803"
             },
+            "bevtotaal": "43356",
             "general": {
                 "BEVMAN": "22427",
                 "BEVVROUW": "20929"
             }
         },
         "2015": {
-            "BEVTOTAAL": "43585",
             "age": {
                 "BEV0_17": "4608",
                 "BEV18_22": "2553",
@@ -259,13 +258,13 @@
                 "BEVTURK": "373",
                 "BEVWEST": "11088"
             },
+            "bevtotaal": "43585",
             "general": {
                 "BEVMAN": "22440",
                 "BEVVROUW": "21145"
             }
         },
         "2016": {
-            "BEVTOTAAL": "43476",
             "age": {
                 "BEV0_17": "4565",
                 "BEV18_22": "2384",
@@ -283,13 +282,13 @@
                 "BEVTURK": "366",
                 "BEVWEST": "11372"
             },
+            "bevtotaal": "43476",
             "general": {
                 "BEVMAN": "22452",
                 "BEVVROUW": "21024"
             }
         },
         "2017": {
-            "BEVTOTAAL": "43228",
             "age": {
                 "BEV0_17": "4512",
                 "BEV18_22": "2202",
@@ -307,13 +306,13 @@
                 "BEVTURK": "376",
                 "BEVWEST": "11549"
             },
+            "bevtotaal": "43228",
             "general": {
                 "BEVMAN": "22301",
                 "BEVVROUW": "20927"
             }
         },
         "2018": {
-            "BEVTOTAAL": "43386",
             "age": {
                 "BEV0_17": "4356",
                 "BEV18_22": "2239",
@@ -332,6 +331,7 @@
                 "BEVTURK": "403",
                 "BEVWEST": "11883"
             },
+            "bevtotaal": "43386",
             "general": {
                 "BEVMAN": "22421",
                 "BEVVROUW": "20965"
@@ -340,7 +340,6 @@
     },
     "DX02": {
         "2005": {
-            "BEVTOTAAL": "40478",
             "age": {
                 "BEV0_17": "5010",
                 "BEV18_22": "2249",
@@ -358,13 +357,13 @@
                 "BEVTURK": "405",
                 "BEVWEST": "8899"
             },
+            "bevtotaal": "40478",
             "general": {
                 "BEVMAN": "21026",
                 "BEVVROUW": "19452"
             }
         },
         "2006": {
-            "BEVTOTAAL": "40925",
             "age": {
                 "BEV0_17": "5062",
                 "BEV18_22": "2479",
@@ -382,13 +381,13 @@
                 "BEVTURK": "448",
                 "BEVWEST": "9034"
             },
+            "bevtotaal": "40925",
             "general": {
                 "BEVMAN": "21188",
                 "BEVVROUW": "19737"
             }
         },
         "2007": {
-            "BEVTOTAAL": "40107",
             "age": {
                 "BEV0_17": "4964",
                 "BEV18_22": "2518",
@@ -406,13 +405,13 @@
                 "BEVTURK": "440",
                 "BEVWEST": "8634"
             },
+            "bevtotaal": "40107",
             "general": {
                 "BEVMAN": "20741",
                 "BEVVROUW": "19366"
             }
         },
         "2008": {
-            "BEVTOTAAL": "40552",
             "age": {
                 "BEV0_17": "5016",
                 "BEV18_22": "2802",
@@ -430,13 +429,13 @@
                 "BEVTURK": "456",
                 "BEVWEST": "8894"
             },
+            "bevtotaal": "40552",
             "general": {
                 "BEVMAN": "20888",
                 "BEVVROUW": "19664"
             }
         },
         "2009": {
-            "BEVTOTAAL": "40872",
             "age": {
                 "BEV0_17": "4924",
                 "BEV18_22": "3008",
@@ -454,13 +453,13 @@
                 "BEVTURK": "467",
                 "BEVWEST": "9230"
             },
+            "bevtotaal": "40872",
             "general": {
                 "BEVMAN": "21027",
                 "BEVVROUW": "19845"
             }
         },
         "2010": {
-            "BEVTOTAAL": "40803",
             "age": {
                 "BEV0_17": "4899",
                 "BEV18_22": "2990",
@@ -478,13 +477,13 @@
                 "BEVTURK": "448",
                 "BEVWEST": "9202"
             },
+            "bevtotaal": "40803",
             "general": {
                 "BEVMAN": "20966",
                 "BEVVROUW": "19837"
             }
         },
         "2011": {
-            "BEVTOTAAL": "41711",
             "age": {
                 "BEV0_17": "4977",
                 "BEV18_22": "3279",
@@ -502,13 +501,13 @@
                 "BEVTURK": "472",
                 "BEVWEST": "9738"
             },
+            "bevtotaal": "41711",
             "general": {
                 "BEVMAN": "21444",
                 "BEVVROUW": "20267"
             }
         },
         "2012": {
-            "BEVTOTAAL": "41939",
             "age": {
                 "BEV0_17": "5022",
                 "BEV18_22": "3020",
@@ -526,13 +525,13 @@
                 "BEVTURK": "452",
                 "BEVWEST": "9778"
             },
+            "bevtotaal": "41939",
             "general": {
                 "BEVMAN": "21529",
                 "BEVVROUW": "20410"
             }
         },
         "2013": {
-            "BEVTOTAAL": "42792",
             "age": {
                 "BEV0_17": "5114",
                 "BEV18_22": "2945",
@@ -550,13 +549,13 @@
                 "BEVTURK": "433",
                 "BEVWEST": "9942"
             },
+            "bevtotaal": "42792",
             "general": {
                 "BEVMAN": "21991",
                 "BEVVROUW": "20801"
             }
         },
         "2014": {
-            "BEVTOTAAL": "42743",
             "age": {
                 "BEV0_17": "5055",
                 "BEV18_22": "2827",
@@ -574,13 +573,13 @@
                 "BEVTURK": "446",
                 "BEVWEST": "9780"
             },
+            "bevtotaal": "42743",
             "general": {
                 "BEVMAN": "22059",
                 "BEVVROUW": "20684"
             }
         },
         "2015": {
-            "BEVTOTAAL": "42833",
             "age": {
                 "BEV0_17": "5089",
                 "BEV18_22": "2879",
@@ -598,13 +597,13 @@
                 "BEVTURK": "456",
                 "BEVWEST": "9875"
             },
+            "bevtotaal": "42833",
             "general": {
                 "BEVMAN": "22063",
                 "BEVVROUW": "20770"
             }
         },
         "2016": {
-            "BEVTOTAAL": "43023",
             "age": {
                 "BEV0_17": "5015",
                 "BEV18_22": "2910",
@@ -622,13 +621,13 @@
                 "BEVTURK": "487",
                 "BEVWEST": "10203"
             },
+            "bevtotaal": "43023",
             "general": {
                 "BEVMAN": "22234",
                 "BEVVROUW": "20789"
             }
         },
         "2017": {
-            "BEVTOTAAL": "43194",
             "age": {
                 "BEV0_17": "4963",
                 "BEV18_22": "2743",
@@ -646,13 +645,13 @@
                 "BEVTURK": "495",
                 "BEVWEST": "10635"
             },
+            "bevtotaal": "43194",
             "general": {
                 "BEVMAN": "22442",
                 "BEVVROUW": "20752"
             }
         },
         "2018": {
-            "BEVTOTAAL": "43465",
             "age": {
                 "BEV0_17": "4887",
                 "BEV18_22": "2774",
@@ -671,6 +670,7 @@
                 "BEVTURK": "512",
                 "BEVWEST": "11084"
             },
+            "bevtotaal": "43465",
             "general": {
                 "BEVMAN": "22474",
                 "BEVVROUW": "20991"
@@ -679,7 +679,6 @@
     },
     "DX03": {
         "2005": {
-            "BEVTOTAAL": "33549",
             "age": {
                 "BEV0_17": "5391",
                 "BEV18_22": "1998",
@@ -697,13 +696,13 @@
                 "BEVTURK": "947",
                 "BEVWEST": "5196"
             },
+            "bevtotaal": "33549",
             "general": {
                 "BEVMAN": "17029",
                 "BEVVROUW": "16520"
             }
         },
         "2006": {
-            "BEVTOTAAL": "34054",
             "age": {
                 "BEV0_17": "5415",
                 "BEV18_22": "2393",
@@ -721,13 +720,13 @@
                 "BEVTURK": "913",
                 "BEVWEST": "5295"
             },
+            "bevtotaal": "34054",
             "general": {
                 "BEVMAN": "17148",
                 "BEVVROUW": "16906"
             }
         },
         "2007": {
-            "BEVTOTAAL": "34058",
             "age": {
                 "BEV0_17": "5299",
                 "BEV18_22": "2318",
@@ -745,13 +744,13 @@
                 "BEVTURK": "886",
                 "BEVWEST": "5343"
             },
+            "bevtotaal": "34058",
             "general": {
                 "BEVMAN": "17063",
                 "BEVVROUW": "16995"
             }
         },
         "2008": {
-            "BEVTOTAAL": "34320",
             "age": {
                 "BEV0_17": "5222",
                 "BEV18_22": "2305",
@@ -769,13 +768,13 @@
                 "BEVTURK": "815",
                 "BEVWEST": "5651"
             },
+            "bevtotaal": "34320",
             "general": {
                 "BEVMAN": "17155",
                 "BEVVROUW": "17165"
             }
         },
         "2009": {
-            "BEVTOTAAL": "34148",
             "age": {
                 "BEV0_17": "5064",
                 "BEV18_22": "2247",
@@ -793,13 +792,13 @@
                 "BEVTURK": "807",
                 "BEVWEST": "5832"
             },
+            "bevtotaal": "34148",
             "general": {
                 "BEVMAN": "16955",
                 "BEVVROUW": "17193"
             }
         },
         "2010": {
-            "BEVTOTAAL": "34057",
             "age": {
                 "BEV0_17": "5015",
                 "BEV18_22": "2103",
@@ -817,13 +816,13 @@
                 "BEVTURK": "804",
                 "BEVWEST": "5999"
             },
+            "bevtotaal": "34057",
             "general": {
                 "BEVMAN": "16912",
                 "BEVVROUW": "17145"
             }
         },
         "2011": {
-            "BEVTOTAAL": "34874",
             "age": {
                 "BEV0_17": "5084",
                 "BEV18_22": "2258",
@@ -841,13 +840,13 @@
                 "BEVTURK": "772",
                 "BEVWEST": "6442"
             },
+            "bevtotaal": "34874",
             "general": {
                 "BEVMAN": "17294",
                 "BEVVROUW": "17580"
             }
         },
         "2012": {
-            "BEVTOTAAL": "35358",
             "age": {
                 "BEV0_17": "5170",
                 "BEV18_22": "2158",
@@ -865,13 +864,13 @@
                 "BEVTURK": "748",
                 "BEVWEST": "6539"
             },
+            "bevtotaal": "35358",
             "general": {
                 "BEVMAN": "17476",
                 "BEVVROUW": "17882"
             }
         },
         "2013": {
-            "BEVTOTAAL": "35407",
             "age": {
                 "BEV0_17": "5145",
                 "BEV18_22": "2151",
@@ -889,13 +888,13 @@
                 "BEVTURK": "734",
                 "BEVWEST": "6504"
             },
+            "bevtotaal": "35407",
             "general": {
                 "BEVMAN": "17521",
                 "BEVVROUW": "17886"
             }
         },
         "2014": {
-            "BEVTOTAAL": "35714",
             "age": {
                 "BEV0_17": "5180",
                 "BEV18_22": "2062",
@@ -913,13 +912,13 @@
                 "BEVTURK": "731",
                 "BEVWEST": "6636"
             },
+            "bevtotaal": "35714",
             "general": {
                 "BEVMAN": "17706",
                 "BEVVROUW": "18008"
             }
         },
         "2015": {
-            "BEVTOTAAL": "36330",
             "age": {
                 "BEV0_17": "5182",
                 "BEV18_22": "2087",
@@ -937,13 +936,13 @@
                 "BEVTURK": "725",
                 "BEVWEST": "6879"
             },
+            "bevtotaal": "36330",
             "general": {
                 "BEVMAN": "17962",
                 "BEVVROUW": "18368"
             }
         },
         "2016": {
-            "BEVTOTAAL": "36116",
             "age": {
                 "BEV0_17": "5224",
                 "BEV18_22": "1656",
@@ -961,13 +960,13 @@
                 "BEVTURK": "732",
                 "BEVWEST": "7031"
             },
+            "bevtotaal": "36116",
             "general": {
                 "BEVMAN": "17944",
                 "BEVVROUW": "18172"
             }
         },
         "2017": {
-            "BEVTOTAAL": "36000",
             "age": {
                 "BEV0_17": "5128",
                 "BEV18_22": "1567",
@@ -985,13 +984,13 @@
                 "BEVTURK": "725",
                 "BEVWEST": "7188"
             },
+            "bevtotaal": "36000",
             "general": {
                 "BEVMAN": "17903",
                 "BEVVROUW": "18097"
             }
         },
         "2018": {
-            "BEVTOTAAL": "36084",
             "age": {
                 "BEV0_17": "5058",
                 "BEV18_22": "1495",
@@ -1010,6 +1009,7 @@
                 "BEVTURK": "729",
                 "BEVWEST": "7402"
             },
+            "bevtotaal": "36084",
             "general": {
                 "BEVMAN": "18023",
                 "BEVVROUW": "18061"
@@ -1018,7 +1018,6 @@
     },
     "DX04": {
         "2005": {
-            "BEVTOTAAL": "31017",
             "age": {
                 "BEV0_17": "7019",
                 "BEV18_22": "2443",
@@ -1036,13 +1035,13 @@
                 "BEVTURK": "4922",
                 "BEVWEST": "2994"
             },
+            "bevtotaal": "31017",
             "general": {
                 "BEVMAN": "15616",
                 "BEVVROUW": "15401"
             }
         },
         "2006": {
-            "BEVTOTAAL": "30477",
             "age": {
                 "BEV0_17": "6789",
                 "BEV18_22": "2276",
@@ -1060,13 +1059,13 @@
                 "BEVTURK": "4831",
                 "BEVWEST": "2910"
             },
+            "bevtotaal": "30477",
             "general": {
                 "BEVMAN": "15400",
                 "BEVVROUW": "15077"
             }
         },
         "2007": {
-            "BEVTOTAAL": "30333",
             "age": {
                 "BEV0_17": "6610",
                 "BEV18_22": "2299",
@@ -1084,13 +1083,13 @@
                 "BEVTURK": "4711",
                 "BEVWEST": "2961"
             },
+            "bevtotaal": "30333",
             "general": {
                 "BEVMAN": "15299",
                 "BEVVROUW": "15034"
             }
         },
         "2008": {
-            "BEVTOTAAL": "30078",
             "age": {
                 "BEV0_17": "6485",
                 "BEV18_22": "2317",
@@ -1108,13 +1107,13 @@
                 "BEVTURK": "4626",
                 "BEVWEST": "3108"
             },
+            "bevtotaal": "30078",
             "general": {
                 "BEVMAN": "15156",
                 "BEVVROUW": "14922"
             }
         },
         "2009": {
-            "BEVTOTAAL": "30448",
             "age": {
                 "BEV0_17": "6416",
                 "BEV18_22": "2321",
@@ -1132,13 +1131,13 @@
                 "BEVTURK": "4618",
                 "BEVWEST": "3279"
             },
+            "bevtotaal": "30448",
             "general": {
                 "BEVMAN": "15277",
                 "BEVVROUW": "15171"
             }
         },
         "2010": {
-            "BEVTOTAAL": "30965",
             "age": {
                 "BEV0_17": "6360",
                 "BEV18_22": "2401",
@@ -1156,13 +1155,13 @@
                 "BEVTURK": "4592",
                 "BEVWEST": "3473"
             },
+            "bevtotaal": "30965",
             "general": {
                 "BEVMAN": "15559",
                 "BEVVROUW": "15406"
             }
         },
         "2011": {
-            "BEVTOTAAL": "31372",
             "age": {
                 "BEV0_17": "6286",
                 "BEV18_22": "2500",
@@ -1180,13 +1179,13 @@
                 "BEVTURK": "4572",
                 "BEVWEST": "3671"
             },
+            "bevtotaal": "31372",
             "general": {
                 "BEVMAN": "15738",
                 "BEVVROUW": "15634"
             }
         },
         "2012": {
-            "BEVTOTAAL": "31971",
             "age": {
                 "BEV0_17": "6237",
                 "BEV18_22": "2539",
@@ -1204,13 +1203,13 @@
                 "BEVTURK": "4499",
                 "BEVWEST": "3911"
             },
+            "bevtotaal": "31971",
             "general": {
                 "BEVMAN": "15950",
                 "BEVVROUW": "16021"
             }
         },
         "2013": {
-            "BEVTOTAAL": "33037",
             "age": {
                 "BEV0_17": "6391",
                 "BEV18_22": "2655",
@@ -1228,13 +1227,13 @@
                 "BEVTURK": "4459",
                 "BEVWEST": "4200"
             },
+            "bevtotaal": "33037",
             "general": {
                 "BEVMAN": "16360",
                 "BEVVROUW": "16677"
             }
         },
         "2014": {
-            "BEVTOTAAL": "33842",
             "age": {
                 "BEV0_17": "6481",
                 "BEV18_22": "2630",
@@ -1252,13 +1251,13 @@
                 "BEVTURK": "4389",
                 "BEVWEST": "4323"
             },
+            "bevtotaal": "33842",
             "general": {
                 "BEVMAN": "16761",
                 "BEVVROUW": "17081"
             }
         },
         "2015": {
-            "BEVTOTAAL": "34363",
             "age": {
                 "BEV0_17": "6508",
                 "BEV18_22": "2483",
@@ -1276,13 +1275,13 @@
                 "BEVTURK": "4257",
                 "BEVWEST": "4621"
             },
+            "bevtotaal": "34363",
             "general": {
                 "BEVMAN": "16988",
                 "BEVVROUW": "17375"
             }
         },
         "2016": {
-            "BEVTOTAAL": "35065",
             "age": {
                 "BEV0_17": "6366",
                 "BEV18_22": "2608",
@@ -1300,13 +1299,13 @@
                 "BEVTURK": "4089",
                 "BEVWEST": "4909"
             },
+            "bevtotaal": "35065",
             "general": {
                 "BEVMAN": "17307",
                 "BEVVROUW": "17758"
             }
         },
         "2017": {
-            "BEVTOTAAL": "34864",
             "age": {
                 "BEV0_17": "6224",
                 "BEV18_22": "2386",
@@ -1324,13 +1323,13 @@
                 "BEVTURK": "3982",
                 "BEVWEST": "4989"
             },
+            "bevtotaal": "34864",
             "general": {
                 "BEVMAN": "17194",
                 "BEVVROUW": "17670"
             }
         },
         "2018": {
-            "BEVTOTAAL": "35009",
             "age": {
                 "BEV0_17": "6237",
                 "BEV18_22": "2275",
@@ -1349,6 +1348,7 @@
                 "BEVTURK": "3862",
                 "BEVWEST": "5393"
             },
+            "bevtotaal": "35009",
             "general": {
                 "BEVMAN": "17304",
                 "BEVVROUW": "17705"
@@ -1357,7 +1357,6 @@
     },
     "DX05": {
         "2005": {
-            "BEVTOTAAL": "66312",
             "age": {
                 "BEV0_17": "9797",
                 "BEV18_22": "4026",
@@ -1375,13 +1374,13 @@
                 "BEVTURK": "3887",
                 "BEVWEST": "10898"
             },
+            "bevtotaal": "66312",
             "general": {
                 "BEVMAN": "32808",
                 "BEVVROUW": "33504"
             }
         },
         "2006": {
-            "BEVTOTAAL": "65966",
             "age": {
                 "BEV0_17": "9757",
                 "BEV18_22": "4020",
@@ -1399,13 +1398,13 @@
                 "BEVTURK": "3722",
                 "BEVWEST": "10982"
             },
+            "bevtotaal": "65966",
             "general": {
                 "BEVMAN": "32594",
                 "BEVVROUW": "33372"
             }
         },
         "2007": {
-            "BEVTOTAAL": "65376",
             "age": {
                 "BEV0_17": "9519",
                 "BEV18_22": "4097",
@@ -1423,13 +1422,13 @@
                 "BEVTURK": "3616",
                 "BEVWEST": "10895"
             },
+            "bevtotaal": "65376",
             "general": {
                 "BEVMAN": "32209",
                 "BEVVROUW": "33167"
             }
         },
         "2008": {
-            "BEVTOTAAL": "65251",
             "age": {
                 "BEV0_17": "9382",
                 "BEV18_22": "4137",
@@ -1447,13 +1446,13 @@
                 "BEVTURK": "3536",
                 "BEVWEST": "11115"
             },
+            "bevtotaal": "65251",
             "general": {
                 "BEVMAN": "32184",
                 "BEVVROUW": "33067"
             }
         },
         "2009": {
-            "BEVTOTAAL": "65396",
             "age": {
                 "BEV0_17": "9300",
                 "BEV18_22": "4133",
@@ -1471,13 +1470,13 @@
                 "BEVTURK": "3475",
                 "BEVWEST": "11696"
             },
+            "bevtotaal": "65396",
             "general": {
                 "BEVMAN": "32339",
                 "BEVVROUW": "33057"
             }
         },
         "2010": {
-            "BEVTOTAAL": "66273",
             "age": {
                 "BEV0_17": "9405",
                 "BEV18_22": "4185",
@@ -1495,13 +1494,13 @@
                 "BEVTURK": "3412",
                 "BEVWEST": "11967"
             },
+            "bevtotaal": "66273",
             "general": {
                 "BEVMAN": "32656",
                 "BEVVROUW": "33617"
             }
         },
         "2011": {
-            "BEVTOTAAL": "67073",
             "age": {
                 "BEV0_17": "9527",
                 "BEV18_22": "4217",
@@ -1519,13 +1518,13 @@
                 "BEVTURK": "3335",
                 "BEVWEST": "12260"
             },
+            "bevtotaal": "67073",
             "general": {
                 "BEVMAN": "32930",
                 "BEVVROUW": "34143"
             }
         },
         "2012": {
-            "BEVTOTAAL": "67855",
             "age": {
                 "BEV0_17": "9673",
                 "BEV18_22": "4210",
@@ -1543,13 +1542,13 @@
                 "BEVTURK": "3258",
                 "BEVWEST": "12577"
             },
+            "bevtotaal": "67855",
             "general": {
                 "BEVMAN": "33243",
                 "BEVVROUW": "34612"
             }
         },
         "2013": {
-            "BEVTOTAAL": "70236",
             "age": {
                 "BEV0_17": "10036",
                 "BEV18_22": "4162",
@@ -1567,13 +1566,13 @@
                 "BEVTURK": "3303",
                 "BEVWEST": "12978"
             },
+            "bevtotaal": "70236",
             "general": {
                 "BEVMAN": "34711",
                 "BEVVROUW": "35525"
             }
         },
         "2014": {
-            "BEVTOTAAL": "71542",
             "age": {
                 "BEV0_17": "10169",
                 "BEV18_22": "4252",
@@ -1591,13 +1590,13 @@
                 "BEVTURK": "3189",
                 "BEVWEST": "13278"
             },
+            "bevtotaal": "71542",
             "general": {
                 "BEVMAN": "35369",
                 "BEVVROUW": "36173"
             }
         },
         "2015": {
-            "BEVTOTAAL": "72139",
             "age": {
                 "BEV0_17": "10306",
                 "BEV18_22": "4096",
@@ -1615,13 +1614,13 @@
                 "BEVTURK": "3077",
                 "BEVWEST": "13674"
             },
+            "bevtotaal": "72139",
             "general": {
                 "BEVMAN": "35719",
                 "BEVVROUW": "36420"
             }
         },
         "2016": {
-            "BEVTOTAAL": "72783",
             "age": {
                 "BEV0_17": "10342",
                 "BEV18_22": "3752",
@@ -1639,13 +1638,13 @@
                 "BEVTURK": "3036",
                 "BEVWEST": "14172"
             },
+            "bevtotaal": "72783",
             "general": {
                 "BEVMAN": "36039",
                 "BEVVROUW": "36744"
             }
         },
         "2017": {
-            "BEVTOTAAL": "72978",
             "age": {
                 "BEV0_17": "10370",
                 "BEV18_22": "3496",
@@ -1663,13 +1662,13 @@
                 "BEVTURK": "3003",
                 "BEVWEST": "14706"
             },
+            "bevtotaal": "72978",
             "general": {
                 "BEVMAN": "36127",
                 "BEVVROUW": "36851"
             }
         },
         "2018": {
-            "BEVTOTAAL": "73117",
             "age": {
                 "BEV0_17": "10109",
                 "BEV18_22": "3491",
@@ -1688,6 +1687,7 @@
                 "BEVTURK": "2955",
                 "BEVWEST": "15381"
             },
+            "bevtotaal": "73117",
             "general": {
                 "BEVMAN": "36374",
                 "BEVVROUW": "36740"
@@ -1696,7 +1696,6 @@
     },
     "DX06": {
         "2005": {
-            "BEVTOTAAL": "40955",
             "age": {
                 "BEV0_17": "10126",
                 "BEV18_22": "2852",
@@ -1714,13 +1713,13 @@
                 "BEVTURK": "6278",
                 "BEVWEST": "3728"
             },
+            "bevtotaal": "40955",
             "general": {
                 "BEVMAN": "20238",
                 "BEVVROUW": "20717"
             }
         },
         "2006": {
-            "BEVTOTAAL": "41286",
             "age": {
                 "BEV0_17": "10231",
                 "BEV18_22": "2962",
@@ -1738,13 +1737,13 @@
                 "BEVTURK": "6605",
                 "BEVWEST": "3692"
             },
+            "bevtotaal": "41286",
             "general": {
                 "BEVMAN": "20461",
                 "BEVVROUW": "20825"
             }
         },
         "2007": {
-            "BEVTOTAAL": "41411",
             "age": {
                 "BEV0_17": "10233",
                 "BEV18_22": "3016",
@@ -1762,13 +1761,13 @@
                 "BEVTURK": "6807",
                 "BEVWEST": "3679"
             },
+            "bevtotaal": "41411",
             "general": {
                 "BEVMAN": "20610",
                 "BEVVROUW": "20801"
             }
         },
         "2008": {
-            "BEVTOTAAL": "41384",
             "age": {
                 "BEV0_17": "10065",
                 "BEV18_22": "3148",
@@ -1786,13 +1785,13 @@
                 "BEVTURK": "6882",
                 "BEVWEST": "3849"
             },
+            "bevtotaal": "41384",
             "general": {
                 "BEVMAN": "20578",
                 "BEVVROUW": "20806"
             }
         },
         "2009": {
-            "BEVTOTAAL": "40741",
             "age": {
                 "BEV0_17": "9811",
                 "BEV18_22": "3063",
@@ -1810,13 +1809,13 @@
                 "BEVTURK": "6981",
                 "BEVWEST": "3960"
             },
+            "bevtotaal": "40741",
             "general": {
                 "BEVMAN": "20383",
                 "BEVVROUW": "20358"
             }
         },
         "2010": {
-            "BEVTOTAAL": "40472",
             "age": {
                 "BEV0_17": "9532",
                 "BEV18_22": "3128",
@@ -1834,13 +1833,13 @@
                 "BEVTURK": "7095",
                 "BEVWEST": "4037"
             },
+            "bevtotaal": "40472",
             "general": {
                 "BEVMAN": "20355",
                 "BEVVROUW": "20117"
             }
         },
         "2011": {
-            "BEVTOTAAL": "41481",
             "age": {
                 "BEV0_17": "9719",
                 "BEV18_22": "3199",
@@ -1858,13 +1857,13 @@
                 "BEVTURK": "7448",
                 "BEVWEST": "4263"
             },
+            "bevtotaal": "41481",
             "general": {
                 "BEVMAN": "20863",
                 "BEVVROUW": "20618"
             }
         },
         "2012": {
-            "BEVTOTAAL": "42230",
             "age": {
                 "BEV0_17": "9739",
                 "BEV18_22": "3265",
@@ -1882,13 +1881,13 @@
                 "BEVTURK": "7779",
                 "BEVWEST": "4388"
             },
+            "bevtotaal": "42230",
             "general": {
                 "BEVMAN": "21333",
                 "BEVVROUW": "20897"
             }
         },
         "2013": {
-            "BEVTOTAAL": "42556",
             "age": {
                 "BEV0_17": "9887",
                 "BEV18_22": "3168",
@@ -1906,13 +1905,13 @@
                 "BEVTURK": "7982",
                 "BEVWEST": "4496"
             },
+            "bevtotaal": "42556",
             "general": {
                 "BEVMAN": "21487",
                 "BEVVROUW": "21069"
             }
         },
         "2014": {
-            "BEVTOTAAL": "42841",
             "age": {
                 "BEV0_17": "10052",
                 "BEV18_22": "3057",
@@ -1930,13 +1929,13 @@
                 "BEVTURK": "8088",
                 "BEVWEST": "4516"
             },
+            "bevtotaal": "42841",
             "general": {
                 "BEVMAN": "21662",
                 "BEVVROUW": "21179"
             }
         },
         "2015": {
-            "BEVTOTAAL": "43958",
             "age": {
                 "BEV0_17": "10333",
                 "BEV18_22": "3096",
@@ -1954,13 +1953,13 @@
                 "BEVTURK": "8282",
                 "BEVWEST": "4796"
             },
+            "bevtotaal": "43958",
             "general": {
                 "BEVMAN": "22250",
                 "BEVVROUW": "21708"
             }
         },
         "2016": {
-            "BEVTOTAAL": "44740",
             "age": {
                 "BEV0_17": "10475",
                 "BEV18_22": "3103",
@@ -1978,13 +1977,13 @@
                 "BEVTURK": "8469",
                 "BEVWEST": "5026"
             },
+            "bevtotaal": "44740",
             "general": {
                 "BEVMAN": "22721",
                 "BEVVROUW": "22019"
             }
         },
         "2017": {
-            "BEVTOTAAL": "45124",
             "age": {
                 "BEV0_17": "10653",
                 "BEV18_22": "3016",
@@ -2002,13 +2001,13 @@
                 "BEVTURK": "8675",
                 "BEVWEST": "5188"
             },
+            "bevtotaal": "45124",
             "general": {
                 "BEVMAN": "22932",
                 "BEVVROUW": "22192"
             }
         },
         "2018": {
-            "BEVTOTAAL": "45940",
             "age": {
                 "BEV0_17": "10844",
                 "BEV18_22": "3088",
@@ -2027,6 +2026,7 @@
                 "BEVTURK": "8837",
                 "BEVWEST": "5492"
             },
+            "bevtotaal": "45940",
             "general": {
                 "BEVMAN": "23443",
                 "BEVVROUW": "22497"
@@ -2035,7 +2035,6 @@
     },
     "DX07": {
         "2005": {
-            "BEVTOTAAL": "29802",
             "age": {
                 "BEV0_17": "6294",
                 "BEV18_22": "2053",
@@ -2053,13 +2052,13 @@
                 "BEVTURK": "3015",
                 "BEVWEST": "2890"
             },
+            "bevtotaal": "29802",
             "general": {
                 "BEVMAN": "14063",
                 "BEVVROUW": "15739"
             }
         },
         "2006": {
-            "BEVTOTAAL": "30469",
             "age": {
                 "BEV0_17": "6291",
                 "BEV18_22": "2182",
@@ -2077,13 +2076,13 @@
                 "BEVTURK": "3243",
                 "BEVWEST": "2925"
             },
+            "bevtotaal": "30469",
             "general": {
                 "BEVMAN": "14410",
                 "BEVVROUW": "16059"
             }
         },
         "2007": {
-            "BEVTOTAAL": "30471",
             "age": {
                 "BEV0_17": "6315",
                 "BEV18_22": "2183",
@@ -2101,13 +2100,13 @@
                 "BEVTURK": "3304",
                 "BEVWEST": "2896"
             },
+            "bevtotaal": "30471",
             "general": {
                 "BEVMAN": "14366",
                 "BEVVROUW": "16105"
             }
         },
         "2008": {
-            "BEVTOTAAL": "31475",
             "age": {
                 "BEV0_17": "6394",
                 "BEV18_22": "2203",
@@ -2125,13 +2124,13 @@
                 "BEVTURK": "3488",
                 "BEVWEST": "3141"
             },
+            "bevtotaal": "31475",
             "general": {
                 "BEVMAN": "14897",
                 "BEVVROUW": "16578"
             }
         },
         "2009": {
-            "BEVTOTAAL": "32543",
             "age": {
                 "BEV0_17": "6589",
                 "BEV18_22": "2186",
@@ -2149,13 +2148,13 @@
                 "BEVTURK": "3702",
                 "BEVWEST": "3388"
             },
+            "bevtotaal": "32543",
             "general": {
                 "BEVMAN": "15553",
                 "BEVVROUW": "16990"
             }
         },
         "2010": {
-            "BEVTOTAAL": "34489",
             "age": {
                 "BEV0_17": "7085",
                 "BEV18_22": "2406",
@@ -2173,13 +2172,13 @@
                 "BEVTURK": "4029",
                 "BEVWEST": "3726"
             },
+            "bevtotaal": "34489",
             "general": {
                 "BEVMAN": "16534",
                 "BEVVROUW": "17955"
             }
         },
         "2011": {
-            "BEVTOTAAL": "35376",
             "age": {
                 "BEV0_17": "7360",
                 "BEV18_22": "2435",
@@ -2197,13 +2196,13 @@
                 "BEVTURK": "4206",
                 "BEVWEST": "3937"
             },
+            "bevtotaal": "35376",
             "general": {
                 "BEVMAN": "16980",
                 "BEVVROUW": "18396"
             }
         },
         "2012": {
-            "BEVTOTAAL": "36081",
             "age": {
                 "BEV0_17": "7515",
                 "BEV18_22": "2563",
@@ -2221,13 +2220,13 @@
                 "BEVTURK": "4355",
                 "BEVWEST": "4143"
             },
+            "bevtotaal": "36081",
             "general": {
                 "BEVMAN": "17432",
                 "BEVVROUW": "18649"
             }
         },
         "2013": {
-            "BEVTOTAAL": "36523",
             "age": {
                 "BEV0_17": "7692",
                 "BEV18_22": "2616",
@@ -2245,13 +2244,13 @@
                 "BEVTURK": "4477",
                 "BEVWEST": "4260"
             },
+            "bevtotaal": "36523",
             "general": {
                 "BEVMAN": "17813",
                 "BEVVROUW": "18710"
             }
         },
         "2014": {
-            "BEVTOTAAL": "37104",
             "age": {
                 "BEV0_17": "7879",
                 "BEV18_22": "2646",
@@ -2269,13 +2268,13 @@
                 "BEVTURK": "4646",
                 "BEVWEST": "4397"
             },
+            "bevtotaal": "37104",
             "general": {
                 "BEVMAN": "18102",
                 "BEVVROUW": "19002"
             }
         },
         "2015": {
-            "BEVTOTAAL": "37840",
             "age": {
                 "BEV0_17": "8137",
                 "BEV18_22": "2616",
@@ -2293,13 +2292,13 @@
                 "BEVTURK": "4775",
                 "BEVWEST": "4615"
             },
+            "bevtotaal": "37840",
             "general": {
                 "BEVMAN": "18444",
                 "BEVVROUW": "19396"
             }
         },
         "2016": {
-            "BEVTOTAAL": "38560",
             "age": {
                 "BEV0_17": "8335",
                 "BEV18_22": "2654",
@@ -2317,13 +2316,13 @@
                 "BEVTURK": "4933",
                 "BEVWEST": "4925"
             },
+            "bevtotaal": "38560",
             "general": {
                 "BEVMAN": "18931",
                 "BEVVROUW": "19629"
             }
         },
         "2017": {
-            "BEVTOTAAL": "38989",
             "age": {
                 "BEV0_17": "8372",
                 "BEV18_22": "2668",
@@ -2341,13 +2340,13 @@
                 "BEVTURK": "5113",
                 "BEVWEST": "5078"
             },
+            "bevtotaal": "38989",
             "general": {
                 "BEVMAN": "19302",
                 "BEVVROUW": "19687"
             }
         },
         "2018": {
-            "BEVTOTAAL": "39312",
             "age": {
                 "BEV0_17": "8420",
                 "BEV18_22": "2677",
@@ -2366,6 +2365,7 @@
                 "BEVTURK": "5210",
                 "BEVWEST": "5343"
             },
+            "bevtotaal": "39312",
             "general": {
                 "BEVMAN": "19429",
                 "BEVVROUW": "19883"
@@ -2374,7 +2374,6 @@
     },
     "DX08": {
         "2005": {
-            "BEVTOTAAL": "28342",
             "age": {
                 "BEV0_17": "7645",
                 "BEV18_22": "1456",
@@ -2392,13 +2391,13 @@
                 "BEVTURK": "1444",
                 "BEVWEST": "3369"
             },
+            "bevtotaal": "28342",
             "general": {
                 "BEVMAN": "14053",
                 "BEVVROUW": "14289"
             }
         },
         "2006": {
-            "BEVTOTAAL": "28336",
             "age": {
                 "BEV0_17": "7567",
                 "BEV18_22": "1504",
@@ -2416,13 +2415,13 @@
                 "BEVTURK": "1536",
                 "BEVWEST": "3386"
             },
+            "bevtotaal": "28336",
             "general": {
                 "BEVMAN": "14027",
                 "BEVVROUW": "14309"
             }
         },
         "2007": {
-            "BEVTOTAAL": "28320",
             "age": {
                 "BEV0_17": "7456",
                 "BEV18_22": "1561",
@@ -2440,13 +2439,13 @@
                 "BEVTURK": "1582",
                 "BEVWEST": "3453"
             },
+            "bevtotaal": "28320",
             "general": {
                 "BEVMAN": "13978",
                 "BEVVROUW": "14342"
             }
         },
         "2008": {
-            "BEVTOTAAL": "28314",
             "age": {
                 "BEV0_17": "7293",
                 "BEV18_22": "1642",
@@ -2464,13 +2463,13 @@
                 "BEVTURK": "1662",
                 "BEVWEST": "3540"
             },
+            "bevtotaal": "28314",
             "general": {
                 "BEVMAN": "13984",
                 "BEVVROUW": "14330"
             }
         },
         "2009": {
-            "BEVTOTAAL": "28254",
             "age": {
                 "BEV0_17": "7111",
                 "BEV18_22": "1813",
@@ -2488,13 +2487,13 @@
                 "BEVTURK": "1695",
                 "BEVWEST": "3584"
             },
+            "bevtotaal": "28254",
             "general": {
                 "BEVMAN": "13914",
                 "BEVVROUW": "14340"
             }
         },
         "2010": {
-            "BEVTOTAAL": "28180",
             "age": {
                 "BEV0_17": "6873",
                 "BEV18_22": "1940",
@@ -2512,13 +2511,13 @@
                 "BEVTURK": "1732",
                 "BEVWEST": "3635"
             },
+            "bevtotaal": "28180",
             "general": {
                 "BEVMAN": "13864",
                 "BEVVROUW": "14316"
             }
         },
         "2011": {
-            "BEVTOTAAL": "28238",
             "age": {
                 "BEV0_17": "6647",
                 "BEV18_22": "2017",
@@ -2536,13 +2535,13 @@
                 "BEVTURK": "1812",
                 "BEVWEST": "3805"
             },
+            "bevtotaal": "28238",
             "general": {
                 "BEVMAN": "13916",
                 "BEVVROUW": "14322"
             }
         },
         "2012": {
-            "BEVTOTAAL": "28231",
             "age": {
                 "BEV0_17": "6452",
                 "BEV18_22": "2126",
@@ -2560,13 +2559,13 @@
                 "BEVTURK": "1821",
                 "BEVWEST": "3902"
             },
+            "bevtotaal": "28231",
             "general": {
                 "BEVMAN": "13929",
                 "BEVVROUW": "14302"
             }
         },
         "2013": {
-            "BEVTOTAAL": "28168",
             "age": {
                 "BEV0_17": "6311",
                 "BEV18_22": "2147",
@@ -2584,13 +2583,13 @@
                 "BEVTURK": "1914",
                 "BEVWEST": "3817"
             },
+            "bevtotaal": "28168",
             "general": {
                 "BEVMAN": "13825",
                 "BEVVROUW": "14343"
             }
         },
         "2014": {
-            "BEVTOTAAL": "28278",
             "age": {
                 "BEV0_17": "6169",
                 "BEV18_22": "2148",
@@ -2608,13 +2607,13 @@
                 "BEVTURK": "1906",
                 "BEVWEST": "3783"
             },
+            "bevtotaal": "28278",
             "general": {
                 "BEVMAN": "13883",
                 "BEVVROUW": "14395"
             }
         },
         "2015": {
-            "BEVTOTAAL": "28249",
             "age": {
                 "BEV0_17": "5983",
                 "BEV18_22": "2121",
@@ -2632,13 +2631,13 @@
                 "BEVTURK": "1924",
                 "BEVWEST": "3834"
             },
+            "bevtotaal": "28249",
             "general": {
                 "BEVMAN": "13867",
                 "BEVVROUW": "14382"
             }
         },
         "2016": {
-            "BEVTOTAAL": "28465",
             "age": {
                 "BEV0_17": "5893",
                 "BEV18_22": "2056",
@@ -2656,13 +2655,13 @@
                 "BEVTURK": "2014",
                 "BEVWEST": "3965"
             },
+            "bevtotaal": "28465",
             "general": {
                 "BEVMAN": "14014",
                 "BEVVROUW": "14451"
             }
         },
         "2017": {
-            "BEVTOTAAL": "28439",
             "age": {
                 "BEV0_17": "5749",
                 "BEV18_22": "2033",
@@ -2680,13 +2679,13 @@
                 "BEVTURK": "2054",
                 "BEVWEST": "4044"
             },
+            "bevtotaal": "28439",
             "general": {
                 "BEVMAN": "14004",
                 "BEVVROUW": "14435"
             }
         },
         "2018": {
-            "BEVTOTAAL": "28541",
             "age": {
                 "BEV0_17": "5755",
                 "BEV18_22": "2021",
@@ -2705,6 +2704,7 @@
                 "BEVTURK": "2132",
                 "BEVWEST": "4084"
             },
+            "bevtotaal": "28541",
             "general": {
                 "BEVMAN": "14090",
                 "BEVVROUW": "14451"
@@ -2713,7 +2713,6 @@
     },
     "DX09": {
         "2005": {
-            "BEVTOTAAL": "31164",
             "age": {
                 "BEV0_17": "7441",
                 "BEV18_22": "2102",
@@ -2731,13 +2730,13 @@
                 "BEVTURK": "3153",
                 "BEVWEST": "3419"
             },
+            "bevtotaal": "31164",
             "general": {
                 "BEVMAN": "15030",
                 "BEVVROUW": "16134"
             }
         },
         "2006": {
-            "BEVTOTAAL": "30887",
             "age": {
                 "BEV0_17": "7338",
                 "BEV18_22": "2204",
@@ -2755,13 +2754,13 @@
                 "BEVTURK": "3100",
                 "BEVWEST": "3414"
             },
+            "bevtotaal": "30887",
             "general": {
                 "BEVMAN": "14985",
                 "BEVVROUW": "15902"
             }
         },
         "2007": {
-            "BEVTOTAAL": "30605",
             "age": {
                 "BEV0_17": "7155",
                 "BEV18_22": "2339",
@@ -2779,13 +2778,13 @@
                 "BEVTURK": "3218",
                 "BEVWEST": "3288"
             },
+            "bevtotaal": "30605",
             "general": {
                 "BEVMAN": "14924",
                 "BEVVROUW": "15681"
             }
         },
         "2008": {
-            "BEVTOTAAL": "30875",
             "age": {
                 "BEV0_17": "7050",
                 "BEV18_22": "2542",
@@ -2803,13 +2802,13 @@
                 "BEVTURK": "3285",
                 "BEVWEST": "3476"
             },
+            "bevtotaal": "30875",
             "general": {
                 "BEVMAN": "15067",
                 "BEVVROUW": "15808"
             }
         },
         "2009": {
-            "BEVTOTAAL": "31507",
             "age": {
                 "BEV0_17": "7022",
                 "BEV18_22": "2728",
@@ -2827,13 +2826,13 @@
                 "BEVTURK": "3424",
                 "BEVWEST": "3722"
             },
+            "bevtotaal": "31507",
             "general": {
                 "BEVMAN": "15417",
                 "BEVVROUW": "16090"
             }
         },
         "2010": {
-            "BEVTOTAAL": "32114",
             "age": {
                 "BEV0_17": "7077",
                 "BEV18_22": "2702",
@@ -2851,13 +2850,13 @@
                 "BEVTURK": "3537",
                 "BEVWEST": "3819"
             },
+            "bevtotaal": "32114",
             "general": {
                 "BEVMAN": "15811",
                 "BEVVROUW": "16303"
             }
         },
         "2011": {
-            "BEVTOTAAL": "33091",
             "age": {
                 "BEV0_17": "7317",
                 "BEV18_22": "2691",
@@ -2875,13 +2874,13 @@
                 "BEVTURK": "3584",
                 "BEVWEST": "4176"
             },
+            "bevtotaal": "33091",
             "general": {
                 "BEVMAN": "16231",
                 "BEVVROUW": "16860"
             }
         },
         "2012": {
-            "BEVTOTAAL": "33443",
             "age": {
                 "BEV0_17": "7403",
                 "BEV18_22": "2564",
@@ -2899,13 +2898,13 @@
                 "BEVTURK": "3645",
                 "BEVWEST": "4214"
             },
+            "bevtotaal": "33443",
             "general": {
                 "BEVMAN": "16414",
                 "BEVVROUW": "17029"
             }
         },
         "2013": {
-            "BEVTOTAAL": "34670",
             "age": {
                 "BEV0_17": "7456",
                 "BEV18_22": "3102",
@@ -2923,13 +2922,13 @@
                 "BEVTURK": "3654",
                 "BEVWEST": "4558"
             },
+            "bevtotaal": "34670",
             "general": {
                 "BEVMAN": "17057",
                 "BEVVROUW": "17613"
             }
         },
         "2014": {
-            "BEVTOTAAL": "35866",
             "age": {
                 "BEV0_17": "7566",
                 "BEV18_22": "3446",
@@ -2947,13 +2946,13 @@
                 "BEVTURK": "3730",
                 "BEVWEST": "5055"
             },
+            "bevtotaal": "35866",
             "general": {
                 "BEVMAN": "17786",
                 "BEVVROUW": "18080"
             }
         },
         "2015": {
-            "BEVTOTAAL": "36754",
             "age": {
                 "BEV0_17": "7596",
                 "BEV18_22": "3445",
@@ -2971,13 +2970,13 @@
                 "BEVTURK": "3740",
                 "BEVWEST": "5456"
             },
+            "bevtotaal": "36754",
             "general": {
                 "BEVMAN": "18386",
                 "BEVVROUW": "18368"
             }
         },
         "2016": {
-            "BEVTOTAAL": "37632",
             "age": {
                 "BEV0_17": "7634",
                 "BEV18_22": "3450",
@@ -2995,13 +2994,13 @@
                 "BEVTURK": "3751",
                 "BEVWEST": "5986"
             },
+            "bevtotaal": "37632",
             "general": {
                 "BEVMAN": "18880",
                 "BEVVROUW": "18752"
             }
         },
         "2017": {
-            "BEVTOTAAL": "39125",
             "age": {
                 "BEV0_17": "7607",
                 "BEV18_22": "3898",
@@ -3019,13 +3018,13 @@
                 "BEVTURK": "3683",
                 "BEVWEST": "6570"
             },
+            "bevtotaal": "39125",
             "general": {
                 "BEVMAN": "19582",
                 "BEVVROUW": "19543"
             }
         },
         "2018": {
-            "BEVTOTAAL": "41988",
             "age": {
                 "BEV0_17": "7611",
                 "BEV18_22": "4343",
@@ -3044,6 +3043,7 @@
                 "BEVTURK": "3679",
                 "BEVWEST": "7552"
             },
+            "bevtotaal": "41988",
             "general": {
                 "BEVMAN": "20910",
                 "BEVVROUW": "21078"
@@ -3052,7 +3052,6 @@
     },
     "DX10": {
         "2005": {
-            "BEVTOTAAL": "50177",
             "age": {
                 "BEV0_17": "7707",
                 "BEV18_22": "2476",
@@ -3070,13 +3069,13 @@
                 "BEVTURK": "627",
                 "BEVWEST": "10711"
             },
+            "bevtotaal": "50177",
             "general": {
                 "BEVMAN": "23619",
                 "BEVVROUW": "26558"
             }
         },
         "2006": {
-            "BEVTOTAAL": "50409",
             "age": {
                 "BEV0_17": "7751",
                 "BEV18_22": "2565",
@@ -3094,13 +3093,13 @@
                 "BEVTURK": "617",
                 "BEVWEST": "10716"
             },
+            "bevtotaal": "50409",
             "general": {
                 "BEVMAN": "23755",
                 "BEVVROUW": "26654"
             }
         },
         "2007": {
-            "BEVTOTAAL": "50441",
             "age": {
                 "BEV0_17": "7837",
                 "BEV18_22": "2531",
@@ -3118,13 +3117,13 @@
                 "BEVTURK": "611",
                 "BEVWEST": "10750"
             },
+            "bevtotaal": "50441",
             "general": {
                 "BEVMAN": "23773",
                 "BEVVROUW": "26668"
             }
         },
         "2008": {
-            "BEVTOTAAL": "50175",
             "age": {
                 "BEV0_17": "7911",
                 "BEV18_22": "2500",
@@ -3142,13 +3141,13 @@
                 "BEVTURK": "587",
                 "BEVWEST": "10820"
             },
+            "bevtotaal": "50175",
             "general": {
                 "BEVMAN": "23642",
                 "BEVVROUW": "26533"
             }
         },
         "2009": {
-            "BEVTOTAAL": "51770",
             "age": {
                 "BEV0_17": "8186",
                 "BEV18_22": "2667",
@@ -3166,13 +3165,13 @@
                 "BEVTURK": "628",
                 "BEVWEST": "11169"
             },
+            "bevtotaal": "51770",
             "general": {
                 "BEVMAN": "24954",
                 "BEVVROUW": "26816"
             }
         },
         "2010": {
-            "BEVTOTAAL": "52591",
             "age": {
                 "BEV0_17": "8522",
                 "BEV18_22": "2846",
@@ -3190,13 +3189,13 @@
                 "BEVTURK": "628",
                 "BEVWEST": "11276"
             },
+            "bevtotaal": "52591",
             "general": {
                 "BEVMAN": "25281",
                 "BEVVROUW": "27310"
             }
         },
         "2011": {
-            "BEVTOTAAL": "53435",
             "age": {
                 "BEV0_17": "8758",
                 "BEV18_22": "2879",
@@ -3214,13 +3213,13 @@
                 "BEVTURK": "646",
                 "BEVWEST": "11563"
             },
+            "bevtotaal": "53435",
             "general": {
                 "BEVMAN": "25720",
                 "BEVVROUW": "27715"
             }
         },
         "2012": {
-            "BEVTOTAAL": "53806",
             "age": {
                 "BEV0_17": "8941",
                 "BEV18_22": "2837",
@@ -3238,13 +3237,13 @@
                 "BEVTURK": "674",
                 "BEVWEST": "11880"
             },
+            "bevtotaal": "53806",
             "general": {
                 "BEVMAN": "25859",
                 "BEVVROUW": "27947"
             }
         },
         "2013": {
-            "BEVTOTAAL": "53143",
             "age": {
                 "BEV0_17": "9185",
                 "BEV18_22": "2758",
@@ -3262,13 +3261,13 @@
                 "BEVTURK": "601",
                 "BEVWEST": "12104"
             },
+            "bevtotaal": "53143",
             "general": {
                 "BEVMAN": "25154",
                 "BEVVROUW": "27989"
             }
         },
         "2014": {
-            "BEVTOTAAL": "53631",
             "age": {
                 "BEV0_17": "9387",
                 "BEV18_22": "2692",
@@ -3286,13 +3285,13 @@
                 "BEVTURK": "592",
                 "BEVWEST": "12407"
             },
+            "bevtotaal": "53631",
             "general": {
                 "BEVMAN": "25473",
                 "BEVVROUW": "28158"
             }
         },
         "2015": {
-            "BEVTOTAAL": "54137",
             "age": {
                 "BEV0_17": "9518",
                 "BEV18_22": "2568",
@@ -3310,13 +3309,13 @@
                 "BEVTURK": "588",
                 "BEVWEST": "12761"
             },
+            "bevtotaal": "54137",
             "general": {
                 "BEVMAN": "25769",
                 "BEVVROUW": "28368"
             }
         },
         "2016": {
-            "BEVTOTAAL": "54534",
             "age": {
                 "BEV0_17": "9594",
                 "BEV18_22": "2640",
@@ -3334,13 +3333,13 @@
                 "BEVTURK": "593",
                 "BEVWEST": "13368"
             },
+            "bevtotaal": "54534",
             "general": {
                 "BEVMAN": "25880",
                 "BEVVROUW": "28654"
             }
         },
         "2017": {
-            "BEVTOTAAL": "54566",
             "age": {
                 "BEV0_17": "9564",
                 "BEV18_22": "2552",
@@ -3358,13 +3357,13 @@
                 "BEVTURK": "635",
                 "BEVWEST": "13735"
             },
+            "bevtotaal": "54566",
             "general": {
                 "BEVMAN": "25898",
                 "BEVVROUW": "28668"
             }
         },
         "2018": {
-            "BEVTOTAAL": "54235",
             "age": {
                 "BEV0_17": "9403",
                 "BEV18_22": "2493",
@@ -3383,6 +3382,7 @@
                 "BEVTURK": "720",
                 "BEVWEST": "14106"
             },
+            "bevtotaal": "54235",
             "general": {
                 "BEVMAN": "25759",
                 "BEVVROUW": "28476"
@@ -3391,7 +3391,6 @@
     },
     "DX11": {
         "2005": {
-            "BEVTOTAAL": "20063",
             "age": {
                 "BEV0_17": "2442",
                 "BEV18_22": "830",
@@ -3409,13 +3408,13 @@
                 "BEVTURK": "187",
                 "BEVWEST": "4341"
             },
+            "bevtotaal": "20063",
             "general": {
                 "BEVMAN": "8933",
                 "BEVVROUW": "11130"
             }
         },
         "2006": {
-            "BEVTOTAAL": "20083",
             "age": {
                 "BEV0_17": "2446",
                 "BEV18_22": "908",
@@ -3433,13 +3432,13 @@
                 "BEVTURK": "188",
                 "BEVWEST": "4396"
             },
+            "bevtotaal": "20083",
             "general": {
                 "BEVMAN": "8995",
                 "BEVVROUW": "11088"
             }
         },
         "2007": {
-            "BEVTOTAAL": "20092",
             "age": {
                 "BEV0_17": "2449",
                 "BEV18_22": "969",
@@ -3457,13 +3456,13 @@
                 "BEVTURK": "175",
                 "BEVWEST": "4297"
             },
+            "bevtotaal": "20092",
             "general": {
                 "BEVMAN": "8990",
                 "BEVVROUW": "11102"
             }
         },
         "2008": {
-            "BEVTOTAAL": "20182",
             "age": {
                 "BEV0_17": "2487",
                 "BEV18_22": "1040",
@@ -3481,13 +3480,13 @@
                 "BEVTURK": "190",
                 "BEVWEST": "4348"
             },
+            "bevtotaal": "20182",
             "general": {
                 "BEVMAN": "9070",
                 "BEVVROUW": "11112"
             }
         },
         "2009": {
-            "BEVTOTAAL": "20323",
             "age": {
                 "BEV0_17": "2473",
                 "BEV18_22": "1071",
@@ -3505,13 +3504,13 @@
                 "BEVTURK": "219",
                 "BEVWEST": "4485"
             },
+            "bevtotaal": "20323",
             "general": {
                 "BEVMAN": "9213",
                 "BEVVROUW": "11110"
             }
         },
         "2010": {
-            "BEVTOTAAL": "20535",
             "age": {
                 "BEV0_17": "2552",
                 "BEV18_22": "1112",
@@ -3529,13 +3528,13 @@
                 "BEVTURK": "221",
                 "BEVWEST": "4563"
             },
+            "bevtotaal": "20535",
             "general": {
                 "BEVMAN": "9320",
                 "BEVVROUW": "11215"
             }
         },
         "2011": {
-            "BEVTOTAAL": "20885",
             "age": {
                 "BEV0_17": "2591",
                 "BEV18_22": "1126",
@@ -3553,13 +3552,13 @@
                 "BEVTURK": "245",
                 "BEVWEST": "4671"
             },
+            "bevtotaal": "20885",
             "general": {
                 "BEVMAN": "9553",
                 "BEVVROUW": "11332"
             }
         },
         "2012": {
-            "BEVTOTAAL": "21598",
             "age": {
                 "BEV0_17": "2724",
                 "BEV18_22": "1198",
@@ -3577,13 +3576,13 @@
                 "BEVTURK": "287",
                 "BEVWEST": "4977"
             },
+            "bevtotaal": "21598",
             "general": {
                 "BEVMAN": "9943",
                 "BEVVROUW": "11655"
             }
         },
         "2013": {
-            "BEVTOTAAL": "21642",
             "age": {
                 "BEV0_17": "2887",
                 "BEV18_22": "975",
@@ -3601,13 +3600,13 @@
                 "BEVTURK": "307",
                 "BEVWEST": "5107"
             },
+            "bevtotaal": "21642",
             "general": {
                 "BEVMAN": "9990",
                 "BEVVROUW": "11652"
             }
         },
         "2014": {
-            "BEVTOTAAL": "21942",
             "age": {
                 "BEV0_17": "2990",
                 "BEV18_22": "997",
@@ -3625,13 +3624,13 @@
                 "BEVTURK": "337",
                 "BEVWEST": "5317"
             },
+            "bevtotaal": "21942",
             "general": {
                 "BEVMAN": "10210",
                 "BEVVROUW": "11732"
             }
         },
         "2015": {
-            "BEVTOTAAL": "22851",
             "age": {
                 "BEV0_17": "3118",
                 "BEV18_22": "1079",
@@ -3649,13 +3648,13 @@
                 "BEVTURK": "341",
                 "BEVWEST": "5781"
             },
+            "bevtotaal": "22851",
             "general": {
                 "BEVMAN": "10717",
                 "BEVVROUW": "12134"
             }
         },
         "2016": {
-            "BEVTOTAAL": "23931",
             "age": {
                 "BEV0_17": "3180",
                 "BEV18_22": "1332",
@@ -3673,13 +3672,13 @@
                 "BEVTURK": "367",
                 "BEVWEST": "6127"
             },
+            "bevtotaal": "23931",
             "general": {
                 "BEVMAN": "11269",
                 "BEVVROUW": "12662"
             }
         },
         "2017": {
-            "BEVTOTAAL": "24951",
             "age": {
                 "BEV0_17": "3268",
                 "BEV18_22": "1255",
@@ -3697,13 +3696,13 @@
                 "BEVTURK": "393",
                 "BEVWEST": "6570"
             },
+            "bevtotaal": "24951",
             "general": {
                 "BEVMAN": "11906",
                 "BEVVROUW": "13045"
             }
         },
         "2018": {
-            "BEVTOTAAL": "26280",
             "age": {
                 "BEV0_17": "3562",
                 "BEV18_22": "1337",
@@ -3722,6 +3721,7 @@
                 "BEVTURK": "467",
                 "BEVWEST": "6954"
             },
+            "bevtotaal": "26280",
             "general": {
                 "BEVMAN": "12643",
                 "BEVVROUW": "13637"
@@ -3730,7 +3730,6 @@
     },
     "DX12": {
         "2005": {
-            "BEVTOTAAL": "60497",
             "age": {
                 "BEV0_17": "7952",
                 "BEV18_22": "3455",
@@ -3748,13 +3747,13 @@
                 "BEVTURK": "1410",
                 "BEVWEST": "10840"
             },
+            "bevtotaal": "60497",
             "general": {
                 "BEVMAN": "29178",
                 "BEVVROUW": "31319"
             }
         },
         "2006": {
-            "BEVTOTAAL": "59987",
             "age": {
                 "BEV0_17": "7826",
                 "BEV18_22": "3391",
@@ -3772,13 +3771,13 @@
                 "BEVTURK": "1340",
                 "BEVWEST": "10767"
             },
+            "bevtotaal": "59987",
             "general": {
                 "BEVMAN": "28882",
                 "BEVVROUW": "31105"
             }
         },
         "2007": {
-            "BEVTOTAAL": "59884",
             "age": {
                 "BEV0_17": "7769",
                 "BEV18_22": "3462",
@@ -3796,13 +3795,13 @@
                 "BEVTURK": "1278",
                 "BEVWEST": "10814"
             },
+            "bevtotaal": "59884",
             "general": {
                 "BEVMAN": "28794",
                 "BEVVROUW": "31090"
             }
         },
         "2008": {
-            "BEVTOTAAL": "60097",
             "age": {
                 "BEV0_17": "7765",
                 "BEV18_22": "3563",
@@ -3820,13 +3819,13 @@
                 "BEVTURK": "1319",
                 "BEVWEST": "10999"
             },
+            "bevtotaal": "60097",
             "general": {
                 "BEVMAN": "28868",
                 "BEVVROUW": "31229"
             }
         },
         "2009": {
-            "BEVTOTAAL": "60060",
             "age": {
                 "BEV0_17": "7661",
                 "BEV18_22": "3668",
@@ -3844,13 +3843,13 @@
                 "BEVTURK": "1286",
                 "BEVWEST": "11170"
             },
+            "bevtotaal": "60060",
             "general": {
                 "BEVMAN": "28835",
                 "BEVVROUW": "31225"
             }
         },
         "2010": {
-            "BEVTOTAAL": "60682",
             "age": {
                 "BEV0_17": "7751",
                 "BEV18_22": "3827",
@@ -3868,13 +3867,13 @@
                 "BEVTURK": "1270",
                 "BEVWEST": "11365"
             },
+            "bevtotaal": "60682",
             "general": {
                 "BEVMAN": "29172",
                 "BEVVROUW": "31510"
             }
         },
         "2011": {
-            "BEVTOTAAL": "61541",
             "age": {
                 "BEV0_17": "7849",
                 "BEV18_22": "4043",
@@ -3892,13 +3891,13 @@
                 "BEVTURK": "1230",
                 "BEVWEST": "11680"
             },
+            "bevtotaal": "61541",
             "general": {
                 "BEVMAN": "29486",
                 "BEVVROUW": "32055"
             }
         },
         "2012": {
-            "BEVTOTAAL": "62199",
             "age": {
                 "BEV0_17": "7923",
                 "BEV18_22": "4070",
@@ -3916,13 +3915,13 @@
                 "BEVTURK": "1230",
                 "BEVWEST": "11905"
             },
+            "bevtotaal": "62199",
             "general": {
                 "BEVMAN": "29806",
                 "BEVVROUW": "32393"
             }
         },
         "2013": {
-            "BEVTOTAAL": "63116",
             "age": {
                 "BEV0_17": "8069",
                 "BEV18_22": "4219",
@@ -3940,13 +3939,13 @@
                 "BEVTURK": "1225",
                 "BEVWEST": "12062"
             },
+            "bevtotaal": "63116",
             "general": {
                 "BEVMAN": "30232",
                 "BEVVROUW": "32884"
             }
         },
         "2014": {
-            "BEVTOTAAL": "63950",
             "age": {
                 "BEV0_17": "8333",
                 "BEV18_22": "4242",
@@ -3964,13 +3963,13 @@
                 "BEVTURK": "1200",
                 "BEVWEST": "12389"
             },
+            "bevtotaal": "63950",
             "general": {
                 "BEVMAN": "30503",
                 "BEVVROUW": "33447"
             }
         },
         "2015": {
-            "BEVTOTAAL": "64450",
             "age": {
                 "BEV0_17": "8398",
                 "BEV18_22": "4213",
@@ -3988,13 +3987,13 @@
                 "BEVTURK": "1178",
                 "BEVWEST": "12624"
             },
+            "bevtotaal": "64450",
             "general": {
                 "BEVMAN": "30734",
                 "BEVVROUW": "33716"
             }
         },
         "2016": {
-            "BEVTOTAAL": "64793",
             "age": {
                 "BEV0_17": "8311",
                 "BEV18_22": "3968",
@@ -4012,13 +4011,13 @@
                 "BEVTURK": "1159",
                 "BEVWEST": "12985"
             },
+            "bevtotaal": "64793",
             "general": {
                 "BEVMAN": "31024",
                 "BEVVROUW": "33769"
             }
         },
         "2017": {
-            "BEVTOTAAL": "64915",
             "age": {
                 "BEV0_17": "8288",
                 "BEV18_22": "3713",
@@ -4036,13 +4035,13 @@
                 "BEVTURK": "1185",
                 "BEVWEST": "13327"
             },
+            "bevtotaal": "64915",
             "general": {
                 "BEVMAN": "31085",
                 "BEVVROUW": "33830"
             }
         },
         "2018": {
-            "BEVTOTAAL": "65033",
             "age": {
                 "BEV0_17": "8180",
                 "BEV18_22": "3372",
@@ -4061,6 +4060,7 @@
                 "BEVTURK": "1196",
                 "BEVWEST": "13993"
             },
+            "bevtotaal": "65033",
             "general": {
                 "BEVMAN": "31222",
                 "BEVVROUW": "33811"
@@ -4069,7 +4069,6 @@
     },
     "DX13": {
         "2005": {
-            "BEVTOTAAL": "33237",
             "age": {
                 "BEV0_17": "6203",
                 "BEV18_22": "2200",
@@ -4087,13 +4086,13 @@
                 "BEVTURK": "2521",
                 "BEVWEST": "4441"
             },
+            "bevtotaal": "33237",
             "general": {
                 "BEVMAN": "16931",
                 "BEVVROUW": "16306"
             }
         },
         "2006": {
-            "BEVTOTAAL": "32831",
             "age": {
                 "BEV0_17": "6031",
                 "BEV18_22": "2201",
@@ -4111,13 +4110,13 @@
                 "BEVTURK": "2467",
                 "BEVWEST": "4425"
             },
+            "bevtotaal": "32831",
             "general": {
                 "BEVMAN": "16682",
                 "BEVVROUW": "16149"
             }
         },
         "2007": {
-            "BEVTOTAAL": "32412",
             "age": {
                 "BEV0_17": "5849",
                 "BEV18_22": "2219",
@@ -4135,13 +4134,13 @@
                 "BEVTURK": "2344",
                 "BEVWEST": "4410"
             },
+            "bevtotaal": "32412",
             "general": {
                 "BEVMAN": "16481",
                 "BEVVROUW": "15931"
             }
         },
         "2008": {
-            "BEVTOTAAL": "32205",
             "age": {
                 "BEV0_17": "5713",
                 "BEV18_22": "2305",
@@ -4159,13 +4158,13 @@
                 "BEVTURK": "2315",
                 "BEVWEST": "4453"
             },
+            "bevtotaal": "32205",
             "general": {
                 "BEVMAN": "16253",
                 "BEVVROUW": "15952"
             }
         },
         "2009": {
-            "BEVTOTAAL": "31998",
             "age": {
                 "BEV0_17": "5548",
                 "BEV18_22": "2227",
@@ -4183,13 +4182,13 @@
                 "BEVTURK": "2286",
                 "BEVWEST": "4541"
             },
+            "bevtotaal": "31998",
             "general": {
                 "BEVMAN": "16152",
                 "BEVVROUW": "15846"
             }
         },
         "2010": {
-            "BEVTOTAAL": "32177",
             "age": {
                 "BEV0_17": "5508",
                 "BEV18_22": "2231",
@@ -4207,13 +4206,13 @@
                 "BEVTURK": "2265",
                 "BEVWEST": "4587"
             },
+            "bevtotaal": "32177",
             "general": {
                 "BEVMAN": "16205",
                 "BEVVROUW": "15972"
             }
         },
         "2011": {
-            "BEVTOTAAL": "32450",
             "age": {
                 "BEV0_17": "5417",
                 "BEV18_22": "2392",
@@ -4231,13 +4230,13 @@
                 "BEVTURK": "2219",
                 "BEVWEST": "4715"
             },
+            "bevtotaal": "32450",
             "general": {
                 "BEVMAN": "16321",
                 "BEVVROUW": "16129"
             }
         },
         "2012": {
-            "BEVTOTAAL": "32399",
             "age": {
                 "BEV0_17": "5269",
                 "BEV18_22": "2394",
@@ -4255,13 +4254,13 @@
                 "BEVTURK": "2136",
                 "BEVWEST": "4809"
             },
+            "bevtotaal": "32399",
             "general": {
                 "BEVMAN": "16290",
                 "BEVVROUW": "16109"
             }
         },
         "2013": {
-            "BEVTOTAAL": "32127",
             "age": {
                 "BEV0_17": "5157",
                 "BEV18_22": "2315",
@@ -4279,13 +4278,13 @@
                 "BEVTURK": "2095",
                 "BEVWEST": "4870"
             },
+            "bevtotaal": "32127",
             "general": {
                 "BEVMAN": "16058",
                 "BEVVROUW": "16069"
             }
         },
         "2014": {
-            "BEVTOTAAL": "32833",
             "age": {
                 "BEV0_17": "5131",
                 "BEV18_22": "2280",
@@ -4303,13 +4302,13 @@
                 "BEVTURK": "2022",
                 "BEVWEST": "4955"
             },
+            "bevtotaal": "32833",
             "general": {
                 "BEVMAN": "16403",
                 "BEVVROUW": "16430"
             }
         },
         "2015": {
-            "BEVTOTAAL": "33845",
             "age": {
                 "BEV0_17": "5214",
                 "BEV18_22": "2293",
@@ -4327,13 +4326,13 @@
                 "BEVTURK": "1964",
                 "BEVWEST": "5245"
             },
+            "bevtotaal": "33845",
             "general": {
                 "BEVMAN": "16877",
                 "BEVVROUW": "16968"
             }
         },
         "2016": {
-            "BEVTOTAAL": "34863",
             "age": {
                 "BEV0_17": "5197",
                 "BEV18_22": "2416",
@@ -4351,13 +4350,13 @@
                 "BEVTURK": "1925",
                 "BEVWEST": "5577"
             },
+            "bevtotaal": "34863",
             "general": {
                 "BEVMAN": "17341",
                 "BEVVROUW": "17522"
             }
         },
         "2017": {
-            "BEVTOTAAL": "35503",
             "age": {
                 "BEV0_17": "5190",
                 "BEV18_22": "2345",
@@ -4375,13 +4374,13 @@
                 "BEVTURK": "1917",
                 "BEVWEST": "5966"
             },
+            "bevtotaal": "35503",
             "general": {
                 "BEVMAN": "17622",
                 "BEVVROUW": "17881"
             }
         },
         "2018": {
-            "BEVTOTAAL": "35846",
             "age": {
                 "BEV0_17": "5170",
                 "BEV18_22": "2243",
@@ -4400,6 +4399,7 @@
                 "BEVTURK": "1905",
                 "BEVWEST": "6236"
             },
+            "bevtotaal": "35846",
             "general": {
                 "BEVMAN": "17769",
                 "BEVVROUW": "18076"
@@ -4408,7 +4408,6 @@
     },
     "DX14": {
         "2005": {
-            "BEVTOTAAL": "39985",
             "age": {
                 "BEV0_17": "8747",
                 "BEV18_22": "2225",
@@ -4426,13 +4425,13 @@
                 "BEVTURK": "3180",
                 "BEVWEST": "4835"
             },
+            "bevtotaal": "39985",
             "general": {
                 "BEVMAN": "20553",
                 "BEVVROUW": "19432"
             }
         },
         "2006": {
-            "BEVTOTAAL": "39892",
             "age": {
                 "BEV0_17": "8702",
                 "BEV18_22": "2223",
@@ -4450,13 +4449,13 @@
                 "BEVTURK": "3129",
                 "BEVWEST": "4887"
             },
+            "bevtotaal": "39892",
             "general": {
                 "BEVMAN": "20527",
                 "BEVVROUW": "19365"
             }
         },
         "2007": {
-            "BEVTOTAAL": "40154",
             "age": {
                 "BEV0_17": "8544",
                 "BEV18_22": "2348",
@@ -4474,13 +4473,13 @@
                 "BEVTURK": "3079",
                 "BEVWEST": "4995"
             },
+            "bevtotaal": "40154",
             "general": {
                 "BEVMAN": "20611",
                 "BEVVROUW": "19543"
             }
         },
         "2008": {
-            "BEVTOTAAL": "39943",
             "age": {
                 "BEV0_17": "8411",
                 "BEV18_22": "2233",
@@ -4498,13 +4497,13 @@
                 "BEVTURK": "2934",
                 "BEVWEST": "5190"
             },
+            "bevtotaal": "39943",
             "general": {
                 "BEVMAN": "20480",
                 "BEVVROUW": "19463"
             }
         },
         "2009": {
-            "BEVTOTAAL": "39443",
             "age": {
                 "BEV0_17": "8264",
                 "BEV18_22": "2131",
@@ -4522,13 +4521,13 @@
                 "BEVTURK": "2936",
                 "BEVWEST": "5281"
             },
+            "bevtotaal": "39443",
             "general": {
                 "BEVMAN": "20089",
                 "BEVVROUW": "19354"
             }
         },
         "2010": {
-            "BEVTOTAAL": "40156",
             "age": {
                 "BEV0_17": "8261",
                 "BEV18_22": "2267",
@@ -4546,13 +4545,13 @@
                 "BEVTURK": "2917",
                 "BEVWEST": "5522"
             },
+            "bevtotaal": "40156",
             "general": {
                 "BEVMAN": "20476",
                 "BEVVROUW": "19680"
             }
         },
         "2011": {
-            "BEVTOTAAL": "40790",
             "age": {
                 "BEV0_17": "8351",
                 "BEV18_22": "2323",
@@ -4570,13 +4569,13 @@
                 "BEVTURK": "2874",
                 "BEVWEST": "5694"
             },
+            "bevtotaal": "40790",
             "general": {
                 "BEVMAN": "20703",
                 "BEVVROUW": "20087"
             }
         },
         "2012": {
-            "BEVTOTAAL": "40805",
             "age": {
                 "BEV0_17": "8266",
                 "BEV18_22": "2357",
@@ -4594,13 +4593,13 @@
                 "BEVTURK": "2787",
                 "BEVWEST": "5810"
             },
+            "bevtotaal": "40805",
             "general": {
                 "BEVMAN": "20664",
                 "BEVVROUW": "20141"
             }
         },
         "2013": {
-            "BEVTOTAAL": "40738",
             "age": {
                 "BEV0_17": "8140",
                 "BEV18_22": "2340",
@@ -4618,13 +4617,13 @@
                 "BEVTURK": "2727",
                 "BEVWEST": "5931"
             },
+            "bevtotaal": "40738",
             "general": {
                 "BEVMAN": "20612",
                 "BEVVROUW": "20126"
             }
         },
         "2014": {
-            "BEVTOTAAL": "41285",
             "age": {
                 "BEV0_17": "8175",
                 "BEV18_22": "2320",
@@ -4642,13 +4641,13 @@
                 "BEVTURK": "2673",
                 "BEVWEST": "6205"
             },
+            "bevtotaal": "41285",
             "general": {
                 "BEVMAN": "20880",
                 "BEVVROUW": "20405"
             }
         },
         "2015": {
-            "BEVTOTAAL": "41182",
             "age": {
                 "BEV0_17": "7991",
                 "BEV18_22": "2305",
@@ -4666,13 +4665,13 @@
                 "BEVTURK": "2581",
                 "BEVWEST": "6317"
             },
+            "bevtotaal": "41182",
             "general": {
                 "BEVMAN": "20702",
                 "BEVVROUW": "20480"
             }
         },
         "2016": {
-            "BEVTOTAAL": "41464",
             "age": {
                 "BEV0_17": "7836",
                 "BEV18_22": "2272",
@@ -4690,13 +4689,13 @@
                 "BEVTURK": "2539",
                 "BEVWEST": "6494"
             },
+            "bevtotaal": "41464",
             "general": {
                 "BEVMAN": "20924",
                 "BEVVROUW": "20540"
             }
         },
         "2017": {
-            "BEVTOTAAL": "41578",
             "age": {
                 "BEV0_17": "7583",
                 "BEV18_22": "2318",
@@ -4714,13 +4713,13 @@
                 "BEVTURK": "2487",
                 "BEVWEST": "6705"
             },
+            "bevtotaal": "41578",
             "general": {
                 "BEVMAN": "20947",
                 "BEVVROUW": "20631"
             }
         },
         "2018": {
-            "BEVTOTAAL": "41427",
             "age": {
                 "BEV0_17": "7328",
                 "BEV18_22": "2248",
@@ -4739,6 +4738,7 @@
                 "BEVTURK": "2434",
                 "BEVWEST": "6911"
             },
+            "bevtotaal": "41427",
             "general": {
                 "BEVMAN": "20847",
                 "BEVVROUW": "20580"
@@ -4747,7 +4747,6 @@
     },
     "DX15": {
         "2005": {
-            "BEVTOTAAL": "25442",
             "age": {
                 "BEV0_17": "4472",
                 "BEV18_22": "1385",
@@ -4765,13 +4764,13 @@
                 "BEVTURK": "426",
                 "BEVWEST": "3440"
             },
+            "bevtotaal": "25442",
             "general": {
                 "BEVMAN": "12231",
                 "BEVVROUW": "13211"
             }
         },
         "2006": {
-            "BEVTOTAAL": "25797",
             "age": {
                 "BEV0_17": "4549",
                 "BEV18_22": "1701",
@@ -4789,13 +4788,13 @@
                 "BEVTURK": "420",
                 "BEVWEST": "3509"
             },
+            "bevtotaal": "25797",
             "general": {
                 "BEVMAN": "12419",
                 "BEVVROUW": "13378"
             }
         },
         "2007": {
-            "BEVTOTAAL": "26386",
             "age": {
                 "BEV0_17": "4542",
                 "BEV18_22": "2178",
@@ -4813,13 +4812,13 @@
                 "BEVTURK": "418",
                 "BEVWEST": "3585"
             },
+            "bevtotaal": "26386",
             "general": {
                 "BEVMAN": "12661",
                 "BEVVROUW": "13725"
             }
         },
         "2008": {
-            "BEVTOTAAL": "26839",
             "age": {
                 "BEV0_17": "4520",
                 "BEV18_22": "2275",
@@ -4837,13 +4836,13 @@
                 "BEVTURK": "416",
                 "BEVWEST": "3763"
             },
+            "bevtotaal": "26839",
             "general": {
                 "BEVMAN": "12819",
                 "BEVVROUW": "14020"
             }
         },
         "2009": {
-            "BEVTOTAAL": "27765",
             "age": {
                 "BEV0_17": "4577",
                 "BEV18_22": "2525",
@@ -4861,13 +4860,13 @@
                 "BEVTURK": "429",
                 "BEVWEST": "4074"
             },
+            "bevtotaal": "27765",
             "general": {
                 "BEVMAN": "13198",
                 "BEVVROUW": "14567"
             }
         },
         "2010": {
-            "BEVTOTAAL": "28312",
             "age": {
                 "BEV0_17": "4719",
                 "BEV18_22": "2493",
@@ -4885,13 +4884,13 @@
                 "BEVTURK": "437",
                 "BEVWEST": "4216"
             },
+            "bevtotaal": "28312",
             "general": {
                 "BEVMAN": "13525",
                 "BEVVROUW": "14787"
             }
         },
         "2011": {
-            "BEVTOTAAL": "28870",
             "age": {
                 "BEV0_17": "4875",
                 "BEV18_22": "2863",
@@ -4909,13 +4908,13 @@
                 "BEVTURK": "441",
                 "BEVWEST": "4503"
             },
+            "bevtotaal": "28870",
             "general": {
                 "BEVMAN": "13904",
                 "BEVVROUW": "14966"
             }
         },
         "2012": {
-            "BEVTOTAAL": "29138",
             "age": {
                 "BEV0_17": "4929",
                 "BEV18_22": "3084",
@@ -4933,13 +4932,13 @@
                 "BEVTURK": "460",
                 "BEVWEST": "4572"
             },
+            "bevtotaal": "29138",
             "general": {
                 "BEVMAN": "14078",
                 "BEVVROUW": "15060"
             }
         },
         "2013": {
-            "BEVTOTAAL": "28996",
             "age": {
                 "BEV0_17": "5010",
                 "BEV18_22": "2982",
@@ -4957,13 +4956,13 @@
                 "BEVTURK": "440",
                 "BEVWEST": "4676"
             },
+            "bevtotaal": "28996",
             "general": {
                 "BEVMAN": "13999",
                 "BEVVROUW": "14997"
             }
         },
         "2014": {
-            "BEVTOTAAL": "30474",
             "age": {
                 "BEV0_17": "5181",
                 "BEV18_22": "3313",
@@ -4981,13 +4980,13 @@
                 "BEVTURK": "459",
                 "BEVWEST": "5018"
             },
+            "bevtotaal": "30474",
             "general": {
                 "BEVMAN": "14656",
                 "BEVVROUW": "15818"
             }
         },
         "2015": {
-            "BEVTOTAAL": "31682",
             "age": {
                 "BEV0_17": "5266",
                 "BEV18_22": "3698",
@@ -5005,13 +5004,13 @@
                 "BEVTURK": "473",
                 "BEVWEST": "5464"
             },
+            "bevtotaal": "31682",
             "general": {
                 "BEVMAN": "15221",
                 "BEVVROUW": "16461"
             }
         },
         "2016": {
-            "BEVTOTAAL": "33450",
             "age": {
                 "BEV0_17": "5315",
                 "BEV18_22": "4036",
@@ -5029,13 +5028,13 @@
                 "BEVTURK": "480",
                 "BEVWEST": "5895"
             },
+            "bevtotaal": "33450",
             "general": {
                 "BEVMAN": "16190",
                 "BEVVROUW": "17260"
             }
         },
         "2017": {
-            "BEVTOTAAL": "34311",
             "age": {
                 "BEV0_17": "5382",
                 "BEV18_22": "3780",
@@ -5053,13 +5052,13 @@
                 "BEVTURK": "500",
                 "BEVWEST": "6225"
             },
+            "bevtotaal": "34311",
             "general": {
                 "BEVMAN": "16758",
                 "BEVVROUW": "17553"
             }
         },
         "2018": {
-            "BEVTOTAAL": "34119",
             "age": {
                 "BEV0_17": "5403",
                 "BEV18_22": "3355",
@@ -5078,6 +5077,7 @@
                 "BEVTURK": "500",
                 "BEVWEST": "6327"
             },
+            "bevtotaal": "34119",
             "general": {
                 "BEVMAN": "16646",
                 "BEVVROUW": "17473"
@@ -5086,7 +5086,6 @@
     },
     "DX16": {
         "2005": {
-            "BEVTOTAAL": "2218",
             "age": {
                 "BEV0_17": "636",
                 "BEV18_22": "108",
@@ -5104,13 +5103,13 @@
                 "BEVTURK": "34",
                 "BEVWEST": "289"
             },
+            "bevtotaal": "2218",
             "general": {
                 "BEVMAN": "1178",
                 "BEVVROUW": "1040"
             }
         },
         "2006": {
-            "BEVTOTAAL": "3609",
             "age": {
                 "BEV0_17": "1107",
                 "BEV18_22": "268",
@@ -5128,13 +5127,13 @@
                 "BEVTURK": "82",
                 "BEVWEST": "423"
             },
+            "bevtotaal": "3609",
             "general": {
                 "BEVMAN": "1819",
                 "BEVVROUW": "1790"
             }
         },
         "2007": {
-            "BEVTOTAAL": "6546",
             "age": {
                 "BEV0_17": "2102",
                 "BEV18_22": "372",
@@ -5152,13 +5151,13 @@
                 "BEVTURK": "165",
                 "BEVWEST": "736"
             },
+            "bevtotaal": "6546",
             "general": {
                 "BEVMAN": "3230",
                 "BEVVROUW": "3316"
             }
         },
         "2008": {
-            "BEVTOTAAL": "8730",
             "age": {
                 "BEV0_17": "2985",
                 "BEV18_22": "442",
@@ -5176,13 +5175,13 @@
                 "BEVTURK": "256",
                 "BEVWEST": "981"
             },
+            "bevtotaal": "8730",
             "general": {
                 "BEVMAN": "4318",
                 "BEVVROUW": "4412"
             }
         },
         "2009": {
-            "BEVTOTAAL": "13239",
             "age": {
                 "BEV0_17": "4478",
                 "BEV18_22": "651",
@@ -5200,13 +5199,13 @@
                 "BEVTURK": "464",
                 "BEVWEST": "1516"
             },
+            "bevtotaal": "13239",
             "general": {
                 "BEVMAN": "6494",
                 "BEVVROUW": "6745"
             }
         },
         "2010": {
-            "BEVTOTAAL": "15970",
             "age": {
                 "BEV0_17": "5471",
                 "BEV18_22": "745",
@@ -5224,13 +5223,13 @@
                 "BEVTURK": "594",
                 "BEVWEST": "1827"
             },
+            "bevtotaal": "15970",
             "general": {
                 "BEVMAN": "7872",
                 "BEVVROUW": "8098"
             }
         },
         "2011": {
-            "BEVTOTAAL": "18124",
             "age": {
                 "BEV0_17": "6088",
                 "BEV18_22": "937",
@@ -5248,13 +5247,13 @@
                 "BEVTURK": "640",
                 "BEVWEST": "2233"
             },
+            "bevtotaal": "18124",
             "general": {
                 "BEVMAN": "8925",
                 "BEVVROUW": "9199"
             }
         },
         "2012": {
-            "BEVTOTAAL": "19933",
             "age": {
                 "BEV0_17": "6710",
                 "BEV18_22": "1049",
@@ -5272,13 +5271,13 @@
                 "BEVTURK": "695",
                 "BEVWEST": "2590"
             },
+            "bevtotaal": "19933",
             "general": {
                 "BEVMAN": "9792",
                 "BEVVROUW": "10141"
             }
         },
         "2013": {
-            "BEVTOTAAL": "20986",
             "age": {
                 "BEV0_17": "7065",
                 "BEV18_22": "1047",
@@ -5296,13 +5295,13 @@
                 "BEVTURK": "749",
                 "BEVWEST": "2774"
             },
+            "bevtotaal": "20986",
             "general": {
                 "BEVMAN": "10327",
                 "BEVVROUW": "10659"
             }
         },
         "2014": {
-            "BEVTOTAAL": "21565",
             "age": {
                 "BEV0_17": "7293",
                 "BEV18_22": "1108",
@@ -5320,13 +5319,13 @@
                 "BEVTURK": "756",
                 "BEVWEST": "2925"
             },
+            "bevtotaal": "21565",
             "general": {
                 "BEVMAN": "10574",
                 "BEVVROUW": "10991"
             }
         },
         "2015": {
-            "BEVTOTAAL": "21981",
             "age": {
                 "BEV0_17": "7390",
                 "BEV18_22": "1173",
@@ -5344,13 +5343,13 @@
                 "BEVTURK": "760",
                 "BEVWEST": "3093"
             },
+            "bevtotaal": "21981",
             "general": {
                 "BEVMAN": "10784",
                 "BEVVROUW": "11197"
             }
         },
         "2016": {
-            "BEVTOTAAL": "22644",
             "age": {
                 "BEV0_17": "7448",
                 "BEV18_22": "1217",
@@ -5368,13 +5367,13 @@
                 "BEVTURK": "763",
                 "BEVWEST": "3336"
             },
+            "bevtotaal": "22644",
             "general": {
                 "BEVMAN": "11158",
                 "BEVVROUW": "11486"
             }
         },
         "2017": {
-            "BEVTOTAAL": "24375",
             "age": {
                 "BEV0_17": "7683",
                 "BEV18_22": "1603",
@@ -5392,13 +5391,13 @@
                 "BEVTURK": "817",
                 "BEVWEST": "3830"
             },
+            "bevtotaal": "24375",
             "general": {
                 "BEVMAN": "12030",
                 "BEVVROUW": "12345"
             }
         },
         "2018": {
-            "BEVTOTAAL": "26062",
             "age": {
                 "BEV0_17": "7964",
                 "BEV18_22": "1721",
@@ -5417,6 +5416,7 @@
                 "BEVTURK": "857",
                 "BEVWEST": "4334"
             },
+            "bevtotaal": "26062",
             "general": {
                 "BEVMAN": "12897",
                 "BEVVROUW": "13165"
@@ -5425,7 +5425,6 @@
     },
     "DX17": {
         "2005": {
-            "BEVTOTAAL": "35010",
             "age": {
                 "BEV0_17": "7881",
                 "BEV18_22": "1925",
@@ -5443,13 +5442,13 @@
                 "BEVTURK": "1367",
                 "BEVWEST": "3063"
             },
+            "bevtotaal": "35010",
             "general": {
                 "BEVMAN": "16701",
                 "BEVVROUW": "18309"
             }
         },
         "2006": {
-            "BEVTOTAAL": "34990",
             "age": {
                 "BEV0_17": "7928",
                 "BEV18_22": "1916",
@@ -5467,13 +5466,13 @@
                 "BEVTURK": "1509",
                 "BEVWEST": "3118"
             },
+            "bevtotaal": "34990",
             "general": {
                 "BEVMAN": "16655",
                 "BEVVROUW": "18335"
             }
         },
         "2007": {
-            "BEVTOTAAL": "35026",
             "age": {
                 "BEV0_17": "7882",
                 "BEV18_22": "1994",
@@ -5491,13 +5490,13 @@
                 "BEVTURK": "1655",
                 "BEVWEST": "3135"
             },
+            "bevtotaal": "35026",
             "general": {
                 "BEVMAN": "16777",
                 "BEVVROUW": "18249"
             }
         },
         "2008": {
-            "BEVTOTAAL": "34624",
             "age": {
                 "BEV0_17": "7755",
                 "BEV18_22": "1972",
@@ -5515,13 +5514,13 @@
                 "BEVTURK": "1771",
                 "BEVWEST": "3036"
             },
+            "bevtotaal": "34624",
             "general": {
                 "BEVMAN": "16557",
                 "BEVVROUW": "18067"
             }
         },
         "2009": {
-            "BEVTOTAAL": "34664",
             "age": {
                 "BEV0_17": "7711",
                 "BEV18_22": "2024",
@@ -5539,13 +5538,13 @@
                 "BEVTURK": "1872",
                 "BEVWEST": "3068"
             },
+            "bevtotaal": "34664",
             "general": {
                 "BEVMAN": "16622",
                 "BEVVROUW": "18042"
             }
         },
         "2010": {
-            "BEVTOTAAL": "34517",
             "age": {
                 "BEV0_17": "7634",
                 "BEV18_22": "2050",
@@ -5563,13 +5562,13 @@
                 "BEVTURK": "1937",
                 "BEVWEST": "3129"
             },
+            "bevtotaal": "34517",
             "general": {
                 "BEVMAN": "16634",
                 "BEVVROUW": "17883"
             }
         },
         "2011": {
-            "BEVTOTAAL": "34348",
             "age": {
                 "BEV0_17": "7648",
                 "BEV18_22": "2026",
@@ -5587,13 +5586,13 @@
                 "BEVTURK": "2007",
                 "BEVWEST": "3142"
             },
+            "bevtotaal": "34348",
             "general": {
                 "BEVMAN": "16519",
                 "BEVVROUW": "17829"
             }
         },
         "2012": {
-            "BEVTOTAAL": "34527",
             "age": {
                 "BEV0_17": "7713",
                 "BEV18_22": "2091",
@@ -5611,13 +5610,13 @@
                 "BEVTURK": "2098",
                 "BEVWEST": "3189"
             },
+            "bevtotaal": "34527",
             "general": {
                 "BEVMAN": "16599",
                 "BEVVROUW": "17928"
             }
         },
         "2013": {
-            "BEVTOTAAL": "35427",
             "age": {
                 "BEV0_17": "7943",
                 "BEV18_22": "2134",
@@ -5635,13 +5634,13 @@
                 "BEVTURK": "2230",
                 "BEVWEST": "3357"
             },
+            "bevtotaal": "35427",
             "general": {
                 "BEVMAN": "16993",
                 "BEVVROUW": "18434"
             }
         },
         "2014": {
-            "BEVTOTAAL": "35817",
             "age": {
                 "BEV0_17": "7914",
                 "BEV18_22": "2106",
@@ -5659,13 +5658,13 @@
                 "BEVTURK": "2270",
                 "BEVWEST": "3493"
             },
+            "bevtotaal": "35817",
             "general": {
                 "BEVMAN": "17273",
                 "BEVVROUW": "18544"
             }
         },
         "2015": {
-            "BEVTOTAAL": "36298",
             "age": {
                 "BEV0_17": "7969",
                 "BEV18_22": "2123",
@@ -5683,13 +5682,13 @@
                 "BEVTURK": "2384",
                 "BEVWEST": "3644"
             },
+            "bevtotaal": "36298",
             "general": {
                 "BEVMAN": "17537",
                 "BEVVROUW": "18761"
             }
         },
         "2016": {
-            "BEVTOTAAL": "37154",
             "age": {
                 "BEV0_17": "8200",
                 "BEV18_22": "2105",
@@ -5707,13 +5706,13 @@
                 "BEVTURK": "2470",
                 "BEVWEST": "3805"
             },
+            "bevtotaal": "37154",
             "general": {
                 "BEVMAN": "17980",
                 "BEVVROUW": "19174"
             }
         },
         "2017": {
-            "BEVTOTAAL": "37691",
             "age": {
                 "BEV0_17": "8234",
                 "BEV18_22": "2145",
@@ -5731,13 +5730,13 @@
                 "BEVTURK": "2534",
                 "BEVWEST": "3976"
             },
+            "bevtotaal": "37691",
             "general": {
                 "BEVMAN": "18276",
                 "BEVVROUW": "19415"
             }
         },
         "2018": {
-            "BEVTOTAAL": "37851",
             "age": {
                 "BEV0_17": "8212",
                 "BEV18_22": "2186",
@@ -5756,6 +5755,7 @@
                 "BEVTURK": "2546",
                 "BEVWEST": "4137"
             },
+            "bevtotaal": "37851",
             "general": {
                 "BEVMAN": "18375",
                 "BEVVROUW": "19476"
@@ -5764,7 +5764,6 @@
     },
     "DX18": {
         "2005": {
-            "BEVTOTAAL": "25800",
             "age": {
                 "BEV0_17": "5491",
                 "BEV18_22": "1596",
@@ -5782,13 +5781,13 @@
                 "BEVTURK": "1170",
                 "BEVWEST": "2282"
             },
+            "bevtotaal": "25800",
             "general": {
                 "BEVMAN": "12665",
                 "BEVVROUW": "13135"
             }
         },
         "2006": {
-            "BEVTOTAAL": "25754",
             "age": {
                 "BEV0_17": "5284",
                 "BEV18_22": "1866",
@@ -5806,13 +5805,13 @@
                 "BEVTURK": "1139",
                 "BEVWEST": "2324"
             },
+            "bevtotaal": "25754",
             "general": {
                 "BEVMAN": "12686",
                 "BEVVROUW": "13068"
             }
         },
         "2007": {
-            "BEVTOTAAL": "25722",
             "age": {
                 "BEV0_17": "5198",
                 "BEV18_22": "1874",
@@ -5830,13 +5829,13 @@
                 "BEVTURK": "1123",
                 "BEVWEST": "2385"
             },
+            "bevtotaal": "25722",
             "general": {
                 "BEVMAN": "12678",
                 "BEVVROUW": "13044"
             }
         },
         "2008": {
-            "BEVTOTAAL": "25584",
             "age": {
                 "BEV0_17": "5089",
                 "BEV18_22": "1873",
@@ -5854,13 +5853,13 @@
                 "BEVTURK": "1089",
                 "BEVWEST": "2465"
             },
+            "bevtotaal": "25584",
             "general": {
                 "BEVMAN": "12586",
                 "BEVVROUW": "12998"
             }
         },
         "2009": {
-            "BEVTOTAAL": "25448",
             "age": {
                 "BEV0_17": "4990",
                 "BEV18_22": "1866",
@@ -5878,13 +5877,13 @@
                 "BEVTURK": "1084",
                 "BEVWEST": "2518"
             },
+            "bevtotaal": "25448",
             "general": {
                 "BEVMAN": "12594",
                 "BEVVROUW": "12854"
             }
         },
         "2010": {
-            "BEVTOTAAL": "25508",
             "age": {
                 "BEV0_17": "4974",
                 "BEV18_22": "1857",
@@ -5902,13 +5901,13 @@
                 "BEVTURK": "1082",
                 "BEVWEST": "2591"
             },
+            "bevtotaal": "25508",
             "general": {
                 "BEVMAN": "12652",
                 "BEVVROUW": "12856"
             }
         },
         "2011": {
-            "BEVTOTAAL": "25750",
             "age": {
                 "BEV0_17": "4979",
                 "BEV18_22": "1800",
@@ -5926,13 +5925,13 @@
                 "BEVTURK": "1062",
                 "BEVWEST": "2697"
             },
+            "bevtotaal": "25750",
             "general": {
                 "BEVMAN": "12828",
                 "BEVVROUW": "12922"
             }
         },
         "2012": {
-            "BEVTOTAAL": "25790",
             "age": {
                 "BEV0_17": "4899",
                 "BEV18_22": "1788",
@@ -5950,13 +5949,13 @@
                 "BEVTURK": "1045",
                 "BEVWEST": "2825"
             },
+            "bevtotaal": "25790",
             "general": {
                 "BEVMAN": "12807",
                 "BEVVROUW": "12983"
             }
         },
         "2013": {
-            "BEVTOTAAL": "25803",
             "age": {
                 "BEV0_17": "4865",
                 "BEV18_22": "1751",
@@ -5974,13 +5973,13 @@
                 "BEVTURK": "1032",
                 "BEVWEST": "2838"
             },
+            "bevtotaal": "25803",
             "general": {
                 "BEVMAN": "12824",
                 "BEVVROUW": "12979"
             }
         },
         "2014": {
-            "BEVTOTAAL": "26245",
             "age": {
                 "BEV0_17": "4935",
                 "BEV18_22": "1723",
@@ -5998,13 +5997,13 @@
                 "BEVTURK": "1022",
                 "BEVWEST": "3013"
             },
+            "bevtotaal": "26245",
             "general": {
                 "BEVMAN": "13080",
                 "BEVVROUW": "13165"
             }
         },
         "2015": {
-            "BEVTOTAAL": "26620",
             "age": {
                 "BEV0_17": "5027",
                 "BEV18_22": "1636",
@@ -6022,13 +6021,13 @@
                 "BEVTURK": "1008",
                 "BEVWEST": "3135"
             },
+            "bevtotaal": "26620",
             "general": {
                 "BEVMAN": "13245",
                 "BEVVROUW": "13375"
             }
         },
         "2016": {
-            "BEVTOTAAL": "26833",
             "age": {
                 "BEV0_17": "5097",
                 "BEV18_22": "1578",
@@ -6046,13 +6045,13 @@
                 "BEVTURK": "958",
                 "BEVWEST": "3327"
             },
+            "bevtotaal": "26833",
             "general": {
                 "BEVMAN": "13334",
                 "BEVVROUW": "13499"
             }
         },
         "2017": {
-            "BEVTOTAAL": "27923",
             "age": {
                 "BEV0_17": "5297",
                 "BEV18_22": "1722",
@@ -6070,13 +6069,13 @@
                 "BEVTURK": "954",
                 "BEVWEST": "3584"
             },
+            "bevtotaal": "27923",
             "general": {
                 "BEVMAN": "13932",
                 "BEVVROUW": "13991"
             }
         },
         "2018": {
-            "BEVTOTAAL": "29059",
             "age": {
                 "BEV0_17": "5418",
                 "BEV18_22": "1844",
@@ -6095,6 +6094,7 @@
                 "BEVTURK": "931",
                 "BEVWEST": "4029"
             },
+            "bevtotaal": "29059",
             "general": {
                 "BEVMAN": "14502",
                 "BEVVROUW": "14557"
@@ -6103,7 +6103,6 @@
     },
     "DX19": {
         "2005": {
-            "BEVTOTAAL": "27309",
             "age": {
                 "BEV0_17": "6624",
                 "BEV18_22": "1678",
@@ -6121,13 +6120,13 @@
                 "BEVTURK": "1865",
                 "BEVWEST": "2605"
             },
+            "bevtotaal": "27309",
             "general": {
                 "BEVMAN": "12928",
                 "BEVVROUW": "14381"
             }
         },
         "2006": {
-            "BEVTOTAAL": "27050",
             "age": {
                 "BEV0_17": "6608",
                 "BEV18_22": "1731",
@@ -6145,13 +6144,13 @@
                 "BEVTURK": "1969",
                 "BEVWEST": "2504"
             },
+            "bevtotaal": "27050",
             "general": {
                 "BEVMAN": "12744",
                 "BEVVROUW": "14306"
             }
         },
         "2007": {
-            "BEVTOTAAL": "26875",
             "age": {
                 "BEV0_17": "6515",
                 "BEV18_22": "1775",
@@ -6169,13 +6168,13 @@
                 "BEVTURK": "2061",
                 "BEVWEST": "2476"
             },
+            "bevtotaal": "26875",
             "general": {
                 "BEVMAN": "12725",
                 "BEVVROUW": "14150"
             }
         },
         "2008": {
-            "BEVTOTAAL": "26722",
             "age": {
                 "BEV0_17": "6376",
                 "BEV18_22": "1879",
@@ -6193,13 +6192,13 @@
                 "BEVTURK": "2169",
                 "BEVWEST": "2483"
             },
+            "bevtotaal": "26722",
             "general": {
                 "BEVMAN": "12680",
                 "BEVVROUW": "14042"
             }
         },
         "2009": {
-            "BEVTOTAAL": "26569",
             "age": {
                 "BEV0_17": "6268",
                 "BEV18_22": "1977",
@@ -6217,13 +6216,13 @@
                 "BEVTURK": "2171",
                 "BEVWEST": "2534"
             },
+            "bevtotaal": "26569",
             "general": {
                 "BEVMAN": "12572",
                 "BEVVROUW": "13997"
             }
         },
         "2010": {
-            "BEVTOTAAL": "26302",
             "age": {
                 "BEV0_17": "6284",
                 "BEV18_22": "1840",
@@ -6241,13 +6240,13 @@
                 "BEVTURK": "2252",
                 "BEVWEST": "2484"
             },
+            "bevtotaal": "26302",
             "general": {
                 "BEVMAN": "12426",
                 "BEVVROUW": "13876"
             }
         },
         "2011": {
-            "BEVTOTAAL": "26577",
             "age": {
                 "BEV0_17": "6406",
                 "BEV18_22": "1825",
@@ -6265,13 +6264,13 @@
                 "BEVTURK": "2374",
                 "BEVWEST": "2537"
             },
+            "bevtotaal": "26577",
             "general": {
                 "BEVMAN": "12587",
                 "BEVVROUW": "13990"
             }
         },
         "2012": {
-            "BEVTOTAAL": "27025",
             "age": {
                 "BEV0_17": "6470",
                 "BEV18_22": "1938",
@@ -6289,13 +6288,13 @@
                 "BEVTURK": "2402",
                 "BEVWEST": "2625"
             },
+            "bevtotaal": "27025",
             "general": {
                 "BEVMAN": "12843",
                 "BEVVROUW": "14182"
             }
         },
         "2013": {
-            "BEVTOTAAL": "27204",
             "age": {
                 "BEV0_17": "6416",
                 "BEV18_22": "1960",
@@ -6313,13 +6312,13 @@
                 "BEVTURK": "2414",
                 "BEVWEST": "2729"
             },
+            "bevtotaal": "27204",
             "general": {
                 "BEVMAN": "12942",
                 "BEVVROUW": "14262"
             }
         },
         "2014": {
-            "BEVTOTAAL": "27844",
             "age": {
                 "BEV0_17": "6595",
                 "BEV18_22": "1905",
@@ -6337,13 +6336,13 @@
                 "BEVTURK": "2515",
                 "BEVWEST": "2864"
             },
+            "bevtotaal": "27844",
             "general": {
                 "BEVMAN": "13317",
                 "BEVVROUW": "14527"
             }
         },
         "2015": {
-            "BEVTOTAAL": "28406",
             "age": {
                 "BEV0_17": "6665",
                 "BEV18_22": "1908",
@@ -6361,13 +6360,13 @@
                 "BEVTURK": "2578",
                 "BEVWEST": "3045"
             },
+            "bevtotaal": "28406",
             "general": {
                 "BEVMAN": "13694",
                 "BEVVROUW": "14712"
             }
         },
         "2016": {
-            "BEVTOTAAL": "28930",
             "age": {
                 "BEV0_17": "6723",
                 "BEV18_22": "1938",
@@ -6385,13 +6384,13 @@
                 "BEVTURK": "2578",
                 "BEVWEST": "3308"
             },
+            "bevtotaal": "28930",
             "general": {
                 "BEVMAN": "14053",
                 "BEVVROUW": "14877"
             }
         },
         "2017": {
-            "BEVTOTAAL": "29152",
             "age": {
                 "BEV0_17": "6696",
                 "BEV18_22": "1966",
@@ -6409,13 +6408,13 @@
                 "BEVTURK": "2604",
                 "BEVWEST": "3519"
             },
+            "bevtotaal": "29152",
             "general": {
                 "BEVMAN": "14181",
                 "BEVVROUW": "14971"
             }
         },
         "2018": {
-            "BEVTOTAAL": "29365",
             "age": {
                 "BEV0_17": "6688",
                 "BEV18_22": "1953",
@@ -6434,6 +6433,7 @@
                 "BEVTURK": "2580",
                 "BEVWEST": "3691"
             },
+            "bevtotaal": "29365",
             "general": {
                 "BEVMAN": "14338",
                 "BEVVROUW": "15027"
@@ -6442,7 +6442,6 @@
     },
     "DX20": {
         "2005": {
-            "BEVTOTAAL": "22063",
             "age": {
                 "BEV0_17": "5779",
                 "BEV18_22": "1849",
@@ -6460,13 +6459,13 @@
                 "BEVTURK": "436",
                 "BEVWEST": "1496"
             },
+            "bevtotaal": "22063",
             "general": {
                 "BEVMAN": "11073",
                 "BEVVROUW": "10990"
             }
         },
         "2006": {
-            "BEVTOTAAL": "21430",
             "age": {
                 "BEV0_17": "5519",
                 "BEV18_22": "1756",
@@ -6484,13 +6483,13 @@
                 "BEVTURK": "409",
                 "BEVWEST": "1431"
             },
+            "bevtotaal": "21430",
             "general": {
                 "BEVMAN": "10775",
                 "BEVVROUW": "10655"
             }
         },
         "2007": {
-            "BEVTOTAAL": "20519",
             "age": {
                 "BEV0_17": "5062",
                 "BEV18_22": "1696",
@@ -6508,13 +6507,13 @@
                 "BEVTURK": "402",
                 "BEVWEST": "1353"
             },
+            "bevtotaal": "20519",
             "general": {
                 "BEVMAN": "10348",
                 "BEVVROUW": "10171"
             }
         },
         "2008": {
-            "BEVTOTAAL": "20537",
             "age": {
                 "BEV0_17": "5038",
                 "BEV18_22": "1711",
@@ -6532,13 +6531,13 @@
                 "BEVTURK": "384",
                 "BEVWEST": "1403"
             },
+            "bevtotaal": "20537",
             "general": {
                 "BEVMAN": "10327",
                 "BEVVROUW": "10210"
             }
         },
         "2009": {
-            "BEVTOTAAL": "20819",
             "age": {
                 "BEV0_17": "5017",
                 "BEV18_22": "1759",
@@ -6556,13 +6555,13 @@
                 "BEVTURK": "399",
                 "BEVWEST": "1475"
             },
+            "bevtotaal": "20819",
             "general": {
                 "BEVMAN": "10463",
                 "BEVVROUW": "10356"
             }
         },
         "2010": {
-            "BEVTOTAAL": "21008",
             "age": {
                 "BEV0_17": "5075",
                 "BEV18_22": "1648",
@@ -6580,13 +6579,13 @@
                 "BEVTURK": "391",
                 "BEVWEST": "1558"
             },
+            "bevtotaal": "21008",
             "general": {
                 "BEVMAN": "10576",
                 "BEVVROUW": "10432"
             }
         },
         "2011": {
-            "BEVTOTAAL": "21413",
             "age": {
                 "BEV0_17": "5100",
                 "BEV18_22": "1766",
@@ -6604,13 +6603,13 @@
                 "BEVTURK": "388",
                 "BEVWEST": "1644"
             },
+            "bevtotaal": "21413",
             "general": {
                 "BEVMAN": "10720",
                 "BEVVROUW": "10693"
             }
         },
         "2012": {
-            "BEVTOTAAL": "22072",
             "age": {
                 "BEV0_17": "5073",
                 "BEV18_22": "2090",
@@ -6628,13 +6627,13 @@
                 "BEVTURK": "375",
                 "BEVWEST": "1968"
             },
+            "bevtotaal": "22072",
             "general": {
                 "BEVMAN": "11135",
                 "BEVVROUW": "10937"
             }
         },
         "2013": {
-            "BEVTOTAAL": "23111",
             "age": {
                 "BEV0_17": "5181",
                 "BEV18_22": "2526",
@@ -6652,13 +6651,13 @@
                 "BEVTURK": "405",
                 "BEVWEST": "2098"
             },
+            "bevtotaal": "23111",
             "general": {
                 "BEVMAN": "11564",
                 "BEVVROUW": "11547"
             }
         },
         "2014": {
-            "BEVTOTAAL": "23186",
             "age": {
                 "BEV0_17": "5163",
                 "BEV18_22": "2447",
@@ -6676,13 +6675,13 @@
                 "BEVTURK": "414",
                 "BEVWEST": "2074"
             },
+            "bevtotaal": "23186",
             "general": {
                 "BEVMAN": "11645",
                 "BEVVROUW": "11541"
             }
         },
         "2015": {
-            "BEVTOTAAL": "23451",
             "age": {
                 "BEV0_17": "5161",
                 "BEV18_22": "2401",
@@ -6700,13 +6699,13 @@
                 "BEVTURK": "415",
                 "BEVWEST": "2301"
             },
+            "bevtotaal": "23451",
             "general": {
                 "BEVMAN": "11856",
                 "BEVVROUW": "11595"
             }
         },
         "2016": {
-            "BEVTOTAAL": "24419",
             "age": {
                 "BEV0_17": "5164",
                 "BEV18_22": "2872",
@@ -6724,13 +6723,13 @@
                 "BEVTURK": "427",
                 "BEVWEST": "2484"
             },
+            "bevtotaal": "24419",
             "general": {
                 "BEVMAN": "12264",
                 "BEVVROUW": "12155"
             }
         },
         "2017": {
-            "BEVTOTAAL": "25063",
             "age": {
                 "BEV0_17": "5052",
                 "BEV18_22": "3022",
@@ -6748,13 +6747,13 @@
                 "BEVTURK": "460",
                 "BEVWEST": "2763"
             },
+            "bevtotaal": "25063",
             "general": {
                 "BEVMAN": "12666",
                 "BEVVROUW": "12397"
             }
         },
         "2018": {
-            "BEVTOTAAL": "25008",
             "age": {
                 "BEV0_17": "4941",
                 "BEV18_22": "2872",
@@ -6773,6 +6772,7 @@
                 "BEVTURK": "457",
                 "BEVWEST": "2893"
             },
+            "bevtotaal": "25008",
             "general": {
                 "BEVMAN": "12671",
                 "BEVVROUW": "12336"
@@ -6781,7 +6781,6 @@
     },
     "DX21": {
         "2005": {
-            "BEVTOTAAL": "23631",
             "age": {
                 "BEV0_17": "5861",
                 "BEV18_22": "1822",
@@ -6799,13 +6798,13 @@
                 "BEVTURK": "148",
                 "BEVWEST": "1840"
             },
+            "bevtotaal": "23631",
             "general": {
                 "BEVMAN": "11947",
                 "BEVVROUW": "11684"
             }
         },
         "2006": {
-            "BEVTOTAAL": "22739",
             "age": {
                 "BEV0_17": "5578",
                 "BEV18_22": "1661",
@@ -6823,13 +6822,13 @@
                 "BEVTURK": "139",
                 "BEVWEST": "1737"
             },
+            "bevtotaal": "22739",
             "general": {
                 "BEVMAN": "11359",
                 "BEVVROUW": "11380"
             }
         },
         "2007": {
-            "BEVTOTAAL": "22970",
             "age": {
                 "BEV0_17": "5691",
                 "BEV18_22": "1706",
@@ -6847,13 +6846,13 @@
                 "BEVTURK": "145",
                 "BEVWEST": "1723"
             },
+            "bevtotaal": "22970",
             "general": {
                 "BEVMAN": "11382",
                 "BEVVROUW": "11588"
             }
         },
         "2008": {
-            "BEVTOTAAL": "23912",
             "age": {
                 "BEV0_17": "5924",
                 "BEV18_22": "1798",
@@ -6871,13 +6870,13 @@
                 "BEVTURK": "172",
                 "BEVWEST": "1794"
             },
+            "bevtotaal": "23912",
             "general": {
                 "BEVMAN": "11792",
                 "BEVVROUW": "12120"
             }
         },
         "2009": {
-            "BEVTOTAAL": "25153",
             "age": {
                 "BEV0_17": "6107",
                 "BEV18_22": "1900",
@@ -6895,13 +6894,13 @@
                 "BEVTURK": "171",
                 "BEVWEST": "1977"
             },
+            "bevtotaal": "25153",
             "general": {
                 "BEVMAN": "12465",
                 "BEVVROUW": "12688"
             }
         },
         "2010": {
-            "BEVTOTAAL": "25853",
             "age": {
                 "BEV0_17": "6204",
                 "BEV18_22": "1929",
@@ -6919,13 +6918,13 @@
                 "BEVTURK": "192",
                 "BEVWEST": "2073"
             },
+            "bevtotaal": "25853",
             "general": {
                 "BEVMAN": "12821",
                 "BEVVROUW": "13032"
             }
         },
         "2011": {
-            "BEVTOTAAL": "25835",
             "age": {
                 "BEV0_17": "6080",
                 "BEV18_22": "2063",
@@ -6943,13 +6942,13 @@
                 "BEVTURK": "204",
                 "BEVWEST": "2134"
             },
+            "bevtotaal": "25835",
             "general": {
                 "BEVMAN": "12836",
                 "BEVVROUW": "12999"
             }
         },
         "2012": {
-            "BEVTOTAAL": "26023",
             "age": {
                 "BEV0_17": "6052",
                 "BEV18_22": "1997",
@@ -6967,13 +6966,13 @@
                 "BEVTURK": "207",
                 "BEVWEST": "2199"
             },
+            "bevtotaal": "26023",
             "general": {
                 "BEVMAN": "12931",
                 "BEVVROUW": "13092"
             }
         },
         "2013": {
-            "BEVTOTAAL": "26267",
             "age": {
                 "BEV0_17": "6002",
                 "BEV18_22": "1990",
@@ -6991,13 +6990,13 @@
                 "BEVTURK": "228",
                 "BEVWEST": "2291"
             },
+            "bevtotaal": "26267",
             "general": {
                 "BEVMAN": "13068",
                 "BEVVROUW": "13199"
             }
         },
         "2014": {
-            "BEVTOTAAL": "26548",
             "age": {
                 "BEV0_17": "6013",
                 "BEV18_22": "1975",
@@ -7015,13 +7014,13 @@
                 "BEVTURK": "246",
                 "BEVWEST": "2358"
             },
+            "bevtotaal": "26548",
             "general": {
                 "BEVMAN": "13210",
                 "BEVVROUW": "13338"
             }
         },
         "2015": {
-            "BEVTOTAAL": "26787",
             "age": {
                 "BEV0_17": "5932",
                 "BEV18_22": "2060",
@@ -7039,13 +7038,13 @@
                 "BEVTURK": "246",
                 "BEVWEST": "2420"
             },
+            "bevtotaal": "26787",
             "general": {
                 "BEVMAN": "13338",
                 "BEVVROUW": "13449"
             }
         },
         "2016": {
-            "BEVTOTAAL": "27260",
             "age": {
                 "BEV0_17": "5934",
                 "BEV18_22": "2054",
@@ -7063,13 +7062,13 @@
                 "BEVTURK": "264",
                 "BEVWEST": "2604"
             },
+            "bevtotaal": "27260",
             "general": {
                 "BEVMAN": "13608",
                 "BEVVROUW": "13652"
             }
         },
         "2017": {
-            "BEVTOTAAL": "28491",
             "age": {
                 "BEV0_17": "6039",
                 "BEV18_22": "2215",
@@ -7087,13 +7086,13 @@
                 "BEVTURK": "306",
                 "BEVWEST": "2815"
             },
+            "bevtotaal": "28491",
             "general": {
                 "BEVMAN": "14269",
                 "BEVVROUW": "14222"
             }
         },
         "2018": {
-            "BEVTOTAAL": "28848",
             "age": {
                 "BEV0_17": "6007",
                 "BEV18_22": "2271",
@@ -7112,6 +7111,7 @@
                 "BEVTURK": "331",
                 "BEVWEST": "2955"
             },
+            "bevtotaal": "28848",
             "general": {
                 "BEVMAN": "14453",
                 "BEVVROUW": "14395"
@@ -7120,7 +7120,6 @@
     },
     "DX22": {
         "2005": {
-            "BEVTOTAAL": "34856",
             "age": {
                 "BEV0_17": "7927",
                 "BEV18_22": "2680",
@@ -7138,13 +7137,13 @@
                 "BEVTURK": "205",
                 "BEVWEST": "3468"
             },
+            "bevtotaal": "34856",
             "general": {
                 "BEVMAN": "16598",
                 "BEVVROUW": "18258"
             }
         },
         "2006": {
-            "BEVTOTAAL": "34738",
             "age": {
                 "BEV0_17": "7800",
                 "BEV18_22": "2709",
@@ -7162,13 +7161,13 @@
                 "BEVTURK": "196",
                 "BEVWEST": "3342"
             },
+            "bevtotaal": "34738",
             "general": {
                 "BEVMAN": "16494",
                 "BEVVROUW": "18244"
             }
         },
         "2007": {
-            "BEVTOTAAL": "34428",
             "age": {
                 "BEV0_17": "7704",
                 "BEV18_22": "2712",
@@ -7186,13 +7185,13 @@
                 "BEVTURK": "220",
                 "BEVWEST": "3226"
             },
+            "bevtotaal": "34428",
             "general": {
                 "BEVMAN": "16344",
                 "BEVVROUW": "18084"
             }
         },
         "2008": {
-            "BEVTOTAAL": "34473",
             "age": {
                 "BEV0_17": "7656",
                 "BEV18_22": "2638",
@@ -7210,13 +7209,13 @@
                 "BEVTURK": "216",
                 "BEVWEST": "3244"
             },
+            "bevtotaal": "34473",
             "general": {
                 "BEVMAN": "16391",
                 "BEVVROUW": "18082"
             }
         },
         "2009": {
-            "BEVTOTAAL": "34518",
             "age": {
                 "BEV0_17": "7582",
                 "BEV18_22": "2648",
@@ -7234,13 +7233,13 @@
                 "BEVTURK": "208",
                 "BEVWEST": "3290"
             },
+            "bevtotaal": "34518",
             "general": {
                 "BEVMAN": "16448",
                 "BEVVROUW": "18070"
             }
         },
         "2010": {
-            "BEVTOTAAL": "34647",
             "age": {
                 "BEV0_17": "7525",
                 "BEV18_22": "2562",
@@ -7258,13 +7257,13 @@
                 "BEVTURK": "197",
                 "BEVWEST": "3285"
             },
+            "bevtotaal": "34647",
             "general": {
                 "BEVMAN": "16509",
                 "BEVVROUW": "18138"
             }
         },
         "2011": {
-            "BEVTOTAAL": "34760",
             "age": {
                 "BEV0_17": "7534",
                 "BEV18_22": "2511",
@@ -7282,13 +7281,13 @@
                 "BEVTURK": "204",
                 "BEVWEST": "3320"
             },
+            "bevtotaal": "34760",
             "general": {
                 "BEVMAN": "16511",
                 "BEVVROUW": "18249"
             }
         },
         "2012": {
-            "BEVTOTAAL": "34771",
             "age": {
                 "BEV0_17": "7374",
                 "BEV18_22": "2461",
@@ -7306,13 +7305,13 @@
                 "BEVTURK": "228",
                 "BEVWEST": "3388"
             },
+            "bevtotaal": "34771",
             "general": {
                 "BEVMAN": "16549",
                 "BEVVROUW": "18222"
             }
         },
         "2013": {
-            "BEVTOTAAL": "34365",
             "age": {
                 "BEV0_17": "7199",
                 "BEV18_22": "2334",
@@ -7330,13 +7329,13 @@
                 "BEVTURK": "231",
                 "BEVWEST": "3332"
             },
+            "bevtotaal": "34365",
             "general": {
                 "BEVMAN": "16391",
                 "BEVVROUW": "17974"
             }
         },
         "2014": {
-            "BEVTOTAAL": "34337",
             "age": {
                 "BEV0_17": "7120",
                 "BEV18_22": "2281",
@@ -7354,13 +7353,13 @@
                 "BEVTURK": "235",
                 "BEVWEST": "3337"
             },
+            "bevtotaal": "34337",
             "general": {
                 "BEVMAN": "16453",
                 "BEVVROUW": "17884"
             }
         },
         "2015": {
-            "BEVTOTAAL": "34329",
             "age": {
                 "BEV0_17": "7169",
                 "BEV18_22": "2216",
@@ -7378,13 +7377,13 @@
                 "BEVTURK": "232",
                 "BEVWEST": "3400"
             },
+            "bevtotaal": "34329",
             "general": {
                 "BEVMAN": "16491",
                 "BEVVROUW": "17838"
             }
         },
         "2016": {
-            "BEVTOTAAL": "34378",
             "age": {
                 "BEV0_17": "7048",
                 "BEV18_22": "2217",
@@ -7402,13 +7401,13 @@
                 "BEVTURK": "237",
                 "BEVWEST": "3475"
             },
+            "bevtotaal": "34378",
             "general": {
                 "BEVMAN": "16634",
                 "BEVVROUW": "17744"
             }
         },
         "2017": {
-            "BEVTOTAAL": "34300",
             "age": {
                 "BEV0_17": "6980",
                 "BEV18_22": "2071",
@@ -7426,13 +7425,13 @@
                 "BEVTURK": "244",
                 "BEVWEST": "3559"
             },
+            "bevtotaal": "34300",
             "general": {
                 "BEVMAN": "16661",
                 "BEVVROUW": "17639"
             }
         },
         "2018": {
-            "BEVTOTAAL": "34143",
             "age": {
                 "BEV0_17": "6865",
                 "BEV18_22": "2056",
@@ -7451,6 +7450,7 @@
                 "BEVTURK": "253",
                 "BEVWEST": "3660"
             },
+            "bevtotaal": "34143",
             "general": {
                 "BEVMAN": "16574",
                 "BEVVROUW": "17569"
@@ -7460,7 +7460,6 @@
     "Dxxx": {},
     "STAD": {
         "2005": {
-            "BEVTOTAAL": "742951",
             "age": {
                 "BEV0_17": "140615",
                 "BEV18_22": "45461",
@@ -7478,13 +7477,13 @@
                 "BEVTURK": "37943",
                 "BEVWEST": "104723"
             },
+            "bevtotaal": "742951",
             "general": {
                 "BEVMAN": "366345",
                 "BEVVROUW": "376606"
             }
         },
         "2006": {
-            "BEVTOTAAL": "743027",
             "age": {
                 "BEV0_17": "139742",
                 "BEV18_22": "47149",
@@ -7502,13 +7501,13 @@
                 "BEVTURK": "38337",
                 "BEVWEST": "105112"
             },
+            "bevtotaal": "743027",
             "general": {
                 "BEVMAN": "366114",
                 "BEVVROUW": "376913"
             }
         },
         "2007": {
-            "BEVTOTAAL": "743104",
             "age": {
                 "BEV0_17": "138806",
                 "BEV18_22": "48478",
@@ -7526,13 +7525,13 @@
                 "BEVTURK": "38565",
                 "BEVWEST": "104742"
             },
+            "bevtotaal": "743104",
             "general": {
                 "BEVMAN": "365872",
                 "BEVVROUW": "377232"
             }
         },
         "2008": {
-            "BEVTOTAAL": "747290",
             "age": {
                 "BEV0_17": "138608",
                 "BEV18_22": "49816",
@@ -7550,13 +7549,13 @@
                 "BEVTURK": "38913",
                 "BEVWEST": "107422"
             },
+            "bevtotaal": "747290",
             "general": {
                 "BEVMAN": "367616",
                 "BEVVROUW": "379674"
             }
         },
         "2009": {
-            "BEVTOTAAL": "756347",
             "age": {
                 "BEV0_17": "139281",
                 "BEV18_22": "51135",
@@ -7574,13 +7573,13 @@
                 "BEVTURK": "39654",
                 "BEVWEST": "111640"
             },
+            "bevtotaal": "756347",
             "general": {
                 "BEVMAN": "372319",
                 "BEVVROUW": "384028"
             }
         },
         "2010": {
-            "BEVTOTAAL": "767773",
             "age": {
                 "BEV0_17": "141151",
                 "BEV18_22": "51921",
@@ -7598,13 +7597,13 @@
                 "BEVTURK": "40370",
                 "BEVWEST": "114553"
             },
+            "bevtotaal": "767773",
             "general": {
                 "BEVMAN": "378297",
                 "BEVVROUW": "389476"
             }
         },
         "2011": {
-            "BEVTOTAAL": "780559",
             "age": {
                 "BEV0_17": "143022",
                 "BEV18_22": "53808",
@@ -7622,13 +7621,13 @@
                 "BEVTURK": "41075",
                 "BEVWEST": "119373"
             },
+            "bevtotaal": "780559",
             "general": {
                 "BEVMAN": "384283",
                 "BEVVROUW": "396276"
             }
         },
         "2012": {
-            "BEVTOTAAL": "790044",
             "age": {
                 "BEV0_17": "144030",
                 "BEV18_22": "54421",
@@ -7646,13 +7645,13 @@
                 "BEVTURK": "41519",
                 "BEVWEST": "122839"
             },
+            "bevtotaal": "790044",
             "general": {
                 "BEVMAN": "388972",
                 "BEVVROUW": "401072"
             }
         },
         "2013": {
-            "BEVTOTAAL": "799442",
             "age": {
                 "BEV0_17": "145663",
                 "BEV18_22": "54883",
@@ -7670,13 +7669,13 @@
                 "BEVTURK": "41981",
                 "BEVWEST": "125720"
             },
+            "bevtotaal": "799442",
             "general": {
                 "BEVMAN": "393336",
                 "BEVVROUW": "406106"
             }
         },
         "2014": {
-            "BEVTOTAAL": "811185",
             "age": {
                 "BEV0_17": "147434",
                 "BEV18_22": "55035",
@@ -7694,13 +7693,13 @@
                 "BEVTURK": "42211",
                 "BEVWEST": "129025"
             },
+            "bevtotaal": "811185",
             "general": {
                 "BEVMAN": "399600",
                 "BEVVROUW": "411585"
             }
         },
         "2015": {
-            "BEVTOTAAL": "822272",
             "age": {
                 "BEV0_17": "148574",
                 "BEV18_22": "55061",
@@ -7718,13 +7717,13 @@
                 "BEVTURK": "42358",
                 "BEVWEST": "134124"
             },
+            "bevtotaal": "822272",
             "general": {
                 "BEVMAN": "405220",
                 "BEVVROUW": "417052"
             }
         },
         "2016": {
-            "BEVTOTAAL": "834713",
             "age": {
                 "BEV0_17": "148915",
                 "BEV18_22": "55227",
@@ -7742,13 +7741,13 @@
                 "BEVTURK": "42638",
                 "BEVWEST": "140431"
             },
+            "bevtotaal": "834713",
             "general": {
                 "BEVMAN": "412317",
                 "BEVVROUW": "422396"
             }
         },
         "2017": {
-            "BEVTOTAAL": "844952",
             "age": {
                 "BEV0_17": "148853",
                 "BEV18_22": "54726",
@@ -7766,13 +7765,13 @@
                 "BEVTURK": "43144",
                 "BEVWEST": "146581"
             },
+            "bevtotaal": "844952",
             "general": {
                 "BEVMAN": "418146",
                 "BEVVROUW": "426806"
             }
         },
         "2018": {
-            "BEVTOTAAL": "854316",
             "age": {
                 "BEV0_17": "148433",
                 "BEV18_22": "54363",
@@ -7791,6 +7790,7 @@
                 "BEVTURK": "43501",
                 "BEVWEST": "153905"
             },
+            "bevtotaal": "854316",
             "general": {
                 "BEVMAN": "423292",
                 "BEVVROUW": "431019"

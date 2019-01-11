@@ -17,11 +17,30 @@ function loadData(name) {
       coordinates[dp.properties.Gebied] = {coordinates: dp.geometry.coordinates, gebiedCode: dp.properties.Gebied_code};
       };
     });
-    var information = makeSvg(coordinates)
 
-    makeMap(information)
+    // makeDropdown("data/bev_amsterdam.json")
+    var information = makeSvg(coordinates)
+    loadCityData(information, "data/bev_amsterdam.json")
   });
 };
+
+// makes the dropdown menu
+function makeDropdown(name) {
+  d3.json(name).then(function (data) {
+   var dropdown = d3.select('body')
+                    .select('div.layout')
+                    .append("select")
+
+
+  });
+}
+
+function loadCityData(information, fileName) {
+  d3.json(fileName).then( function (data) {
+    makeMap(information, data)
+    // informationGraph(data[maxYear]);
+  });
+}
 
 // makes a svg to visualize Amsterdam
 function makeSvg(coordinates) {
@@ -72,81 +91,130 @@ function makeSvg(coordinates) {
 };
 
 // makes the Amsterdam map
-function makeMap(data) {
-  const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
-  const ratioLong = data.extremes["maxlong"] - data.extremes["minlong"]
+function makeMap(data, cityData) {
 
-  var svg = d3.select("body")
-              .select("div.layout")
-              .select("svg.amsterdam");
+    var year = d3.max(Object.keys(cityData[Object.keys(cityData)[0]]))
+    var population = []
 
-  // makes the text element to put the area names in
-  d3.select("div.layout")
-    .select("div#container.amsterdam")
-     .append("p")
-     .attr("class", "stadsdeel");
-
-  // makes all the polygons
-  svg.selectAll("polygon.stadsdeel")
-     .data(Object.keys(data.data))
-     .enter()
-     .append("polygon")
-     .attr("class", "stadsdeel")
-     .attr("click", false)
-     .attr("fill", "pink")
-     .attr("points", function(dp) {
-
-       // calculates the coordinates in the canvas
-        var string = ""
-        data.data[dp].coordinates.forEach( function (d) {
-          d.forEach( function (coordinate) {
-            var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"]);
-            var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]));
-            string = string + percLong + "," + percLat + " ";
-          });
-        });
-        return string
-
-      })
-      .on("click", function(dp) {
-        if (d3.select(this).attr("click") === "true") {
-
-          // refers it back to its original state
-          d3.select(this)
-            .attr("click", false)
-            .attr("fill", "pink");
-          d3.select("p.stadsdeel")
-            .text("");
-
-          d3.select("div#container.areavisual")
-            .selectAll("svg")
-            .remove();
+    Object.keys(cityData).forEach( function (dp) {
+      try {
+        if (dp != "STAD") {
+          population.push(cityData[dp][year].bevtotaal)
         }
-        else {
+      }
+      catch(err) {
+      };
+    });
+
+    // makes the color
+    var color = d3.scaleLinear()
+                  .domain([d3.min(population), d3.max(population)])
+                  .interpolate(d3.interpolateLab)
+                  .range(["#b22222", "#87cefa"]);
+
+    const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
+    const ratioLong = data.extremes["maxlong"] - data.extremes["minlong"]
+
+    var svg = d3.select("body")
+                .select("div.layout")
+                .select("svg.amsterdam");
+
+    // makes the text element to put the area names in
+    d3.select("div.layout")
+      .select("div#container.amsterdam")
+       .append("p")
+       .attr("class", "stadsdeel");
+
+    // makes all the polygons
+    svg.selectAll("polygon.stadsdeel")
+       .data(Object.keys(data.data))
+       .enter()
+       .append("polygon")
+       .attr("class", "stadsdeel")
+       .attr("click", false)
+       .attr("fill", function (d) {
+                      if (cityData[data.data[d].gebiedCode][year] != null) {
+                        return color(cityData[data.data[d].gebiedCode][year].bevtotaal)
+                      }
+                      else {
+                        return "white"
+                      }
+                    })
+       .attr("points", function(dp) {
+
+         // calculates the coordinates in the canvas
+          var string = ""
+          data.data[dp].coordinates.forEach( function (d) {
+            d.forEach( function (coordinate) {
+              var percLong = 100 * (1 - ratioLat) * (coordinate[0] - data.extremes["minlong"]) / (data.extremes["maxlong"] - data.extremes["minlong"]);
+              var percLat =  100 * (1 - ratioLong) * (1 - (coordinate[1] - data.extremes["minlat"]) / (data.extremes["maxlat"] - data.extremes["minlat"]));
+              string = string + percLong + "," + percLat + " ";
+            });
+          });
+          return string
+
+        })
+        .on("click", function(dp) {
+          changeMap(color, data, cityData, dp)
+          if (d3.select(this).attr("click") === "true") {
 
             // select the correct polygen and fill it.
             // makes an extra visualisation
             d3.selectAll("polygon.stadsdeel")
+              .data(Object.keys(data.data))
               .attr("click", "false")
-              .attr("fill", "pink");
-
-            d3.select(this)
-              .attr("fill", "orange")
-              .attr("click", true);
+              .attr("fill", function (d) {
+                             if (cityData[data.data[d].gebiedCode][year] != null) {
+                               return color(cityData[data.data[d].gebiedCode][year].bevtotaal)
+                             }
+                             else {
+                               return "white"
+                             }
+                           })
 
             d3.select("p.stadsdeel")
-              .text(dp);
+              .text("");
 
-            loadCityData("data/bev_amsterdam.json", data.data[dp]);
-          };
-      });
+            d3.select("div#container.areavisual")
+              .selectAll("svg")
+              .remove();
+          }
+          else {
+            // select the correct polygen and fill it.
+            // makes an extra visualisation
+            d3.selectAll("polygon.stadsdeel")
+              .data(Object.keys(data.data))
+              .attr("click", "false")
+              .attr("fill", function (d) {
+                             if (cityData[data.data[d].gebiedCode][year] != null) {
+                               return color(cityData[data.data[d].gebiedCode][year].bevtotaal)
+                             }
+                             else {
+                               return "white"
+                             }
+                           })
 
-      // make a container where the datavisual is put in
-      d3.select("body")
-        .select("div.layout")
-        .append("div")
-        .attr("id", "container")
-        .attr("class", "areavisual")
+              d3.select(this)
+                .attr("fill", "orange")
+                .attr("click", true);
+
+              d3.select("p.stadsdeel")
+                .text(dp);
+
+              informationGraph(cityData[data.data[dp].gebiedCode][year])
+            };
+        });
+
+        // make a container where the datavisual is put in
+        d3.select("body")
+          .select("div.layout")
+          .append("div")
+          .attr("id", "container")
+          .attr("class", "areavisual")
+};
+
+function changeMap(color, data, cityData, dp) {
+
 };
 
 function informationGraph(data) {
@@ -155,23 +223,17 @@ function informationGraph(data) {
   const height = 300;
   const width = 300;
 
-  // const svg = d3.select("div#container.areavisual")
-  //               .append("svg")
-  //               .attr("id", "barchart")
-  //
-  //       g = svg.append("g").attr("id", "barchart")
-
   var y = d3.scaleBand()
             .rangeRound([0, height])
             .domain(["1"]);
 
   var x = d3.scaleLinear()
-            .domain([0, data.BEVTOTAAL])
+            .domain([0, data.bevtotaal])
             .range([0, width]);
 
   var z = d3.scaleLinear()
             .range(["#87ceeb", "#FFB6C1"]);
-  console.log(d3.selectAll("svg#barchart")._groups[0])
+
   if (d3.selectAll("svg#barchart")._groups[0].length === 0) {
     const svg = d3.select("div#container.areavisual")
                   .append("svg")
@@ -196,17 +258,19 @@ function informationGraph(data) {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL))})
+        .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
         .attr("y", y("1") + 50)
         .attr("height", y.bandwidth() - 100)
-        .attr("width", function(d) { return (x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL)))})
+        .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
         .attr("transform", "translate(25, 0)")
 
    // append xAxis
    d3.select("svg#barchart").append("g")
       .attr("class", "xAxis")
       .attr("transform", "translate(25, " + height + ")")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .attr("transform", "rotate(90)");
 
    // append yAxis
    d3.select("svg#barchart").append("g")
@@ -214,47 +278,36 @@ function informationGraph(data) {
       .attr("class", "yAxis")
       .call(d3.axisLeft(y));
 
+  // remove tick
+  d3.selectAll("g.yAxis")
+    .selectAll("g.tick")
+    .remove();
+
+
   }
-  else { console.log(true)
+
+  // will change the value in the bargraph
+  else {
          const svg = d3.selectAll("svg#barchart")
                  g = d3.select("g#barchart")
 
-         var serie = g.selectAll("g.series")
-                      .data(stackData)
-                      .enter()
-
-
-         serie.data( function (d) { return d})
-              .enter()
-              .selectAll("rect.bar")
+         var serie = g.selectAll("g.series").data(stackData)
+         serie.selectAll("rect.bar").data(function (d)  { return d })
               .transition()
-              .attr("x", function (d) { return x(d[0] * Number(data.BEVTOTAAL))})
+              .attr("x", function (d) { console.log(12);return x(d[0] * Number(data.bevtotaal))})
               .attr("y", y("1") + 50)
               .attr("height", y.bandwidth() - 100)
-              .attr("width", function(d) { return (x(d[1] * Number(data.BEVTOTAAL)) - x(d[0] * Number(data.BEVTOTAAL)))})
-
-          d3.select("g.yAxis")
-            .transition()
-            .call(d3.axisLeft(y));
+              .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
 
           d3.select("g.xAxis")
             .transition()
-            .call(d3.axisLeft(x))
-       }
+            .call(d3.axisBottom(x))
+            .selectAll("text")
+            .attr("transform", "rotate(90)");
+
+        }
+};
 
 
-}
-
-function loadCityData(fileName, name) {
-
-  d3.json(fileName).then( function (data) {
-    var data = data[name.gebiedCode]
-
-    var maxYear = d3.max(Object.keys(data));
-
-    informationGraph(data[maxYear]);
-  });
-
-}
 
 loadData("data/GEBIEDEN22.json")

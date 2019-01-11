@@ -13,8 +13,15 @@ Dit is wordt in latere fases uitgebreidt en text toegevoegd.
 Er is een begin gemaakt aan de visualisatie van geparsde data, dus kan het getoond.
 
 ## Dag 4
+Overleg gehad over de kaart. De kaart wordt morgen ingevuld met de bevolkingsaantallen.
+Er zit nog een idee achter, omdat te vervangen met bevolkingsdichtheid (of dat kan kiezen).
+
+Een barchart is ook gemaakt, zodat men de verhouding tussen man en vrouw kan bekijken per stadsdeel.
+Dit wordt nog aestetisch netter gemaakt
 
 ## Dag 5
+De kaart is met behulp van een gradatie gecodeerd, waardoor men de bevolkingsaantal per stadsdeel kan zien.
+Hierbij is moet nog een legenda gemaakt worden en keuze mogelijkheid per jaar
 
 
 # Week 2

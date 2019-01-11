@@ -62,11 +62,11 @@ def make_json(list, variables):
         for row in reader:
             if not int(row[0]) in dict[row[1]].keys():
                 dict[row[1]][int(row[0])] = {}
+
             if row[2] in variables[0]:
                 if not "general" in dict[row[1]][int(row[0])]:
                     dict[row[1]][int(row[0])]["general"] = {}
                 dict[row[1]][int(row[0])]["general"][row[2]] = row[-1]
-
 
             elif row[2] in variables[1]:
                 if not "background" in dict[row[1]][int(row[0])]:
@@ -79,7 +79,7 @@ def make_json(list, variables):
 
                 dict[row[1]][int(row[0])]["age"][row[2]] = row[-1]
             elif row[2] in variables[-1]:
-                dict[row[1]][int(row[0])][row[2]] = row[-1]
+                dict[row[1]][int(row[0])][row[2].lower()] = row[-1]
 
     with open('bev_amsterdam.json', 'w') as json_file:
         json.dump(dict, json_file, sort_keys = True, indent = 4,
