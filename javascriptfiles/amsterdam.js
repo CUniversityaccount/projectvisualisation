@@ -175,9 +175,8 @@ function makeMap(data, cityData) {
             d3.select("p.stadsdeel")
               .text("");
 
-            d3.select("div#container.areavisual")
-              .selectAll("svg")
-              .remove();
+            // change the graph to the original state
+            informationGraph(cityData["STAD"][year])
           }
           else {
             // select the correct polygen and fill it.
@@ -200,8 +199,12 @@ function makeMap(data, cityData) {
 
               d3.select("p.stadsdeel")
                 .text(dp);
-
-              informationGraph(cityData[data.data[dp].gebiedCode][year])
+              if (cityData[data.data[dp].gebiedCode][year] != undefined) {
+                informationGraph(cityData[data.data[dp].gebiedCode][year]);
+              }
+              else {
+                informationGraph(cityData["STAD"][year])
+              }
             };
         });
 
@@ -211,6 +214,8 @@ function makeMap(data, cityData) {
           .append("div")
           .attr("id", "container")
           .attr("class", "areavisual")
+
+      informationGraph(cityData["STAD"][year])
 };
 
 function changeMap(color, data, cityData, dp) {
@@ -220,7 +225,7 @@ function changeMap(color, data, cityData, dp) {
 function informationGraph(data) {
   const stack = d3.stack().offset(d3.stackOffsetExpand);
   var stackData = stack.keys(Object.keys(data.general))([data.general])
-  const height = 300;
+  const height = 100;
   const width = 300;
 
   var y = d3.scaleBand()
@@ -239,74 +244,132 @@ function informationGraph(data) {
                   .append("svg")
                   .attr("id", "barchart")
                   .attr("height", height + 50)
-                  .attr("width", width + 50)
+                  .attr("width", width + 100)
                   .attr("padding", 5)
 
     g = svg.append("g")
-           .attr("id", "barchart")
+           .attr("id", "barchart");
 
-   var serie = g.selectAll(".series")
-                .data(stackData)
-                .enter()
-                .append("g")
-                .attr("class", "series")
-                .attr("fill", function(d, i) { return z(i) })
-                .attr("key", function (d) { return d.key });
+    var serie = g.selectAll(".series")
+                  .data(stackData)
+                  .enter()
+                  .append("g")
+                  .attr("class", "series")
+                  .attr("fill", function(d, i) { return z(i) })
+                  .attr("key", function (d) { return d.key });
 
-   serie.selectAll(".series")
-        .data( function(d) { return d })
-        .enter()
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
-        .attr("y", y("1") + 50)
-        .attr("height", y.bandwidth() - 100)
-        .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
-        .attr("transform", "translate(25, 0)")
+     serie.selectAll(".series")
+          .data( function(d) { return d })
+          .enter()
+          .append("rect")
+          .attr("class", "bar")
+          .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
+          .attr("y", y("1"))
+          .attr("height", y.bandwidth())
+          .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
+          .attr("transform", "translate(25, 0)")
+          .on("mouseover", handeleMouseOverGraph)
+          .on("mouseout", handleMouseOutGraph);
 
-   // append xAxis
-   d3.select("svg#barchart").append("g")
-      .attr("class", "xAxis")
-      .attr("transform", "translate(25, " + height + ")")
-      .call(d3.axisBottom(x))
-      .selectAll("text")
-      .attr("transform", "rotate(90)");
+       // append xAxis
+       d3.select("svg#barchart").append("g")
+          .attr("class", "xAxis")
+          .attr("transform", "translate(25, " + height + ")")
+          .call(d3.axisBottom(x))
+          .selectAll("text")
+            .attr("y", 0)
+            .attr("x", 9)
+            .attr("dy", ".35em")
+            .attr("transform", "rotate(90)")
+            .style("text-anchor", "start");
 
-   // append yAxis
-   d3.select("svg#barchart").append("g")
-      .attr("transform", "translate(25, 0)")
-      .attr("class", "yAxis")
-      .call(d3.axisLeft(y));
+       // append yAxis
+       d3.select("svg#barchart").append("g")
+          .attr("transform", "translate(25, 0)")
+          .attr("class", "yAxis")
+          .call(d3.axisLeft(y));
 
-  // remove tick
-  d3.selectAll("g.yAxis")
-    .selectAll("g.tick")
-    .remove();
+      d3.select("svg#barchart").append("g")
+         .attr("transform", "translate(" + (width + 25) + ", 0)")
+         .attr("class", "yAxis")
+         .call(d3.axisRight(y));
 
-
+      // remove tick
+      d3.selectAll("g.yAxis")
+        .selectAll("g.tick")
+        .remove();
   }
 
   // will change the value in the bargraph
   else {
-         const svg = d3.selectAll("svg#barchart")
-                 g = d3.select("g#barchart")
+     const svg = d3.selectAll("svg#barchart")
+             g = d3.select("g#barchart")
 
-         var serie = g.selectAll("g.series").data(stackData)
-         serie.selectAll("rect.bar").data(function (d)  { return d })
-              .transition()
-              .attr("x", function (d) { console.log(12);return x(d[0] * Number(data.bevtotaal))})
-              .attr("y", y("1") + 50)
-              .attr("height", y.bandwidth() - 100)
-              .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
+     var serie = g.selectAll("g.series").data(stackData)
 
-          d3.select("g.xAxis")
-            .transition()
-            .call(d3.axisBottom(x))
-            .selectAll("text")
-            .attr("transform", "rotate(90)");
+     // change the bar with a good transition
+     serie.selectAll("rect.bar").data(function (d)  { return d })
+          .transition()
+          .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
+          .attr("y", y("1"))
+          .attr("height", y.bandwidth())
+          .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
 
-        }
+      // change the x axis
+      d3.select("g.xAxis")
+        .transition()
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+          .attr("y", 0)
+          .attr("x", 9)
+          .attr("dy", ".35em")
+          .attr("transform", "rotate(90)")
+          .style("text-anchor", "start");
+
+    };
 };
+
+function handleMouseOutGraph (d, i) {
+  d3.select("svg#barchart")
+    .selectAll("text#percPopulation")
+    .selectAll("tspan")
+    .transition()
+    .styleTween('fill-opacity', () => d3.interpolateNumber(1, 0))
+    .remove()
+};
+
+function handeleMouseOverGraph (d, i) {
+  var width = 300
+  var height = 100
+  var population = Object.values(d.data)
+  var totPopulation = 0
+
+  population.forEach( function (dp) {
+    totPopulation = totPopulation + parseInt(dp)
+  });
+
+  var perc = -1 * ( d[0] - d[1] )
+  var xPlace = ((d[0] + d[1]) / 2) * width
+  var yPlace = height / 2
+
+  d3.select("svg#barchart")
+    .append("text")
+    .attr("id", "percPopulation")
+      .append("tspan")
+        .attr("transform", "translate(12.5, 0)")
+        .attr("x", xPlace)
+        .attr("y", yPlace)
+        .text((Math.round(perc * 1000) / 10) + "%");
+
+    d3.select("text#percPopulation")
+      .append("tspan")
+        .attr("x", xPlace + 25)
+        .attr("y", yPlace - 25)
+        .attr("text-anchor", "middle")
+        .text("Population: " + Math.round(totPopulation * perc))
+
+
+}
 
 
 
