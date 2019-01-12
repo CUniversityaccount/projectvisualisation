@@ -13,6 +13,12 @@ div.layout div#container.amsterdam p{
 
 }
 
+div.layout div#container.amsterdam svg#amsterdamLegenda {
+  display: block;
+  padding-left: 15px;
+  align-self: center;
+}
+
 div.layout div#container.amsterdam svg.amsterdam{
   stroke:       black;
   stroke-width: 0.5px;

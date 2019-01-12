@@ -107,17 +107,25 @@ function makeMap(data, cityData) {
     });
 
     // makes the color
+    var step = d3.scaleLinear()
+                 .domain([1, 3])
+                 .range([d3.min(population), d3.max(population)]);
+
     var color = d3.scaleLinear()
-                  .domain([d3.min(population), d3.max(population)])
-                  .interpolate(d3.interpolateLab)
-                  .range(["#b22222", "#87cefa"]);
+                  .domain([d3.min(population), step(2), step(3)])
+                  .range(["#b22222","pink",  "#87cefa"])
+                  .interpolate(d3.interpolateHsl);
 
     const ratioLat = data.extremes["maxlat"] - data.extremes["minlat"]
     const ratioLong = data.extremes["maxlong"] - data.extremes["minlong"]
 
+    // makes svg file for the map
     var svg = d3.select("body")
                 .select("div.layout")
                 .select("svg.amsterdam");
+
+    // append legend
+    makeLegendAmsterdam(color, population)
 
     // makes the text element to put the area names in
     d3.select("div.layout")
@@ -155,7 +163,6 @@ function makeMap(data, cityData) {
 
         })
         .on("click", function(dp) {
-          changeMap(color, data, cityData, dp)
           if (d3.select(this).attr("click") === "true") {
 
             // select the correct polygen and fill it.
@@ -218,7 +225,55 @@ function makeMap(data, cityData) {
       informationGraph(cityData["STAD"][year])
 };
 
-function changeMap(color, data, cityData, dp) {
+function makeLegendAmsterdam(color, population) {
+  var width = parseInt(d3.select("svg.amsterdam").attr("width").substr(0, 3));
+  var height = 50;
+
+  const svg = d3.select("div#container.amsterdam")
+                .append("svg")
+                .attr("id", "amsterdamLegenda")
+                .attr("width", width)
+                .attr("height", height);
+  console.log(true)
+  var svgDefs = svg.append("defs")
+  var legend = svgDefs.append("svg:linearGradient")
+                      .attr("id", "gradient")
+                      .attr("x1", "0%")
+                      .attr("y1", "100%")
+                      .attr("x2", "100%")
+                      .attr("y2", "100%")
+                      .attr("spreadMethod", "pad");
+  console.log(true)
+  // append stops
+  legend.selectAll("stop")
+        .data([
+        {offset: "0%", color: color(0 * d3.max(population))},
+        {offset: "33%", color: color((33/100) * d3.max(population))},
+        {offset: "66%", color: color((66/100) * d3.max(population))},
+        {offset: "100%", color: color(d3.max(population))},
+        ])
+        .enter()
+        .append("stop")
+        .attr("offset", function (d) { return d.offset })
+        .attr("stop-color", function (d) { return d.color })
+        .attr("stop-opacity", 1);
+
+  // append rectangle
+  svg.append("rect")
+       .attr("width", width)
+       .attr("height", height - 30)
+       .style("fill", "url(#gradient)")
+       .attr("transform", "translate(0, 10)");
+
+  var y = d3.scaleLinear()
+            .range([300, 0])
+            .domain([68, 12]);
+
+  var yAxis = d3.axisBottom()
+                .scale(y)
+                .ticks(5)
+
+
 
 };
 
@@ -242,10 +297,10 @@ function informationGraph(data) {
   if (d3.selectAll("svg#barchart")._groups[0].length === 0) {
     const svg = d3.select("div#container.areavisual")
                   .append("svg")
-                  .attr("id", "barchart")
-                  .attr("height", height + 50)
-                  .attr("width", width + 100)
-                  .attr("padding", 5)
+                    .attr("id", "barchart")
+                    .attr("height", height + 50)
+                    .attr("width", width + 100)
+                    .attr("padding", 5)
 
     g = svg.append("g")
            .attr("id", "barchart");
@@ -253,23 +308,23 @@ function informationGraph(data) {
     var serie = g.selectAll(".series")
                   .data(stackData)
                   .enter()
-                  .append("g")
-                  .attr("class", "series")
-                  .attr("fill", function(d, i) { return z(i) })
-                  .attr("key", function (d) { return d.key });
+                    .append("g")
+                    .attr("class", "series")
+                    .attr("fill", function(d, i) { return z(i) })
+                    .attr("key", function (d) { return d.key });
 
      serie.selectAll(".series")
           .data( function(d) { return d })
           .enter()
           .append("rect")
-          .attr("class", "bar")
-          .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
-          .attr("y", y("1"))
-          .attr("height", y.bandwidth())
-          .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
-          .attr("transform", "translate(25, 0)")
-          .on("mouseover", handeleMouseOverGraph)
-          .on("mouseout", handleMouseOutGraph);
+            .attr("class", "bar")
+            .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
+            .attr("y", y("1"))
+            .attr("height", y.bandwidth())
+            .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal)) - x(d[0] * Number(data.bevtotaal)))})
+            .attr("transform", "translate(25, 0)")
+            .on("mouseover", handeleMouseOverGraph)
+            .on("mouseout", handleMouseOutGraph);
 
        // append xAxis
        d3.select("svg#barchart").append("g")
@@ -289,15 +344,15 @@ function informationGraph(data) {
           .attr("class", "yAxis")
           .call(d3.axisLeft(y));
 
-      d3.select("svg#barchart").append("g")
+       d3.select("svg#barchart").append("g")
          .attr("transform", "translate(" + (width + 25) + ", 0)")
          .attr("class", "yAxis")
          .call(d3.axisRight(y));
 
-      // remove tick
-      d3.selectAll("g.yAxis")
-        .selectAll("g.tick")
-        .remove();
+       // remove tick
+       d3.selectAll("g.yAxis")
+         .selectAll("g.tick")
+         .remove();
   }
 
   // will change the value in the bargraph
@@ -333,8 +388,10 @@ function handleMouseOutGraph (d, i) {
   d3.select("svg#barchart")
     .selectAll("text#percPopulation")
     .selectAll("tspan")
-    .transition()
-    .styleTween('fill-opacity', () => d3.interpolateNumber(1, 0))
+    .remove()
+
+  d3.select("svg#barchart")
+    .selectAll("text#percPopulation")
     .remove()
 };
 
@@ -366,11 +423,9 @@ function handeleMouseOverGraph (d, i) {
         .attr("x", xPlace + 25)
         .attr("y", yPlace - 25)
         .attr("text-anchor", "middle")
-        .text("Population: " + Math.round(totPopulation * perc))
+        .text("Population: " + Math.round(totPopulation * perc));
 
 
-}
-
-
+};
 
 loadData("data/GEBIEDEN22.json")
