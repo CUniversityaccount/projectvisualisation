@@ -27,8 +27,7 @@ svg#amsterdamLegenda rect {
 
 div.layout div#container.amsterdam svg.amsterdam{
   stroke:       black;
-  stroke-width: 0.5px;
-  fill:         pink;
+  stroke-width: 1.5px;  
 
 }
 
