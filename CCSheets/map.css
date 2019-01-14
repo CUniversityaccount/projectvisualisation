@@ -19,6 +19,12 @@ div.layout div#container.amsterdam svg#amsterdamLegenda {
   align-self: center;
 }
 
+svg#amsterdamLegenda rect {
+  stroke: black;
+  stroke-bottom: white;
+  "fill": "url(#gradient)";
+}
+
 div.layout div#container.amsterdam svg.amsterdam{
   stroke:       black;
   stroke-width: 0.5px;
@@ -32,3 +38,9 @@ div.layout div#container.areavisual {
   margin-left: 100vh;
   margin-top: 90px;
 }
+
+div.layout div#container.areavisual svg#barChart{
+  padding-top: 25px;
+  display: block;
+  text-align: center;
+};
