@@ -292,9 +292,30 @@ function navBarInforGraph(data) {
           .style("height", height + "px")
           .style("float", "left")
           .attr("key", function (dp) { return dp })
-          .text(function (dp) { return dp.charAt(0).toUpperCase() + dp.substr(1, 10) });
+          .attr("selected", "false")
+          .text(function (dp) { return dp.charAt(0).toUpperCase() + dp.substr(1, 10) })
+          .on("click", function (dp) {
+            console.log(d3.select(this).attr("selected"))
+            d3.selectAll("button.barChart").attr("selected", "false")
+            if (d3.select(this).attr("selected") === "false") {
 
 
+              d3.select(this)
+                .attr("selected", "true")
+              if (dp === navElements[0]) {
+                makePieBev(data[dp])
+              }
+              else if (dp === navElements[1] ) {
+                console.log(data[dp])
+              }
+              else {
+
+              };
+            }
+            else {
+
+            };
+          });
 };
 
 function informationGraph(data) {

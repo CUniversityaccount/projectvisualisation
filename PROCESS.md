@@ -26,6 +26,12 @@ Hierbij is moet nog een legenda gemaakt worden en keuze mogelijkheid per jaar
 
 # Week 2
 ## Dag 1
+Van het weekend zijn de hoeveelheid mensen per stadsdeel toegevoegd op de kaart, waardoor de kaart geen enkele monotone kleur is.
+Verder is de legenda met gradiatie ook toegevoegd, waardoor de hoeveelheid op een oogopslag duidelijk is.
+
+Op 14 januari is de kaart omgezet naar een geojson, waardoor de kaart van Amsterdam realistischer is. Er zijn ook nog knoppen toegevoegd aan de secundaire visualisatie, waardoor je een visualisatie kan kiezen. Deze interacties werken nog niet.
+
+Verder wordt een slider waarop de tijd kan worden geselecteerd, nog toegevoegd
 
 ## Dag 2
 
