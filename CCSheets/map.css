@@ -27,7 +27,7 @@ svg#amsterdamLegenda rect {
 
 div.layout div#container.amsterdam svg.amsterdam{
   stroke:       black;
-  stroke-width: 1.5px;  
+  stroke-width: 1.5px;
 
 }
 
@@ -38,7 +38,7 @@ div.layout div#container.areavisual {
   margin-top: 90px;
 }
 
-div.layout div#container.areavisual svg#barChart{
+div.layout div#container.areavisual svg#visual{
   padding-top: 25px;
   display: block;
   text-align: center;

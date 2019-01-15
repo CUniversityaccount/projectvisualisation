@@ -25,9 +25,12 @@ function loadCityData(information, fileName) {
 
 // makes the Amsterdam map
 function makeMap(data, cityData) {
+
   // makes svg file for the map
   const width = 600;
   const height = 450;
+
+  // coordinates of Amsterdamcentre
   const adamCentre = [4.9020727, 52.3717204]
 
   var svg =   d3.select("body")
@@ -133,7 +136,12 @@ function makeMap(data, cityData) {
             .text("");
 
             // change the graph to the original state
-            informationGraph(cityData["STAD"][year])
+            if (d3.select("g#barChart")._groups[0][0] != null) {
+              informationGraph(cityData["STAD"][year]);
+            }
+            else if (d3.select("g#pieChart")._groups[0][0] != null) {
+              makePieBev(cityData["STADc"][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
+            }
         }
         else {
           zoomIn(dp)
@@ -155,7 +163,13 @@ function makeMap(data, cityData) {
           .text(dp.properties.Gebied);
 
         if (cityData[dp.properties.Gebied_code][year] != undefined) {
-          informationGraph(cityData[dp.properties.Gebied_code][year]);
+          if (d3.select("g#barChart")._groups[0][0] != null) {
+            informationGraph(cityData[dp.properties.Gebied_code][year]);
+          }
+          else if (d3.select("g#pieChart")._groups[0][0] != null) {
+            makePieBev(cityData[dp.properties.Gebied_code][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
+          }
+
         }
         else {
           informationGraph(cityData["STAD"][year])
@@ -171,7 +185,7 @@ function makeMap(data, cityData) {
         .attr("class", "areavisual")
 
   navBarInforGraph(cityData["STAD"][year])
-  informationGraph(cityData["STAD"][year])
+  informationGraph(cityData["STAD"][year]);
 
   function zoomIn(data) {
     var bounds = path.bounds(data)
@@ -287,7 +301,7 @@ function navBarInforGraph(data) {
       .data(navElements)
       .enter()
         .append("button")
-          .attr("class", "barChart")
+          .attr("class", "visual")
           .style("width", Math.round((1/3) * width) + "px" )
           .style("height", height + "px")
           .style("float", "left")
@@ -295,7 +309,6 @@ function navBarInforGraph(data) {
           .attr("selected", "false")
           .text(function (dp) { return dp.charAt(0).toUpperCase() + dp.substr(1, 10) })
           .on("click", function (dp) {
-            console.log(d3.select(this).attr("selected"))
             d3.selectAll("button.barChart").attr("selected", "false")
             if (d3.select(this).attr("selected") === "false") {
 
@@ -303,10 +316,9 @@ function navBarInforGraph(data) {
               d3.select(this)
                 .attr("selected", "true")
               if (dp === navElements[0]) {
-                makePieBev(data[dp])
+                makePieBev(data[dp], data.bevtotaal)
               }
               else if (dp === navElements[1] ) {
-                console.log(data[dp])
               }
               else {
 
@@ -316,6 +328,72 @@ function navBarInforGraph(data) {
 
             };
           });
+};
+
+// makes a piechart of the population
+function makePieBev(data , populationTotal) {
+
+  var svg = d3.select("svg#visual");
+
+  var height = parseInt(svg.attr("height"));
+      width = parseInt(svg.attr("width"))
+      thickness = 80
+      radius = (Math.max(height, width) - 100) / 2;
+      color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  svg.attr('height', Math.max(width, height))
+  svg.attr('width', Math.max(width, height))
+  width = Math.max(width, height)
+  height = Math.max(width, height)
+
+  var arc = d3.arc()
+              .innerRadius(radius - thickness)
+              .outerRadius(radius);
+
+  var pie = d3.pie()
+              .value(function(d) { return data[d] })
+              .sort(null);
+
+  if (d3.select("g#pieChart")._groups[0][0] === null) {
+
+    // removes existing chart
+    d3.select("svg#visual")
+      .selectAll("g")
+      .remove();
+
+    var g = svg.append("g")
+                .attr("id", "pieChart")
+                .attr("transform", "translate(" + (width/2) + ", " + (height/2)  + ")");
+
+
+    // makes donut chart
+    var path = g.selectAll("path")
+                .data(pie(Object.keys(data)))
+                .enter()
+                .append("g")
+                .append("path")
+                  .attr("id", "pi")
+                  .attr("d", arc)
+                  .attr("fill", function (d,i) { return color(i) })
+                  .attr("stroke", "white")
+                  .attr("stroke-width", 6)
+  }
+  else {
+    // makes donut chart
+    d3.select("g#pieChart")
+      .selectAll("path#pi")
+      .data(pie(Object.keys(data)))
+      .transition()
+      .attr("d", arc)
+      .attr("fill", function (d,i) { return color(i) })
+
+  }
+
+
+
+
+
+
 };
 
 function informationGraph(data) {
@@ -335,10 +413,10 @@ function informationGraph(data) {
   var z = d3.scaleLinear()
             .range(["#87ceeb", "#FFB6C1"]);
 
-  if (d3.selectAll("svg#barChart")._groups[0].length === 0) {
+  if (d3.selectAll("svg#visual")._groups[0].length === 0) {
     const svg = d3.select("div#container.areavisual")
                   .append("svg")
-                    .attr("id", "barChart")
+                    .attr("id", "visual")
                     .attr("height", height + 50)
                     .attr("width", width + 100)
                     .attr("padding", 5);
@@ -368,7 +446,7 @@ function informationGraph(data) {
             .on("mouseout", handleMouseOutGraph);
 
        // append xAxis
-       d3.select("svg#barChart").append("g")
+       d3.select("svg#visual").append("g")
           .attr("class", "xAxis")
           .attr("transform", "translate(50, " + height + ")")
           .call(d3.axisBottom(x))
@@ -380,12 +458,12 @@ function informationGraph(data) {
             .style("text-anchor", "start");
 
        // append yAxis
-       d3.select("svg#barChart").append("g")
+       d3.select("svg#visual").append("g")
           .attr("transform", "translate(50, 0)")
           .attr("class", "yAxis")
           .call(d3.axisLeft(y));
 
-       d3.select("svg#barChart").append("g")
+       d3.select("svg#visual").append("g")
          .attr("transform", "translate(" + (width + 50) + ", 0)")
          .attr("class", "yAxis")
          .call(d3.axisRight(y));
@@ -398,7 +476,7 @@ function informationGraph(data) {
 
   // will change the value in the bargraph
   else {
-     const svg = d3.selectAll("svg#barChart")
+     const svg = d3.selectAll("svg#visual")
              g = d3.select("g#barChart")
 
      var serie = g.selectAll("g.series").data(stackData)
@@ -426,12 +504,12 @@ function informationGraph(data) {
 };
 
 function handleMouseOutGraph (d, i) {
-  d3.select("svg#barChart")
+  d3.select("svg#visual")
     .selectAll("text#percPopulation")
     .selectAll("tspan")
     .remove()
 
-  d3.select("svg#barChart")
+  d3.select("svg#visual")
     .selectAll("text#percPopulation")
     .remove()
 };
@@ -451,7 +529,7 @@ function handeleMouseOverGraph (d, i) {
   var yPlace = height / 2
 
   // adds total population of women and man
-  d3.select("svg#barChart")
+  d3.select("svg#visual")
     .append("text")
     .attr("text-allign", "center")
     .attr("id", "percPopulation")
