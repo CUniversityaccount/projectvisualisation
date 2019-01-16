@@ -33,9 +33,23 @@ Op 14 januari is de kaart omgezet naar een geojson, waardoor de kaart van Amster
 
 Verder wordt een slider waarop de tijd kan worden geselecteerd, nog toegevoegd
 
+Men kan ook nu op het stadsdeel inzoomen als men op het stadsdeel klikt. Als men nogmaals klikt op het stadsdeel zoomt het uit.
+
 ## Dag 2
+Vandaag was een piechart toegevoegd van de leeftijden per groep mensen in de buurt.
+Deze piechart wordt bijgewerkt als men op een stadsdeel drukt. Het gaat weer terug naar de originele staat als het stadsdeel wordt gedeselelecteerd.
+
+Er is een begin gemaakt met de treemap, echter wordt dat een taak voor morgen
+
 
 ## Dag 3
+De treemap is vandaag afgemaakt. Verder zijn er interactieve functies toegevoegd aan de treemap. Deze functionaliteiten werken echter nog niet naar wensen, dus daar wordt morgen aan gewerkt. Er moeten ook nog legenda's worden toegevoegd, waardoor de grafieken duidelijker moeten worden. Er moeten ook nieuwe kleuren worden aangewezen.
+
+Verder passen de grafieken, die aan de knoppen zijn gebonden naar de conforme data, die aan dat moment relevant zijn.
+
+Morgen wordt de slider met de jaren die van toepassing is op de kaart van Amsterdam toegevoegd. Als deze functionaliteit werkt, dan kan er worden gekeken of er een animatie kan worden afgespeeld worden met behulp van de slijder
+
+Vrijdag wordt de website klaargemaakt voor alfa testing
 
 ## Dag 4
 

@@ -117,6 +117,9 @@ function makeMap(data, cityData) {
       .on("click", function(dp) {
         if (d3.select(this).attr("click") === "true") {
 
+          // update navigation menu
+          navBarInforGraph(cityData["STAD"][year], "STAD");
+
           // zoom out
           svg.transition()
               .duration(500)
@@ -142,9 +145,15 @@ function makeMap(data, cityData) {
             else if (d3.select("g#pieChart")._groups[0][0] != null) {
               makePieBev(cityData["STAD"][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
             }
+            else if (d3.select("g#treeMap")._groups[0][0] != null) {
+              makeTreeAuto(cityData["STAD"][year], "background", "STAD");
+            }
         }
         else {
           zoomIn(dp)
+
+          // update navigation menu
+          navBarInforGraph(cityData[dp.properties.Gebied_code][year], dp.properties.Gebied_code);
 
           // select the correct polygen and fill it.
           // makes an extra visualisation
@@ -170,6 +179,10 @@ function makeMap(data, cityData) {
             makePieBev(cityData[dp.properties.Gebied_code][year].age,
                   cityData[dp.properties.Gebied_code][year].bevtotaal);
           }
+          else if (d3.select("g#treeMap")._groups[0][0] != null) {
+            makeTreeAuto(cityData[dp.properties.Gebied_code][year],
+                  "background", dp.properties.Gebied_code);
+          };
 
         }
         else {
@@ -185,7 +198,11 @@ function makeMap(data, cityData) {
         .attr("id", "container")
         .attr("class", "areavisual")
 
-  navBarInforGraph(cityData["STAD"][year], "STAD")
+
+  if (d3.select("div.barNavigation#container")._groups[0][0] == null) {
+    navBarInforGraph(cityData["STAD"][year], "STAD");
+  }
+
   informationGraph(cityData["STAD"][year]);
 
   function zoomIn(data) {
@@ -278,70 +295,88 @@ function makeLegendAmsterdam(color, population) {
 
 // makes navigation for the barChart
 function navBarInforGraph(data, stadsdeel) {
-  console.log(stadsdeel)
-
+  console.log(true)
+  var navElements = Object.keys(data)
   var height = 50;
   var width = 400;
   var index = null;
-  var navElements = Object.keys(data)
+  if (d3.select("div.barNavigation#container")._groups[0][0] == null) {
+    console.log("whaaat")
+    var div = d3.select("div.areavisual")
+                .append("div")
+                  .attr("class", "barNavigation")
+                  .attr("id", "container")
+                  .attr("height", height)
+                  .attr("width", width);
 
-  var div = d3.select("div.areavisual")
-              .append("div")
-                .attr("class", "barNavigation")
-                .attr("id", "container")
-                .attr("height", height)
-                .attr("width", width);
+    Object.keys(data).forEach( function (dp) {
+      if (dp.includes("bev")) {
+        index = navElements.indexOf(dp)
+      };
+    });
+    navElements.splice(index, 1)
 
-  Object.keys(data).forEach( function (dp) {
-    if (dp.includes("bev")) {
-      index = navElements.indexOf(dp)
-    };
-  });
-  navElements.splice(index, 1)
+    div.selectAll("button.visual")
+        .data(navElements)
+        .enter()
+          .append("button")
+            .attr("class", "visual")
+            .style("width", Math.round((1/3) * width) + "px" )
+            .style("height", height + "px")
+            .style("float", "left")
+            .attr("key", function (dp) { return dp })
+            .attr("selected", "false")
+            .text(function (dp) { return dp.charAt(0).toUpperCase() + dp.substr(1, 10) })
+            .on("click", function (dp) {
+              d3.selectAll("button.barChart").attr("selected", "false")
+              if (d3.select(this).attr("selected") === "false") {
+                d3.selectAll("button.visual")
+                  .attr("selected", "false")
 
-  div.selectAll("a.barChart")
-      .data(navElements)
-      .enter()
-        .append("button")
-          .attr("class", "visual")
-          .style("width", Math.round((1/3) * width) + "px" )
-          .style("height", height + "px")
-          .style("float", "left")
-          .attr("key", function (dp) { return dp })
+                d3.select(this)
+                  .attr("selected", "true")
+
+                if (dp === navElements[0]) {
+                  makePieBev(data[dp], data.bevtotaal);
+                }
+                else if (dp === navElements[1]) {
+                  makeTreeAuto(data, dp, stadsdeel);
+                }
+                else if (dp === navElements[2]) {
+                  informationGraph(data)
+                };
+              }
+            });
+  }
+  else {
+    console.log(data)
+    d3.selectAll("button.visual")
+    .data(navElements)
+    .on("click", function (dp) {
+      d3.selectAll("button.barChart").attr("selected", "false")
+      if (d3.select(this).attr("selected") === "false") {
+        d3.selectAll("button.visual")
           .attr("selected", "false")
-          .text(function (dp) { return dp.charAt(0).toUpperCase() + dp.substr(1, 10) })
-          .on("click", function (dp) {
-            d3.selectAll("button.barChart").attr("selected", "false")
-            if (d3.select(this).attr("selected") === "false") {
-              d3.selectAll("button.visual")
-                .attr("selected", "false")
 
-              d3.select(this)
-                .attr("selected", "true")
+        d3.select(this)
+          .attr("selected", "true")
 
-              if (dp === navElements[0]) {
-                makePieBev(data[dp], data.bevtotaal);
-              }
-              else if (dp === navElements[1]) {
-                makeTreeAuto(data, dp, stadsdeel);
-              }
-              else if (dp === navElements[2]) {
-                informationGraph(data)
-              };
-            }
-            else {
-
-            };
-          });
+        if (dp === navElements[0]) {
+          makePieBev(data[dp], data.bevtotaal);
+        }
+        else if (dp === navElements[1]) {
+          makeTreeAuto(data, dp, stadsdeel);
+        }
+        else if (dp === navElements[2]) {
+          informationGraph(data)
+        };
+      }
+    });
+  };
 };
 
 // makes a piechart of the population
 function makePieBev(data) {
-
-  // removes existing chart
-  d3.select("svg#visual")
-    .selectAll("g")
-    .remove();
 
   const svg = d3.select("svg#visual");
 
@@ -395,6 +430,7 @@ function makePieBev(data) {
                 .data(pie(Object.keys(data)), key)
   }
   else {
+
     // updates donut chart
     d3.select("g#pieChart")
       .selectAll("path#pi")
@@ -407,6 +443,7 @@ function makePieBev(data) {
 };
 
 function makeTreeAuto(sourceData , dp, stadsdeel) {
+
   const svg = d3.select("svg#visual")
         color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -417,34 +454,84 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
     data["children"].push({name: d, size: Number(sourceData[dp][d]) });
   })
 
-  const height = parseInt(svg.attr("height"));
-        width = parseInt(svg.attr("width"))
-        radius = (Math.max(height, width) - 100) / 2
+  const height = width = Math.max(parseInt(svg.attr("height")), parseInt(svg.attr("width")));
         color = d3.scaleOrdinal(d3.schemeCategory10);
-
-  const treemap = svg.attr("width", width)
-                .attr("height", height)
-                .append("g")
-                .attr("class", "treemap")
 
   const layout = d3.treemap()
                    .size([width, height])
-                   .paddingOuter(5);
+                   .padding(3);
 
   var root = d3.hierarchy(data).sum( function (d) { return d.size });
   var descendants = root.descendants()
   layout(root);
-  console.log(descendants)
-  var slices = treemap.selectAll("rect")
-                      .data(descendants)
-                      .enter()
-                      .append("rect");
-  // Draw on screen
-  slices.attr('x', function (d) { return d.x0; })
+
+  if (d3.select("g#treeMap")._groups[0][0] === null) {
+    // removes existing chart
+    d3.select("svg#visual")
+      .selectAll("g")
+      .remove();
+
+    const treemap = svg.attr("width", width)
+                  .attr("height", height)
+                  .append("g")
+                  .attr("id", "treeMap");
+
+    var slices = treemap.selectAll("rect")
+                        .data(descendants)
+                        .enter()
+                        .append("rect");
+    
+    // Draw on screen
+    slices.attr('x', function (d) { return d.x0; })
+        .attr('y', function (d) { return d.y0; })
+        .attr('width', function (d) { return d.x1 - d.x0; })
+        .attr('height', function (d) { return d.y1 - d.y0; })
+        .attr("fill", function (d,i) { return color(i) })
+        .on("mouseover", function (d) {
+
+          if (d.parent != null) {
+            d3.select("div.areavisual")
+              .append("p")
+              .attr("id", "treeMap")
+              .text(function () {
+                if (d.data.name.includes("autoch")) {
+                  return "Autochtoon"
+                }
+                else if (d.data.name.includes("sur")) {
+                  return "Surinaams"
+                }
+                else if ()
+              });
+
+            d3.select(this).attr("fill", "pink")
+          };
+        })
+        .on("mouseout", function (d, i) {
+          if (d.parent != null) {
+            d3.select("div.areavisual")
+              .selectAll("p#treeMap")
+              .remove()
+
+            d3.select(this).attr("fill", function () {
+              return color(i)
+            });
+          }
+        });
+
+  }
+  else {
+
+    // update the slices
+    svg.select("g#treeMap")
+      .selectAll("rect")
+      .data(descendants)
+      .transition()
+      .attr('x', function (d) { return d.x0; })
       .attr('y', function (d) { return d.y0; })
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
-      .attr("fill", function (d,i) { console.log(i); return color(i) });
+
+  };
 
 
 };
