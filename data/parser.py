@@ -71,6 +71,7 @@ def make_json(list, variables):
             elif row[2] in variables[1]:
                 if not "background" in dict[row[1]][int(row[0])]:
                     dict[row[1]][int(row[0])]["background"] = {}
+
                 dict[row[1]][int(row[0])]["background"][row[2]] = row[-1]
 
             elif row[2] in variables[2]:

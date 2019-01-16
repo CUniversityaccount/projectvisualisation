@@ -140,7 +140,7 @@ function makeMap(data, cityData) {
               informationGraph(cityData["STAD"][year]);
             }
             else if (d3.select("g#pieChart")._groups[0][0] != null) {
-              makePieBev(cityData["STADc"][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
+              makePieBev(cityData["STAD"][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
             }
         }
         else {
@@ -167,12 +167,13 @@ function makeMap(data, cityData) {
             informationGraph(cityData[dp.properties.Gebied_code][year]);
           }
           else if (d3.select("g#pieChart")._groups[0][0] != null) {
-            makePieBev(cityData[dp.properties.Gebied_code][year].age, cityData[dp.properties.Gebied_code][year].bevtotaal)
+            makePieBev(cityData[dp.properties.Gebied_code][year].age,
+                  cityData[dp.properties.Gebied_code][year].bevtotaal);
           }
 
         }
         else {
-          informationGraph(cityData["STAD"][year])
+          informationGraph(cityData["STAD"][year]);
         };
       };
     });
@@ -184,7 +185,7 @@ function makeMap(data, cityData) {
         .attr("id", "container")
         .attr("class", "areavisual")
 
-  navBarInforGraph(cityData["STAD"][year])
+  navBarInforGraph(cityData["STAD"][year], "STAD")
   informationGraph(cityData["STAD"][year]);
 
   function zoomIn(data) {
@@ -276,7 +277,8 @@ function makeLegendAmsterdam(color, population) {
 };
 
 // makes navigation for the barChart
-function navBarInforGraph(data) {
+function navBarInforGraph(data, stadsdeel) {
+  console.log(stadsdeel)
 
   var height = 50;
   var width = 400;
@@ -311,17 +313,20 @@ function navBarInforGraph(data) {
           .on("click", function (dp) {
             d3.selectAll("button.barChart").attr("selected", "false")
             if (d3.select(this).attr("selected") === "false") {
-
+              d3.selectAll("button.visual")
+                .attr("selected", "false")
 
               d3.select(this)
                 .attr("selected", "true")
-              if (dp === navElements[0]) {
-                makePieBev(data[dp], data.bevtotaal)
-              }
-              else if (dp === navElements[1] ) {
-              }
-              else {
 
+              if (dp === navElements[0]) {
+                makePieBev(data[dp], data.bevtotaal);
+              }
+              else if (dp === navElements[1]) {
+                makeTreeAuto(data, dp, stadsdeel);
+              }
+              else if (dp === navElements[2]) {
+                informationGraph(data)
               };
             }
             else {
@@ -331,15 +336,20 @@ function navBarInforGraph(data) {
 };
 
 // makes a piechart of the population
-function makePieBev(data , populationTotal) {
+function makePieBev(data) {
 
-  var svg = d3.select("svg#visual");
+  // removes existing chart
+  d3.select("svg#visual")
+    .selectAll("g")
+    .remove();
 
-  var height = parseInt(svg.attr("height"));
-      width = parseInt(svg.attr("width"))
-      thickness = 80
-      radius = (Math.max(height, width) - 100) / 2;
-      color = d3.scaleOrdinal(d3.schemeCategory10);
+  const svg = d3.select("svg#visual");
+
+  var height = parseInt(svg.attr("height"))
+        width = parseInt(svg.attr("width"))
+        thickness = 80
+        radius = (Math.max(height, width) - 100) / 2;
+        color = d3.scaleOrdinal(d3.schemeCategory10);
 
   svg.attr('height', Math.max(width, height))
   svg.attr('width', Math.max(width, height))
@@ -348,7 +358,8 @@ function makePieBev(data , populationTotal) {
 
   var arc = d3.arc()
               .innerRadius(radius - thickness)
-              .outerRadius(radius);
+              .outerRadius(radius)
+              .padAngle(0.02);
 
   var pie = d3.pie()
               .value(function(d) { return data[d] })
@@ -375,11 +386,16 @@ function makePieBev(data , populationTotal) {
                   .attr("id", "pi")
                   .attr("d", arc)
                   .attr("fill", function (d,i) { return color(i) })
-                  .attr("stroke", "white")
-                  .attr("stroke-width", 6)
+    var key =  function (d) {
+      let string = d.data.substring(3, d.data.length)
+    }
+
+    // append text
+    var text = g.selectAll("text.labels")
+                .data(pie(Object.keys(data)), key)
   }
   else {
-    // makes donut chart
+    // updates donut chart
     d3.select("g#pieChart")
       .selectAll("path#pi")
       .data(pie(Object.keys(data)))
@@ -388,10 +404,47 @@ function makePieBev(data , populationTotal) {
       .attr("fill", function (d,i) { return color(i) })
 
   }
+};
 
+function makeTreeAuto(sourceData , dp, stadsdeel) {
+  const svg = d3.select("svg#visual")
+        color = d3.scaleOrdinal(d3.schemeCategory10);
 
+  let data = {}
+  data["name"] = stadsdeel
+  data["children"] = []
+  Object.keys(sourceData[dp]).forEach( function (d) {
+    data["children"].push({name: d, size: Number(sourceData[dp][d]) });
+  })
 
+  const height = parseInt(svg.attr("height"));
+        width = parseInt(svg.attr("width"))
+        radius = (Math.max(height, width) - 100) / 2
+        color = d3.scaleOrdinal(d3.schemeCategory10);
 
+  const treemap = svg.attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("class", "treemap")
+
+  const layout = d3.treemap()
+                   .size([width, height])
+                   .paddingOuter(5);
+
+  var root = d3.hierarchy(data).sum( function (d) { return d.size });
+  var descendants = root.descendants()
+  layout(root);
+  console.log(descendants)
+  var slices = treemap.selectAll("rect")
+                      .data(descendants)
+                      .enter()
+                      .append("rect");
+  // Draw on screen
+  slices.attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .attr("fill", function (d,i) { console.log(i); return color(i) });
 
 
 };
@@ -420,6 +473,17 @@ function informationGraph(data) {
                     .attr("height", height + 50)
                     .attr("width", width + 100)
                     .attr("padding", 5);
+
+  };
+
+  if (d3.selectAll("g#barChart")._groups[0].length === 0) {
+
+    // removes existing chart
+    d3.select("svg#visual")
+      .selectAll("g")
+      .remove();
+
+    const svg = d3.select("svg#visual")
 
     g = svg.append("g")
            .attr("id", "barChart");
