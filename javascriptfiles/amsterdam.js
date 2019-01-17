@@ -1,3 +1,4 @@
+
 // loads data
 function loadData(name) {
   d3.json(name).then( function(data) {
@@ -26,7 +27,6 @@ function loadCityData(information, fileName) {
 // makes the Amsterdam map
 function makeMap(data, cityData) {
 
-  // makes svg file for the map
   const width = 600;
   const height = 450;
 
@@ -36,7 +36,7 @@ function makeMap(data, cityData) {
   var svg =   d3.select("body")
                 .select("div.layout")
                 .append("div")
-                  .attr("id", "container")
+                  .attr("id", "mapid")
                   .attr("class", "amsterdam")
                   .append("svg")
                   .attr("class", "amsterdam")
@@ -45,8 +45,10 @@ function makeMap(data, cityData) {
                 .append("g")
                   .attr("class", "zoomIn");
 
-  var projection = d3.geoMercator()
-                     .scale(75000)
+  makeTimeSliderMap(Object.keys(cityData[Object.keys(cityData)[0]]))
+
+  var projection = d3.geoConicEquidistant()
+                     .scale(120000)
                      // middle of Amsterdam
                      .center(adamCentre)
                      .translate([width / 2, height / 2]);
@@ -60,7 +62,7 @@ function makeMap(data, cityData) {
   Object.keys(cityData).forEach( function (dp) {
     try {
       if (dp != "STAD") {
-        population.push(cityData[dp][year].bevtotaal)
+        population.push(Number(cityData[dp][year].bevtotaal))
       }
     }
     catch(err) {
@@ -69,12 +71,12 @@ function makeMap(data, cityData) {
 
   // makes the color
   var step = d3.scaleLinear()
-               .domain([1, 3])
+               .domain([0, 3])
                .range([d3.min(population), d3.max(population)]);
 
   var color = d3.scaleLinear()
-                .domain([step(1), step(2), step(3)])
-                .range(["white", "#87cefa", "#b22222"])
+                .domain([d3.min(population), step(1), step(2)])
+                .range(["#CDCDCD", "lightgreen", "#4682B4"])
                 .interpolate(d3.interpolateLab);
 
   // append legend
@@ -82,7 +84,7 @@ function makeMap(data, cityData) {
 
     // makes the text element to put the area names in
     d3.select("div.layout")
-      .select("div#container.amsterdam")
+      .select("div#mapid.amsterdam")
        .append("p")
        .attr("class", "stadsdeel");
 
@@ -152,8 +154,11 @@ function makeMap(data, cityData) {
         else {
           zoomIn(dp)
 
-          // update navigation menu
-          navBarInforGraph(cityData[dp.properties.Gebied_code][year], dp.properties.Gebied_code);
+          if (cityData[dp.properties.Gebied_code][year] != undefined) {
+
+            // update navigation menu
+            navBarInforGraph(cityData[dp.properties.Gebied_code][year], dp.properties.Gebied_code);
+          };
 
           // select the correct polygen and fill it.
           // makes an extra visualisation
@@ -184,9 +189,6 @@ function makeMap(data, cityData) {
                   "background", dp.properties.Gebied_code);
           };
 
-        }
-        else {
-          informationGraph(cityData["STAD"][year]);
         };
       };
     });
@@ -220,11 +222,34 @@ function makeMap(data, cityData) {
   };
 };
 
+function makeTimeSliderMap(years) {
+  years.forEach( function (d, i) {
+    years[i] = Number(d)
+
+  })
+  console.log(true)
+
+  var sliderTime = d3.sliderBottom()
+    .min(d3.min(years))
+    .max(d3.max(years))
+    .step(1)
+    .width(Number(d3.select("svg.amsterdam").attr("width")) - 50)
+    .ticks(years.length)
+    .default(d3.min(years));
+    // .default(new Data(Number(d3.min(years)), 1, 1));
+
+  var gSlider = d3.select("svg.amsterdam")
+                  .append("g")
+                  .call(sliderTime)
+  console.log(true)
+
+};
+
 function fillAdamMap(color, data, element) {
   if (data != null && element != "true") {
     return color(data.bevtotaal)
   }
-  else if (data === undefined ) {
+  else if (data === undefined && element != "true") {
     return "grey"
   }
   else {
@@ -233,10 +258,11 @@ function fillAdamMap(color, data, element) {
 }
 
 function makeLegendAmsterdam(color, population) {
+
   var width = parseInt(d3.select("svg.amsterdam").attr("width").substr(0, 3));
   var height = 50;
 
-  const svg = d3.select("div#container.amsterdam")
+  const svg = d3.select("div#mapid.amsterdam")
                 .append("svg")
                 .attr("id", "amsterdamLegenda")
                 .attr("width", width + 25)
@@ -251,14 +277,17 @@ function makeLegendAmsterdam(color, population) {
                       .attr("y2", "100%")
                       .attr("spreadMethod", "pad");
 
+  var minPop = d3.min(population)
+  var maxPop = d3.max(population)
+
   // append stops
   legend.selectAll("stop")
         .data([
-        {offset: "0%", color: color(d3.min(population))},
-        {offset: "25%", color: color((25/100) * d3.max(population))},
-        {offset: "50%", color: color((50/100) * d3.max(population))},
-        {offset: "75%", color: color((75/100) * d3.max(population))},
-        {offset: "100%", color: color(d3.max(population))},
+        {offset: "0%", color: color(minPop)},
+        {offset: "25%", color: color(((25/100) * (maxPop - minPop)) + minPop)},
+        {offset: "50%", color: color(((50/100) * (maxPop - minPop)) + minPop)},
+        {offset: "75%", color: color(((75/100) * (maxPop - minPop)) + minPop)},
+        {offset: "100%", color: color(maxPop)},
         ])
         .enter()
         .append("stop")
@@ -295,13 +324,11 @@ function makeLegendAmsterdam(color, population) {
 
 // makes navigation for the barChart
 function navBarInforGraph(data, stadsdeel) {
-  console.log(true)
   var navElements = Object.keys(data)
   var height = 50;
   var width = 400;
   var index = null;
   if (d3.select("div.barNavigation#container")._groups[0][0] == null) {
-    console.log("whaaat")
     var div = d3.select("div.areavisual")
                 .append("div")
                   .attr("class", "barNavigation")
@@ -349,7 +376,7 @@ function navBarInforGraph(data, stadsdeel) {
             });
   }
   else {
-    console.log(data)
+
     d3.selectAll("button.visual")
     .data(navElements)
     .on("click", function (dp) {
@@ -443,29 +470,30 @@ function makePieBev(data) {
 };
 
 function makeTreeAuto(sourceData , dp, stadsdeel) {
-
   const svg = d3.select("svg#visual")
-        color = d3.scaleOrdinal(d3.schemeCategory10);
+  const values = Object.values(sourceData[dp]);
+  values.forEach ( function (d, i) {
+    values[i] = Number(d)
+  });
 
-  let data = {}
-  data["name"] = stadsdeel
-  data["children"] = []
-  Object.keys(sourceData[dp]).forEach( function (d) {
-    data["children"].push({name: d, size: Number(sourceData[dp][d]) });
-  })
+  const color = d3.scaleLinear()
+                  .domain([parseInt(d3.min(values)), parseInt(d3.max(values))])
+                  .range(["lightgrey", "green"]);
+
+  let data = parseTreeData(stadsdeel, sourceData, dp)
 
   const height = width = Math.max(parseInt(svg.attr("height")), parseInt(svg.attr("width")));
-        color = d3.scaleOrdinal(d3.schemeCategory10);
 
   const layout = d3.treemap()
                    .size([width, height])
                    .padding(3);
 
   var root = d3.hierarchy(data).sum( function (d) { return d.size });
-  var descendants = root.descendants()
+  var descendants = root.descendants();
   layout(root);
 
   if (d3.select("g#treeMap")._groups[0][0] === null) {
+
     // removes existing chart
     d3.select("svg#visual")
       .selectAll("g")
@@ -480,43 +508,19 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
                         .data(descendants)
                         .enter()
                         .append("rect");
-    
+
     // Draw on screen
     slices.attr('x', function (d) { return d.x0; })
         .attr('y', function (d) { return d.y0; })
         .attr('width', function (d) { return d.x1 - d.x0; })
         .attr('height', function (d) { return d.y1 - d.y0; })
-        .attr("fill", function (d,i) { return color(i) })
-        .on("mouseover", function (d) {
-
-          if (d.parent != null) {
-            d3.select("div.areavisual")
-              .append("p")
-              .attr("id", "treeMap")
-              .text(function () {
-                if (d.data.name.includes("autoch")) {
-                  return "Autochtoon"
-                }
-                else if (d.data.name.includes("sur")) {
-                  return "Surinaams"
-                }
-                else if ()
-              });
-
-            d3.select(this).attr("fill", "pink")
-          };
-        })
-        .on("mouseout", function (d, i) {
-          if (d.parent != null) {
-            d3.select("div.areavisual")
-              .selectAll("p#treeMap")
-              .remove()
-
-            d3.select(this).attr("fill", function () {
-              return color(i)
-            });
-          }
-        });
+        .attr("fill", function (d) { if (d.parent === null) {
+              return "#F8F8F8"
+            }
+            else {
+              return color(d.value)
+            };
+          });
 
   }
   else {
@@ -530,16 +534,59 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       .attr('y', function (d) { return d.y0; })
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
-
+      .attr("fill", function(d) {
+        if (d.parent === null) {
+            return "#F8F8F8"
+          }
+          else {
+            return color(d.value)
+          };
+        });
   };
 
+  svg.select("g#treeMap")
+     .selectAll("rect")
+     .data(descendants)
+     .on("mouseover", function (d) {
 
+       if (d.parent != null) {
+         d3.select("div.areavisual")
+           .append("p")
+           .attr("id", "treeMap")
+
+         d3.select(this).attr("fill", "pink")
+       };
+     })
+     .on("mouseout", function (d, i) {
+       if (d.parent != null) {
+         d3.select("div.areavisual")
+           .selectAll("p#treeMap")
+           .remove()
+
+         d3.select(this)
+           .attr("fill", function () { if (d.parent === null) {
+                 return "#F8F8F8"
+               }
+               else {
+                 return color(d.value)
+               };
+         });
+       };
+     });
+};
+function parseTreeData(stadsdeel, data, dp) {
+  let parseData = {name: "STAD", children: []}
+  Object.entries(data[dp]).forEach( function (d) {
+    parseData.children.push({ name: d[0], size: Number(d[1]) })
+  });
+
+  return parseData
 };
 
 function informationGraph(data) {
   const stack = d3.stack().offset(d3.stackOffsetExpand);
   var stackData = stack.keys(Object.keys(data.general))([data.general])
-  const height = 100;
+  const height = 150;
   const width = 300;
 
   var y = d3.scaleBand()

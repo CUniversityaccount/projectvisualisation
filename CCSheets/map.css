@@ -1,19 +1,19 @@
 /* Style for the Amsterdam map */
-div.layout div#container.amsterdam {
+div.layout div#mapid.amsterdam {
   display:  inline-block;
   margin-left: 90px;
   float: left;
   position: absolute;
-
+  height: 450px;
+  width: 600px;
 }
 
-div.layout div#container.amsterdam p{
+div.layout div#mapid.amsterdam p{
   display:  block;
   text-align: center;
-
 }
 
-div.layout div#container.amsterdam svg#amsterdamLegenda {
+div.layout div#mapid.amsterdam svg#amsterdamLegenda {
   display: block;
   padding-left: 15px;
   align-self: center;
@@ -25,9 +25,10 @@ svg#amsterdamLegenda rect {
   "fill": "url(#gradient)";
 }
 
-div.layout div#container.amsterdam svg.amsterdam{
-  stroke:       black;
+div.layout div#mapid.amsterdam svg.amsterdam path{
+  stroke:       #F8F8F8;
   stroke-width: 1.5px;
+
 
 }
 
@@ -43,3 +44,9 @@ div.layout div#container.areavisual svg#visual{
   display: block;
   text-align: center;
 };
+
+div.layout div#mapid.amsterdam svg.amsterdam {
+  font-style: normal;
+  font: arial;
+  stroke: white;
+}
