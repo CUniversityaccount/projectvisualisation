@@ -52,6 +52,11 @@ Morgen wordt de slider met de jaren die van toepassing is op de kaart van Amster
 Vrijdag wordt de website klaargemaakt voor alfa testing
 
 ## Dag 4
+17-01 was vooral gefocust op de esthetica van de website. Hierbij kwam ook naar voren dat de gradatie van de legenda die onder Amsterdam zat niet klopte. Dit is dan ook vandaag aangepast naar de gewenste resultaten.
+
+Verder is er begin gemaakt met de slider update. Er is een d3 library gevonden, waardoor de slider zelf maken zeer soepel verloopt. Dit wordt voor morgen alle data begewerkt als de slider verplaatst.
+
+In de documentatie wordt ook aangepast dat het een kleiner tijdslot is geworden dan verwacht bij de data. Dit kan worden verholpen met CBS data, maar dit is een doel voor het weekend.
 
 ## Dag 5
 
