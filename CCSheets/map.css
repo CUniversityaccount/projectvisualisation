@@ -28,9 +28,7 @@ svg#amsterdamLegenda rect {
 div.layout div#mapid.amsterdam svg.amsterdam path{
   stroke:       #F8F8F8;
   stroke-width: 1.5px;
-
-
-}
+}  
 
 div.layout div#container.areavisual {
   display: inline-block;
