@@ -59,7 +59,11 @@ Verder is er begin gemaakt met de slider update. Er is een d3 library gevonden, 
 In de documentatie wordt ook aangepast dat het een kleiner tijdslot is geworden dan verwacht bij de data. Dit kan worden verholpen met CBS data, maar dit is een doel voor het weekend.
 
 ## Dag 5
+Er is vandaag besloten om de huidige tijdspan die van toepassing is om die te behouden, omdat er te genoeg tijd meer is om redelijk de data te parsen en te gebruiken.
 
+De slider kan nu met de tijd worden upgedate, echter wordt de huidige side visual hierbij nog niet bijgewerkt. Dit is het doel voor volgende week.
+
+Er wordt volgende week nieuwe visualisatie, waarbij data kan worden vergeleken. Er wordt ook legenda's bij gemaakt.
 
 # Week 3
 ## Dag 1

@@ -566,6 +566,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
         });
   };
 
+  // append the rectangles
   svg.select("g#treeMap")
      .selectAll("rect")
      .data(descendants)
@@ -607,6 +608,7 @@ function parseTreeData(stadsdeel, data, dp) {
   return parseData
 };
 
+// makes the barChart for the difference in men and women (biological)
 function informationGraph(data) {
   const stack = d3.stack().offset(d3.stackOffsetExpand);
   var stackData = stack.keys(Object.keys(data.general))([data.general])
