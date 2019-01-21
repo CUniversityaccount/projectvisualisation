@@ -67,6 +67,10 @@ Er wordt volgende week nieuwe visualisatie, waarbij data kan worden vergeleken. 
 
 # Week 3
 ## Dag 1
+Vandaag zijn de legenda's toegevoegd aan de grafieken. Verder is de interactie tussen de grafieken verbeterd en werkt de tijdlijn nu naar behoren.
+Er zijn ook enkele aestetische aanpassingen gedaan, zoals dat de tijdlijn niet onduidelijk wordt als de gebruiker inzoomt.
+
+De titels zijn ook toegevoegd, maar voldoen niet aan de eisen.
 
 ## Dag 2
 
