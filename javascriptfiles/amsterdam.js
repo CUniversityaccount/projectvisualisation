@@ -89,8 +89,8 @@ function AdamMap(data, cityData, year) {
   var path = d3.geoPath()
     .projection(projection);
 
+  // checks if the svg exists
   if (d3.select("svg.amsterdam")._groups[0][0] === null) {
-    console.log("laa")
     var year = d3.min(Object.keys(Object.values(cityData)[0]));
 
     var svg =   d3.select("body")
@@ -105,7 +105,7 @@ function AdamMap(data, cityData, year) {
       .append("g")
         .attr("class", "zoomIn");
 
-    // append legend
+    // append legend for the population
     makeLegendAmsterdam(color, population)
 
     // makes the text element to put the area names in
@@ -137,6 +137,8 @@ function AdamMap(data, cityData, year) {
     navBarInforGraph(cityData["STAD"][year], "STAD");
     informationGraph(cityData["STAD"][year]);
   }
+
+  // update the Amsterdam Map
   else {
 
     var svg = d3.select("svg.amsterdam")
@@ -590,6 +592,7 @@ function makePieBev(data) {
 
 // makes a tree map
 function makeTreeAuto(sourceData , dp, stadsdeel) {
+
   const svg = d3.select("svg#visual")
   const values = Object.values(sourceData[dp]);
   values.forEach( function (d, i) {
@@ -597,7 +600,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
   });
 
   const color = d3.scaleLinear()
-                  .domain([parseInt(d3.min(values)), parseInt(d3.max(values))])
+                  .domain([0, Object.keys(sourceData[dp]).length])
                   .range(["lightgrey", "green"]);
 
   let data = parseTreeData(stadsdeel, sourceData, dp)
@@ -606,7 +609,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
     parseInt(svg.attr("width")));
 
   const layout = d3.treemap()
-                   .size([width, height])
+                   .size([width - 100, height - 100])
                    .padding(3);
 
   var root = d3.hierarchy(data).sum( function (d) { return d.size });
@@ -621,9 +624,10 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       .remove();
 
     const treemap = svg.attr("width", width)
-                  .attr("height", height)
-                  .append("g")
-                  .attr("id", "treeMap");
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(50, 50)")
+      .attr("id", "treeMap");
 
     var slices = treemap.selectAll("rect")
                         .data(descendants)
@@ -635,13 +639,14 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
         .attr('y', function (d) { return d.y0; })
         .attr('width', function (d) { return d.x1 - d.x0; })
         .attr('height', function (d) { return d.y1 - d.y0; })
-        .attr("fill", function (d) { if (d.parent === null) {
+        .attr("fill", function (d, i) {
+          if (d.parent === null) {
               return "#F8F8F8"
-            }
-            else {
-              return color(d.value)
-            };
-          });
+          }
+          else {
+            return color(i)
+          };
+        });
 
   }
   else {
@@ -655,15 +660,18 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       .attr('y', function (d) { return d.y0; })
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
-      .attr("fill", function(d) {
+      .attr("fill", function(d, i) {
         if (d.parent === null) {
             return "#F8F8F8"
           }
           else {
-            return color(d.value)
+            return color(i)
           };
         });
   };
+
+  // sum for check
+  var sum = Object.values(sourceData[dp]).reduce((a,b) => Number(a) + Number(b))
 
   // append the rectangles
   svg.select("g#treeMap")
@@ -671,13 +679,16 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
      .data(descendants)
      .on("mouseover", function (d) {
 
+
        if (d.parent != null) {
          d3.select("div.areavisual")
            .append("p")
            .attr("id", "treeMap")
+           .text(d.data.name)
 
          d3.select(this).attr("fill", "pink")
        };
+
      })
      .on("mouseout", function (d, i) {
        if (d.parent != null) {
@@ -690,7 +701,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
                  return "#F8F8F8"
                }
                else {
-                 return color(d.value)
+                 return color(i)
                };
          });
        };
@@ -856,10 +867,6 @@ function informationGraph(data) {
           .attr("dy", ".35em")
           .attr("transform", "rotate(90)")
           .style("text-anchor", "start");
-
-      // append legend
-
-
     };
 };
 

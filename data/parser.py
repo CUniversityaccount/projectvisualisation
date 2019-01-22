@@ -45,8 +45,8 @@ def parse_data(list, variables, file):
 
     totaal = variable[0]
     general = variable[1:3]
-    background = variable[3:11]
-    age = variable[11:]
+    background = variable[3:10]
+    age = variable[10:]
 
     return general, background, age, totaal
 def make_json(list, variables):
@@ -79,6 +79,7 @@ def make_json(list, variables):
                     dict[row[1]][int(row[0])]["age"] = {}
 
                 dict[row[1]][int(row[0])]["age"][row[2]] = row[-1]
+
             elif row[2] in variables[-1]:
                 dict[row[1]][int(row[0])][row[2].lower()] = row[-1]
 
