@@ -1,6 +1,8 @@
+
 /* Style for the Amsterdam map */
 div.layout div#mapid.amsterdam {
   display:  inline-block;
+  margin-top: 55px;
   margin-left: 90px;
   float: left;
   position: absolute;
@@ -35,8 +37,9 @@ div.layout div#container.areavisual {
   display: inline-block;
   position: absolute;
   margin-left: 100vh;
+
   float: left;
-  margin-top: 5px;
+  margin-top: 60px;
   padding-left: 25px;
 }
 
@@ -44,4 +47,17 @@ div.layout div#container.areavisual svg#visual{
   padding-top: 25px;
   display: block;
   text-align: center;
+}
+
+/* Webpage title */
+h1#titleWebpage {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: pink;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: medium;
+  position: fixed;
 }

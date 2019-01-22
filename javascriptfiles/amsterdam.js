@@ -13,8 +13,9 @@ function loadCityData(information, fileName) {
     AdamMap(information, data);
     makeTimeSliderMap(Object.keys(Object.values(data)[0]),
       information, data);
+
   });
-}
+};
 
 // makes the slider for the map
 function makeTimeSliderMap(years, dataMap, dataNumbers) {
@@ -52,8 +53,7 @@ function makeTimeSliderMap(years, dataMap, dataNumbers) {
 
   // makes the background for the slider
   rect.attr("width", d3.select("g#slider").node().getBoundingClientRect().width)
-    .attr("height", d3.select("g#slider").node().getBoundingClientRect().height +
-      d3.select("g#slider").node().getBoundingClientRect().y)
+    .attr("height", d3.select("g#slider").node().getBoundingClientRect().height + 5)
     .attr("fill", "#F8F8F8")
 
 
@@ -91,6 +91,13 @@ function AdamMap(data, cityData, year) {
 
   // checks if the svg exists
   if (d3.select("svg.amsterdam")._groups[0][0] === null) {
+
+    // makes title
+    var head = d3.select("div.layout")
+                 .append("h1")
+                 .attr("id", "titleWebpage")
+                 .text("Visualisatie van Amsterdam")
+
     var year = d3.min(Object.keys(Object.values(cityData)[0]));
 
     var svg =   d3.select("body")
@@ -247,7 +254,6 @@ function AdamMap(data, cityData, year) {
   };
 });
 
-
   navBarInforGraph(cityData["STAD"][year], "STAD");
 
   // zooms in on the specific area
@@ -273,7 +279,7 @@ function graphSelection(areaData, cityData, dp) {
       informationGraph(areaData);
     }
     else if (d3.select("g#pieChart")._groups[0][0] != null) {
-      makePieBev(areaData.age,
+      makePieBev(areaData.Age,
             areaData.bevtotaal);
     }
     else if (d3.select("g#treeMap")._groups[0][0] != null) {
@@ -389,6 +395,7 @@ function makeLegendAmsterdam(color, population) {
 
 // makes navigation for the barChart
 function navBarInforGraph(data, stadsdeel) {
+
   var navElements = Object.keys(data)
   var height = 50;
   var width = 400;
@@ -407,7 +414,6 @@ function navBarInforGraph(data, stadsdeel) {
       };
     });
     navElements.splice(index, 1)
-
     div.selectAll("button.visual")
         .data(navElements)
         .enter()
@@ -434,10 +440,10 @@ function navBarInforGraph(data, stadsdeel) {
                   makePieBev(data[dp], data.bevtotaal);
                 }
                 else if (dp === navElements[1]) {
-                  makeTreeAuto(data, dp, stadsdeel);
+                  informationGraph(data)
                 }
                 else if (dp === navElements[2]) {
-                  informationGraph(data)
+                  makeTreeAuto(data, dp, stadsdeel);
                 };
               }
             });
@@ -459,10 +465,11 @@ function navBarInforGraph(data, stadsdeel) {
           makePieBev(data[dp], data.bevtotaal);
         }
         else if (dp === navElements[1]) {
-          makeTreeAuto(data, dp, stadsdeel);
+          informationGraph(data);
         }
         else if (dp === navElements[2]) {
-          informationGraph(data)
+
+          makeTreeAuto(data, dp, stadsdeel);
         };
       }
     });
@@ -473,7 +480,6 @@ function navBarInforGraph(data, stadsdeel) {
 function makePieBev(data) {
 
   const svg = d3.select("svg#visual");
-
   var height = parseInt(svg.attr("height"))
         width = parseInt(svg.attr("width"))
         thickness = 80
@@ -594,6 +600,7 @@ function makePieBev(data) {
 function makeTreeAuto(sourceData , dp, stadsdeel) {
 
   const svg = d3.select("svg#visual")
+
   const values = Object.values(sourceData[dp]);
   values.forEach( function (d, i) {
     values[i] = Number(d)
@@ -623,20 +630,37 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       .selectAll("g")
       .remove();
 
+    // append title
+    var title = svg.append("g")
+      .attr("id", "title")
+
+    title.append("rect")
+      .attr("width", width)
+      .attr("height", 50)
+      .attr("fill", "#F8F8F8")
+
+    title.append("text")
+      .attr("dy", 20)
+      .attr("dx", 150)
+      .text("Communities")
+
     const treemap = svg.attr("width", width)
       .attr("height", height)
       .append("g")
       .attr("transform", "translate(50, 50)")
       .attr("id", "treeMap");
 
-    var slices = treemap.selectAll("rect")
+    var rect = treemap.selectAll("g#rect")
                         .data(descendants)
                         .enter()
-                        .append("rect");
+                        .append("g")
+                        .attr("id", "rect")
+                        .attr("transform", function (d) {
+                          return "translate(" + d.x0 + ", " + d.y0 + ")"
+                        })
 
     // Draw on screen
-    slices.attr('x', function (d) { return d.x0; })
-        .attr('y', function (d) { return d.y0; })
+    rect.append("rect")
         .attr('width', function (d) { return d.x1 - d.x0; })
         .attr('height', function (d) { return d.y1 - d.y0; })
         .attr("fill", function (d, i) {
@@ -648,16 +672,72 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
           };
         });
 
+    // append text
+    rect.append("text")
+      .attr("dx", 4)
+      .attr("dy", 14)
+      .text(function (d) {
+        if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
+          && (d.x1 - d.x0) > 10 )  {
+          var percentage = parseInt((d.value / sourceData.bevtotaal) * 1000) /10
+          return percentage + "%"
+        }
+        else {
+          return ""
+        };
+      });
+
+    // append legend
+    let dataHeight = 25;
+    let dataLength = 0;
+
+    let legendBar = svg.selectAll("g#legendTree")
+      .data(Object.keys(sourceData[dp]))
+      .enter()
+      .append("g")
+        .attr("id", "legendTree")
+        .attr("transform", function (d, i) {
+          if ((i % 2) === 0) {
+            currentDataLength = dataLength
+            dataLength = dataLength + 90
+          }
+
+          return "translate(" + currentDataLength + ", " + (((i % 2) * dataHeight) + height - 40) + ")"
+        });
+
+      // makes the rectangles for legend
+      legendBar.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("height", 15)
+        .attr("width", 15)
+        .attr("fill", function (d, i) {
+          return color(i);
+        })
+        .attr("stroke", "black");
+
+      // appends text for legend
+      legendBar.append("text")
+        .attr("x", 25)
+        .attr("y", 15)
+        .text(function (d) {
+          return d[3] + d.substring(4).toLowerCase()
+        });
+
   }
   else {
 
-    // update the slices
-    svg.select("g#treeMap")
-      .selectAll("rect")
+    // update the placement of the rectangles
+    var rect = svg.select("g#treeMap")
+      .selectAll("g#rect")
       .data(descendants)
       .transition()
-      .attr('x', function (d) { return d.x0; })
-      .attr('y', function (d) { return d.y0; })
+      .attr("transform", function (d) {
+        return "translate(" + d.x0 + ", " + d.y0 + ")"
+      });
+
+    //update the size of the rectangles
+    rect.select("rect")
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
       .attr("fill", function(d, i) {
@@ -668,44 +748,77 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
             return color(i)
           };
         });
-  };
 
-  // sum for check
-  var sum = Object.values(sourceData[dp]).reduce((a,b) => Number(a) + Number(b))
+    // update text
+    rect.select("text")
+      .text(function (d) {
+        if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
+          && (d.x1 - d.x0) > 25 ) {
+          var percentage = parseInt((d.value / sourceData.bevtotaal) * 1000) /10
+          return percentage + "%"
+        }
+        else {
+          return ""
+        };
+      });
+  };
 
   // append the rectangles
   svg.select("g#treeMap")
-     .selectAll("rect")
+     .selectAll("g#rect")
      .data(descendants)
      .on("mouseover", function (d) {
 
+       // returns the absolute value
+       d3.select(this)
+          .select("text")
+          .text(function () {
+            if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
+              && (d.x1 - d.x0) > 10 )  {
+              return d.value
+            }
+            else {
+              return ""
+            };
+          });
 
+      // fill the hovered rectangle in pink
        if (d.parent != null) {
-         d3.select("div.areavisual")
-           .append("p")
-           .attr("id", "treeMap")
-           .text(d.data.name)
-
-         d3.select(this).attr("fill", "pink")
+         d3.select(this)
+           .select("rect")
+           .attr("fill", "pink")
        };
 
      })
      .on("mouseout", function (d, i) {
-       if (d.parent != null) {
-         d3.select("div.areavisual")
-           .selectAll("p#treeMap")
-           .remove()
 
+       // updates the text back to original
+       d3.select(this)
+          .select("text")
+          .text(function () {
+            if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
+              && (d.x1 - d.x0) > 10 )  {
+              var percentage = parseInt((d.value / sourceData.bevtotaal) * 1000) /10
+              return percentage + "%"
+            }
+            else {
+              return ""
+            };
+          });
+
+      // returns the correct color
+       if (d.parent != null) {
          d3.select(this)
+          .select("rect")
            .attr("fill", function () { if (d.parent === null) {
                  return "#F8F8F8"
-               }
-               else {
-                 return color(i)
-               };
-         });
-       };
-     });
+        }
+        else {
+          return color(i)
+        };
+      });
+     };
+    });
 };
 
 // change the data format for the treemap
@@ -722,7 +835,7 @@ function parseTreeData(stadsdeel, data, dp) {
 // makes the barChart for the difference in men and women (biological)
 function informationGraph(data) {
   const stack = d3.stack().offset(d3.stackOffsetExpand);
-  var stackData = stack.keys(Object.keys(data.general))([data.general])
+  var stackData = stack.keys(Object.keys(data.Ratio))([data.Ratio])
   const height = 150;
   const width = 300;
 

@@ -64,9 +64,9 @@ def make_json(list, variables):
                 dict[row[1]][int(row[0])] = {}
 
             if row[2] in variables[0]:
-                if not "general" in dict[row[1]][int(row[0])]:
-                    dict[row[1]][int(row[0])]["general"] = {}
-                dict[row[1]][int(row[0])]["general"][row[2]] = row[-1]
+                if not "Ratio" in dict[row[1]][int(row[0])]:
+                    dict[row[1]][int(row[0])]["Ratio"] = {}
+                dict[row[1]][int(row[0])]["Ratio"][row[2]] = row[-1]
 
             elif row[2] in variables[1]:
                 if not "background" in dict[row[1]][int(row[0])]:
@@ -75,10 +75,10 @@ def make_json(list, variables):
                 dict[row[1]][int(row[0])]["background"][row[2]] = row[-1]
 
             elif row[2] in variables[2]:
-                if not "age" in dict[row[1]][int(row[0])]:
-                    dict[row[1]][int(row[0])]["age"] = {}
+                if not "Age" in dict[row[1]][int(row[0])]:
+                    dict[row[1]][int(row[0])]["Age"] = {}
 
-                dict[row[1]][int(row[0])]["age"][row[2]] = row[-1]
+                dict[row[1]][int(row[0])]["Age"][row[2]] = row[-1]
 
             elif row[2] in variables[-1]:
                 dict[row[1]][int(row[0])][row[2].lower()] = row[-1]
