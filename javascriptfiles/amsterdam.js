@@ -97,9 +97,9 @@ function AdamMap(data, cityData, year) {
                  .append("h1")
                  .attr("id", "titleWebpage")
                  .text("Visualisatie van Amsterdam")
-
-    var year = d3.min(Object.keys(Object.values(cityData)[0]));
-
+    console.log(cityData)
+    var year = d3.min(Object.keys(Object.values(cityData)[2]))
+    console.log(year)
     var svg =   d3.select("body")
       .select("div.layout")
       .append("div")
@@ -130,6 +130,7 @@ function AdamMap(data, cityData, year) {
       .attr("d", path)
       .attr("click", false)
       .attr("fill", function (dp) {
+        console.log(cityData[dp.properties.Gebied_code])
         return fillAdamMap(color, cityData[dp.properties.Gebied_code][year],
           d3.select(this).attr("click"));
       });
@@ -482,7 +483,7 @@ function makePieBev(data) {
   const svg = d3.select("svg#visual");
   var height = parseInt(svg.attr("height"))
         width = parseInt(svg.attr("width"))
-        thickness = 80
+        thickness = 60
         radius = (Math.max(height, width) - 100) / 2;
         color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -516,20 +517,13 @@ function makePieBev(data) {
 
     // makes donut chart
     var path = g.selectAll("path")
-                .data(pie(Object.keys(data)))
-                .enter()
-                .append("g")
-                .append("path")
-                  .attr("id", "pi")
-                  .attr("d", arc)
-                  .attr("fill", function (d,i) { return color(i) })
-    var key =  function (d) {
-      let string = d.data.substring(3, d.data.length)
-    };
-
-    // append text
-    var text = g.selectAll("text.labels")
-                .data(pie(Object.keys(data)), key);
+      .data(pie(Object.keys(data)))
+      .enter()
+      .append("g")
+      .append("path")
+        .attr("id", "pi")
+        .attr("d", arc)
+        .attr("fill", function (d,i) { return color(i) });
 
     //makes legend
     var dataHeight = 25;
@@ -594,6 +588,35 @@ function makePieBev(data) {
       .attr("fill", function (d,i) { return color(i) })
 
   };
+
+  d3.select("g#pieChart")
+    .selectAll("path#pi")
+    .data(Object.keys(data))
+    .on("mouseover", function (d) {
+
+      // adds text
+      d3.select("svg#visual")
+        .append("g")
+        .attr("id", "textPie")
+        .attr("transform", "translate(" + (width / 2) +", " + (height / 2) + ")")
+        .append("text")
+        .attr("text-anchor", "middle")
+        .text(function () {
+          return "Aantal mensen: " + data[d]
+        })
+
+      d3.select(this)
+        .style("stroke", "black")
+        .style("stroke-width", "2px")
+    })
+    .on("mouseout", function (d) {
+      d3.select("svg#visual")
+        .select("g#textPie")
+        .remove()
+
+      d3.select(this)
+        .style("stroke", null)
+    });
 };
 
 // makes a tree map

@@ -47,14 +47,12 @@ def parse_data(list, variables, file):
     general = variable[1:3]
     background = variable[3:10]
     age = variable[10:]
-
+    print(sorted(age))
     return general, background, age, totaal
 def make_json(list, variables):
     dict = {}
-
-    for variable in list:
-        dict[variable] = {}
-
+    for area in list:
+        dict[area] = {}
 
 
     with open("data.csv", "r", newline="") as parsed:
@@ -83,6 +81,7 @@ def make_json(list, variables):
             elif row[2] in variables[-1]:
                 dict[row[1]][int(row[0])][row[2].lower()] = row[-1]
 
+    print(dict)
     with open('bev_amsterdam.json', 'w') as json_file:
         json.dump(dict, json_file, sort_keys = True, indent = 4,
                ensure_ascii = False)
