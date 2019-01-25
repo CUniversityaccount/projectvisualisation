@@ -73,8 +73,19 @@ Er zijn ook enkele aestetische aanpassingen gedaan, zoals dat de tijdlijn niet o
 De titels zijn ook toegevoegd, maar voldoen niet aan de eisen.
 
 ## Dag 2
+De treemap en de donutchart zijn interactief gemaakt. Bij de treemap zijn nu de percentages te zien.
+Als men er overheen gaat, dan is de absolute hoeveelheid te zien.
+
+Bij de donutchart is te zien als je eroverheen gaat, de totale hoeveelheid mensen die tot die groep behoren.
+
+Voor undefined gedeelte, moet nog een text met grote text, NO DATA.  
 
 ## Dag 3
+Aesthetisch is de webpagina afgemaakt, echter moet er nog een paar dingen worden aangepast.
+Het wordt verder zijn vandaag bugs uitgewerkt, zodat de datavisualisatie de juiste getallen laat zien.
+
+Verder is een interactie bijgemaakt bij de treemap dat men eroverheen gaat de absolute getallen kan zien.
+
 
 ## Dag 4
 

@@ -1,5 +1,7 @@
-
-// hier nog navragen
+/*
+  Writer: Coen Mol
+  Subject: Amsterdam visualisation headpage
+*/
 // loads data
 function loadData(name) {
   d3.json(name).then( function(data) {
@@ -26,6 +28,8 @@ function makeTimeSliderMap(years, dataMap, dataNumbers) {
     });
 
   let currentVariable = d3.min(years)
+
+  // makes the slider
   var sliderTime = d3.sliderBottom()
     .min(d3.min(dataTime))
     .max(d3.max(dataTime))
@@ -97,9 +101,9 @@ function AdamMap(data, cityData, year) {
                  .append("h1")
                  .attr("id", "titleWebpage")
                  .text("Visualisatie van Amsterdam")
-    console.log(cityData)
+
     var year = d3.min(Object.keys(Object.values(cityData)[2]))
-    console.log(year)
+
     var svg =   d3.select("body")
       .select("div.layout")
       .append("div")
@@ -130,7 +134,6 @@ function AdamMap(data, cityData, year) {
       .attr("d", path)
       .attr("click", false)
       .attr("fill", function (dp) {
-        console.log(cityData[dp.properties.Gebied_code])
         return fillAdamMap(color, cityData[dp.properties.Gebied_code][year],
           d3.select(this).attr("click"));
       });
@@ -332,7 +335,7 @@ function populationData(data) {
 // makes the legend for the headmap
 function makeLegendAmsterdam(color, population) {
   var width = parseInt(d3.select("svg.amsterdam").attr("width").substr(0, 3));
-  var height = 50;
+  var height = 75;
 
   const svg = d3.select("div#mapid.amsterdam")
                 .append("svg")
@@ -370,7 +373,7 @@ function makeLegendAmsterdam(color, population) {
   // append rectangle
   svg.append("rect")
        .attr("width", width)
-       .attr("height", height - 30)
+       .attr("height", height - 55)
        .style("fill", "url(#gradient)")
        .attr("transform", "translate(0, 10)");
 
@@ -385,12 +388,14 @@ function makeLegendAmsterdam(color, population) {
     .attr("class", "y axis")
     .attr("transform", "translate(0,30)")
     .call(yAxis)
+
+  // append title for the legend
+  svg.append("g")
+    .attr('transform', "translate(" + (width / 2) + ", 70)")
+    .attr("text-anchor", "middle")
+    .attr("id", "legendAmsterdam")
     .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("axis title");
+    .text("Bevolking (absolute aantal)")
 
 };
 
@@ -894,8 +899,16 @@ function informationGraph(data) {
 
     const svg = d3.select("svg#visual")
 
+    // append title
+    svg.append("g")
+      .attr("id", "tileBarChart")
+      .attr("transform", "translate(100, 25)")
+      .append("text")
+      .text("Ratio between Women and Men")
+
     g = svg.append("g")
-           .attr("id", "barChart");
+           .attr("id", "barChart")
+           .attr("transform", "translate(0, 50)");
 
     var serie = g.selectAll(".series")
                   .data(stackData)
@@ -923,7 +936,7 @@ function informationGraph(data) {
        // append xAxis
        d3.select("svg#visual").append("g")
           .attr("class", "xAxis")
-          .attr("transform", "translate(50, " + height + ")")
+          .attr("transform", "translate(50, " + (height + 50) + ")")
           .call(d3.axisBottom(x))
           .selectAll("text")
             .attr("y", 0)
@@ -948,12 +961,12 @@ function informationGraph(data) {
           .attr("id", "legendBar")
           .attr("transform", function (d, i) {
             if (i === 0) {
-              return "translate(50, " + (height + 50) + ")"
+              return "translate(50, " + (height + 100) + ")"
             }
             else {
               return "translate(" +
                 (Number(d3.select("svg#visual").attr("width")) * 0.5)
-                + ", " + (height + 50) + ")"
+                + ", " + (height + 100) + ")"
              }
           });
 
@@ -1038,14 +1051,14 @@ function handeleMouseOverGraph (d, i) {
     .attr("id", "percPopulation")
       .append("tspan")
         .attr("x", xPlace + 25)
-        .attr("y", yPlace)
+        .attr("y", yPlace + 50)
         .text((Math.round(perc * 1000) / 10) + "%");
 
   // adds percentage women and man
   d3.select("text#percPopulation")
     .append("tspan")
       .attr("x", xPlace - 12.5)
-      .attr("y", yPlace - 25)
+      .attr("y", yPlace + 25)
       .text("Population: " + Math.round(totPopulation * perc));
 
 };
