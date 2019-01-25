@@ -2,6 +2,7 @@
   Writer: Coen Mol
   Subject: Amsterdam visualisation headpage
 */
+
 // loads data
 function loadData(name) {
   d3.json(name).then( function(data) {
@@ -59,9 +60,9 @@ function makeTimeSliderMap(years, dataMap, dataNumbers) {
   rect.attr("width", d3.select("g#slider").node().getBoundingClientRect().width)
     .attr("height", d3.select("g#slider").node().getBoundingClientRect().height + 5)
     .attr("fill", "#F8F8F8")
-
-
 };
+
+
 
 // makes the Amsterdam map
 function AdamMap(data, cityData, year) {
@@ -866,7 +867,7 @@ function informationGraph(data) {
   var stackData = stack.keys(Object.keys(data.Ratio))([data.Ratio])
   const height = 150;
   const width = 300;
-
+  console.log(stackData)
   var y = d3.scaleBand()
             .rangeRound([0, height])
             .domain(["1"]);

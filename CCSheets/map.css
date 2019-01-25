@@ -57,5 +57,5 @@ h1#titleWebpage {
   border-bottom-style: solid;
   border-bottom-color: black;
   border-bottom-width: medium;
-  position: absolute;
+  position: fixed;
 }
