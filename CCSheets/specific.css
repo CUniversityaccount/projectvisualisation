@@ -1,4 +1,9 @@
 div.lineGraph {
   float: left;
   margin-left: 95px;
+  display: block;
+}
+
+svg#lineGraph {
+  margin-top: 50px
 }

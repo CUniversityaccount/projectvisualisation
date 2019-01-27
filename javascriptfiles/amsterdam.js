@@ -4,19 +4,15 @@
 */
 
 // loads data
-function loadData(name) {
-  d3.json(name).then( function(data) {
-    loadCityData(data, "data/bev_amsterdam.json")
-  });
-};
-
-// loads the data
-function loadCityData(information, fileName) {
-  d3.json(fileName).then( function (data) {
-    AdamMap(information, data);
-    makeTimeSliderMap(Object.keys(Object.values(data)[0]),
-      information, data);
-
+function loadData(city, name) {
+  Promise.all([
+    d3.json(city),
+    d3.json(name)
+  ])
+  .then( function(data) {
+    AdamMap(data[0], data[1]);
+    makeTimeSliderMap(Object.keys(Object.values(data[1])[0]),
+      data[0], data[1]);
   });
 };
 
@@ -61,8 +57,6 @@ function makeTimeSliderMap(years, dataMap, dataNumbers) {
     .attr("height", d3.select("g#slider").node().getBoundingClientRect().height + 5)
     .attr("fill", "#F8F8F8")
 };
-
-
 
 // makes the Amsterdam map
 function AdamMap(data, cityData, year) {
@@ -174,6 +168,7 @@ function AdamMap(data, cityData, year) {
     };
   };
 
+  // fills the area with correct color
   svg.selectAll("path.stadsdeel")
      .data(data.features)
      .attr("fill", function (dp) {
@@ -300,7 +295,6 @@ function graphSelection(areaData, cityData, dp) {
   };
 };
 
-
 // color function of the map
 function fillAdamMap(color, data, element) {
   if (data != null && element != "true") {
@@ -319,6 +313,8 @@ function populationData(data) {
   var dataList = []
 
   Object.keys(data).forEach( function (dp) {
+
+    // skips if it is undefined
     try {
       if (dp != "STAD") {
         Object.keys(data[dp]).forEach( function (year) {
@@ -863,7 +859,8 @@ function parseTreeData(stadsdeel, data, dp) {
 
 // makes the barChart for the difference in men and women (biological)
 function informationGraph(data) {
-  const stack = d3.stack().offset(d3.stackOffsetExpand);
+  var stack = d3.stack().offset(d3.stackOffsetNone);
+  console.log(data)
   var stackData = stack.keys(Object.keys(data.Ratio))([data.Ratio])
   const height = 150;
   const width = 300;
@@ -892,6 +889,7 @@ function informationGraph(data) {
 
   // checks if the graph already exists
   if (d3.selectAll("g#barChart")._groups[0].length === 0) {
+
 
     // removes existing chart
     d3.select("svg#visual")
@@ -924,12 +922,12 @@ function informationGraph(data) {
           .enter()
           .append("rect")
             .attr("class", "bar")
-            .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
+            .attr("x", function (d) { return x(d[0])})
             .attr("y", y("1"))
             .attr("height", y.bandwidth())
             .attr("width", function(d) {
-              return (x(d[1] * Number(data.bevtotaal))
-              - x(d[0] * Number(data.bevtotaal)))})
+              return (x(d[1])
+              - x(d[0]))})
             .attr("transform", "translate(50, 0)")
             .on("mouseover", handeleMouseOverGraph)
             .on("mouseout", handleMouseOutGraph);
@@ -1001,11 +999,12 @@ function informationGraph(data) {
      // change the bar with a good transition
      serie.selectAll("rect.bar").data(function (d)  { return d })
           .transition()
-          .attr("x", function (d) { return x(d[0] * Number(data.bevtotaal))})
+          .attr("x", function (d) { return x(d[0])})
           .attr("y", y("1"))
           .attr("height", y.bandwidth())
-          .attr("width", function(d) { return (x(d[1] * Number(data.bevtotaal))
-            - x(d[0] * Number(data.bevtotaal)))});
+          .attr("width", function(d) {
+            return (x(d[1]) - x(d[0]))
+          });
 
       // change the x axis
       d3.select("g.xAxis")
@@ -1020,6 +1019,7 @@ function informationGraph(data) {
     };
 };
 
+// handles mouse over for the barchart
 function handleMouseOutGraph (d, i) {
   d3.select("svg#visual")
     .selectAll("text#percPopulation")
@@ -1031,7 +1031,8 @@ function handleMouseOutGraph (d, i) {
     .remove()
 };
 
-function handeleMouseOverGraph (d, i) {
+// handles mouse out for the barchart
+function handeleMouseOverGraph (d) {
   var width = 300
   var height = 100
   var population = Object.values(d.data)
@@ -1041,10 +1042,10 @@ function handeleMouseOverGraph (d, i) {
     totPopulation = totPopulation + parseInt(dp)
   });
 
-  var perc = -1 * ( d[0] - d[1] )
-  var xPlace = ((d[0] + d[1]) / 2) * width
+  var perc = (d[1] - d[0]) / totPopulation
+  var xPlace = ((d[0] + ((d[1] - d[0]) / 2))/ totPopulation) * width
   var yPlace = height / 2
-
+  
   // adds total population of women and man
   d3.select("svg#visual")
     .append("text")
@@ -1064,4 +1065,4 @@ function handeleMouseOverGraph (d, i) {
 
 };
 
-loadData("data/GEBIEDEN22.json")
+loadData("data/GEBIEDEN22.json", "data/bev_amsterdam.json")
