@@ -10,14 +10,12 @@ function loadData (file1, file2) {
 
     var cityAreas = parseDataCity(data[1])
     makeLineGraph(data[0], cityAreas)
-
   });
-
 };
 
 function layOut() {
-  var height = 500
-  var width = 500
+  var height = 600
+  var width = 600
 
   d3.select("div.layout")
     .append("div")
@@ -48,11 +46,11 @@ function makeLineGraph (data, cityAreas) {
 
   const x = d3.scaleTime()
     .domain([d3.min(years), d3.max(years)])
-    .range([0, width - 100]);
+    .range([0, width - 200]);
 
   const y = d3.scaleLinear()
     .domain([0, formatScript(d3.max(arrayY))])
-    .range([height - 100, 0])
+    .range([height - 200, 0])
 
   const area = d3.area()
       .x(function (d, i) { return x(years[i]) })
@@ -67,8 +65,8 @@ function makeLineGraph (data, cityAreas) {
     .attr("id", "graph")
     .attr("value", begin[1])
     .attr("transform", "translate(50, 50)")
-    .attr("height", height - 100)
-    .attr("width", width - 100)
+    .attr("height", height - 200)
+    .attr("width", width - 200)
 
   // makes the graph
   layerGroups.selectAll("path")
@@ -98,8 +96,10 @@ function makeLineGraph (data, cityAreas) {
   d3.select("svg#lineGraph")
     .append("g")
     .attr("class", "xAxis")
-    .attr("transform", "translate(50, " + (height - 50) + ")")
+    .attr("transform", "translate(50, " + (height - 150) + ")")
     .call(d3.axisBottom(x))
+
+
 
   // call Y axis
   d3.select("svg#lineGraph")
@@ -109,20 +109,56 @@ function makeLineGraph (data, cityAreas) {
     .call(d3.axisLeft(y))
 
   // make legend
-  let dataLength = 25;
-  let offSet = 100;
+  let dataHeight = 25;
 
   const legendBar = svg.selectAll("g#legendBar")
     .data(stackData)
     .enter()
     .append("g")
+    .attr("id", "legendBar")
+      .attr('transform', function (d, i) {
+        return "translate(" + (width - 100) + ", " + (dataHeight * i) + ")";
+      });
 
+  // makes the rectangels for the legendBar
+  legendBar.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("height", 20)
+    .attr("width", 20)
+    .attr("fill", function (d, i) {
+      return color(i)
+    });
+
+  // append text for the legend
+  legendBar.append("text")
+    .attr("x", 25)
+    .attr("y", 15)
+    .text(formatText);
+
+};
+
+function formatText(d) {
+
+  // formats the text to the correct format
+  if (d.key.toLowerCase().includes("plus")) {
+    return d.key.substring(3, 5) + "+"
+  }
+  else if (d.includes("0_") && d.includes("17")) {
+    return "<" + d.key.substring(5)
+  }
+  else {
+    var string = d.key
+    string = string.replace(/_/g, "-")
+    return string[3] + string.substring(4).toLowerCase()
+
+  };
 };
 
 function updateGraph(data, updateValues) {
 
-  const height = Number(d3.select("g#graph").attr("height"))
-  const width = Number(d3.select("g#graph").attr("width"))
+  let height = Number(d3.select("g#graph").attr("height"))
+  let width = Number(d3.select("g#graph").attr("width"))
   const years = Object.keys(data[updateValues[0]])
 
   const x = d3.scaleLinear()
@@ -144,6 +180,10 @@ function updateGraph(data, updateValues) {
             return y(d[0] * popArray[i]);
           })
           .y1(function (d, i) { return y(d[1] * popArray[i]); })
+
+    d3.select("g.yAxis")
+      .transition()
+      .call(d3.axisLeft(y))
   }
   else {
     y.domain([0, 100])
@@ -153,11 +193,11 @@ function updateGraph(data, updateValues) {
     })
     .y1(function (d, i) { return y(d[1] * 100) })
 
-  };
+    d3.select("g.yAxis")
+      .transition()
+      .call(d3.axisLeft(y))
 
-  d3.select("g.yAxis")
-    .transition()
-    .call(d3.axisLeft(y))
+  };
 
   const dataGraph = parseDataGraph(data, updateValues);
 
@@ -185,32 +225,69 @@ function updateGraph(data, updateValues) {
       .selectAll("path")
       .remove()
 
-      // makes the graph
-      var layers = d3.select("g#graph")
-        .attr("value", updateValues[1])
+    // makes the graph
+    var layers = d3.select("g#graph")
+      .attr("value", updateValues[1])
 
-      layers.selectAll("path")
-        .data(stackData)
-        .enter()
-        .append("path")
-        .attr("d", area)
-        .attr("class", function (d) {
-          return d.key
-        })
-        .attr("fill", function (d, i) {
-          return color(i)
-        })
-        .on("mouseover", function (d, i) {
-          d3.select(this)
-            .attr("fill", "pink")
-        })
-        .on("mouseout", function (d, i) {
-          d3.select(this)
-            .attr("fill", function() {
-              return color(i)
+    layers.selectAll("path")
+      .data(stackData)
+      .enter()
+      .append("path")
+      .attr("d", area)
+      .attr("class", function (d) {
+        return d.key
+      })
+      .attr("fill", function (d, i) {
+        return color(i)
+      })
+      .on("mouseover", function (d, i) {
+        d3.select(this)
+          .attr("fill", "pink")
+      })
+      .on("mouseout", function (d, i) {
+        d3.select(this)
+          .attr("fill", function() {
+            return color(i)
 
-            })
+          })
+      });
+
+    // updates the legend
+    d3.selectAll("g#legendBar")
+      .remove();
+
+    // make legend
+    let dataHeight = 25;
+    height = Number(d3.select("svg#lineGraph").attr("height"))
+    width = Number(d3.select("svg#lineGraph").attr("width"))
+
+    const legendBar = d3.select("svg#lineGraph")
+      .selectAll("g#legendBar")
+      .data(stackData)
+      .enter()
+      .append("g")
+      .attr("id", "legendBar")
+        .attr('transform', function (d, i) {
+          return "translate(" + (width - 100) + ", " + (dataHeight * i) + ")";
         });
+
+    // makes the rectangels for the legendBar
+    legendBar.append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("height", 20)
+      .attr("width", 20)
+      .attr("fill", function (d, i) {
+        return color(i)
+      });
+
+    // append text for the legend
+    legendBar.append("text")
+      .attr("x", 25)
+      .attr("y", 15)
+      .text(formatText);
+
+
   };
 };
 
@@ -268,7 +345,8 @@ function parseDataGraph(data, area) {
 
 // makes the menu where you can select the menu
 function makeSelectMenu(data, areas) {
-  var otherVar = Object.keys(Object.values(Object.values(data)[0])[0])
+  let otherVar = Object.keys(Object.values(Object.values(data)[0])[0])
+  otherVar.splice(-1)
 
   // makes a div for the navigationMenu
   const div = d3.select("div.lineGraph")
@@ -312,7 +390,7 @@ function makeSelectMenu(data, areas) {
       return dp;
     })
     .text(function (dp) {
-      return dp;
+      return dp[0].toUpperCase() + dp.substr(1);
     });
 
   return [areas[Object.keys(areas).sort()[0]], otherVar[0]]

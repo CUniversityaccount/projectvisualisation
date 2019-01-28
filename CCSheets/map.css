@@ -17,7 +17,10 @@ div.layout div#mapid.amsterdam svg.amsterdam g.zoomIn {
 
 div.layout div#mapid.amsterdam p{
   display:  block;
+  position: absolute;
   text-align: center;
+  margin-top: 75px;
+  width: 600px;
 }
 
 div.layout div#mapid.amsterdam svg#amsterdamLegenda {

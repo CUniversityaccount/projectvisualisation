@@ -47,8 +47,9 @@ def parse_data(list, variables, file):
     general = variable[1:3]
     background = variable[3:10]
     age = variable[10:]
-    print(sorted(age))
+
     return general, background, age, totaal
+    
 def make_json(list, variables):
     dict = {}
     for area in list:
