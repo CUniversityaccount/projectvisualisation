@@ -111,9 +111,9 @@ function AdamMap(data, cityData, year) {
    .range([Number(d3.min(population)), Number(d3.max(population))]);
 
   var color = d3.scaleLinear()
-    .domain([d3.min(population), step(1), step(2)])
-    .range(["#CDCDCD", "lightgreen", "#4682B4"])
-    .interpolate(d3.interpolateLab);
+    .domain([d3.min(population), step(1), step(2), step(3)])
+    .range(["#FFFF99", "orange", "purple", "	#4E2A84"])
+    .interpolate(d3.interpolateRgb)
 
   var projection = d3.geoConicEquidistant()
    .scale(120000)
@@ -145,8 +145,7 @@ function AdamMap(data, cityData, year) {
       .attr("d", path)
       .attr("click", false)
       .attr("fill", function (dp) {
-        return fillAdamMap(color, cityData[dp.properties.Gebied_code][year],
-          d3.select(this).attr("click"));
+        return fillAdamMap(color, cityData[dp.properties.Gebied_code][year]);
       });
 
     // make a container where the datavisual is put in
@@ -187,25 +186,24 @@ function AdamMap(data, cityData, year) {
   svg.selectAll("path.stadsdeel")
      .data(data.features)
      .attr("fill", function (dp) {
-       return fillAdamMap(color, cityData[dp.properties.Gebied_code][year],
-         d3.select(this).attr("click"));
+       return fillAdamMap(color, cityData[dp.properties.Gebied_code][year]);
      })
      .on("mouseover", function () {
-      d3.select(this)
-        .style("cursor", "pointer")
-        .attr("fill", "pink");
+      if (d3.select(this).attr("click") === "false") {
+        d3.select(this)
+          .style("cursor", "pointer")
+          .attr("fill", "pink")
+      };
+
     })
     .on("mouseout", function (dp) {
-      if (d3.select(this).attr("click") != "false") {
-        d3.select(this)
-          .attr("fill", "pink");
-      }
-      else {
+
+      if (d3.select(this).attr("click") === "false") {
         d3.selectAll("path.stadsdeel")
           .attr("fill", function(dp) {
-            return fillAdamMap(color, cityData[dp.properties.Gebied_code][year],
-              d3.select(this).attr("click"))
-        });
+            return fillAdamMap(color,
+              cityData[dp.properties.Gebied_code][year]);
+          });
       };
     })
     .on("click", function(dp) {
@@ -221,11 +219,7 @@ function AdamMap(data, cityData, year) {
         d3.selectAll("path.stadsdeel")
           .data(data.features)
           .attr("click", "false")
-          .attr("fill", function (dp) {
-            return fillAdamMap(color,
-              cityData[dp.properties.Gebied_code][year],
-              d3.select(this).attr("click"))
-            });
+          .attr("opacity", 1)
 
         d3.select("p.stadsdeel")
           .text("");
@@ -236,7 +230,6 @@ function AdamMap(data, cityData, year) {
       else {
         zoomIn(dp)
 
-
         // update navigation menu
         navBarInforGraph(cityData[dp.properties.Gebied_code][year],
           dp.properties.Gebied_code);
@@ -246,18 +239,20 @@ function AdamMap(data, cityData, year) {
         d3.selectAll("path.stadsdeel")
           .data(data.features)
           .attr("click", "false")
-          .attr("fill", function (dp) {
+          .attr("opacity", 0.5)
+          .attr("fill", function(dp) {
             return fillAdamMap(color,
-              cityData[dp.properties.Gebied_code][year],
-              d3.select(this).attr("click"));
-        });
-
-        d3.select(this)
-          .attr("fill", "pink")
-          .attr("click", true);
+              cityData[dp.properties.Gebied_code][year]);
+          });
 
         d3.select("p.stadsdeel")
           .text(dp.properties.Gebied);
+
+        d3.select(this)
+          .transition()
+          .attr("opacity", 1)
+          .attr("click", true);
+
 
         graphSelection(cityData[dp.properties.Gebied_code][year], cityData, dp)
       };
@@ -344,16 +339,13 @@ function graphSelection(areaData, cityData, dp) {
 };
 
 // color function of the map
-function fillAdamMap(color, data, element) {
-  if (data != null && element != "true") {
+function fillAdamMap(color, data) {
+  if (data != null) {
     return color(data.bevtotaal)
   }
-  else if (data === undefined && element != "true") {
+  else {
     return "grey"
   }
-  else {
-    return "pink"
-  };
 }
 
 // makes a list of the population of that year
@@ -399,11 +391,11 @@ function makeLegendAmsterdam(color, population) {
   // append stops
   legend.selectAll("stop")
         .data([
-        {offset: "0%", color: color(minPop)},
-        {offset: "25%", color: color(((25/100) * (maxPop - minPop)) + minPop)},
-        {offset: "50%", color: color(((50/100) * (maxPop - minPop)) + minPop)},
-        {offset: "75%", color: color(((75/100) * (maxPop - minPop)) + minPop)},
-        {offset: "100%", color: color(maxPop)},
+          {offset: "0%", color: color(minPop)},
+          {offset: "25%", color: color(((25/100) * (maxPop - minPop)) + minPop)},
+          {offset: "50%", color: color(((50/100) * (maxPop - minPop)) + minPop)},
+          {offset: "75%", color: color(((75/100) * (maxPop - minPop)) + minPop)},
+          {offset: "100%", color: color(maxPop)},
         ])
         .enter()
         .append("stop")
@@ -539,7 +531,6 @@ function navBarInforGraph(data, stadsdeel) {
 
 // make a piechart of the population (ages)
 function makePieBev(data) {
-
   const svg = d3.select("svg#visual");
   var height = parseInt(svg.attr("height"))
         width = parseInt(svg.attr("width"))
@@ -908,6 +899,12 @@ function updateTreeMap(rectangles, descendants, totalPopulation, color) {
 
     // update text
     rect.select("text")
+      .attr("x", function (d) {
+        return (d.x1 - d.x0) / 2;
+      })
+      .attr("y", function(d) {
+        return (d.y1 - d.y0) / 2;
+      })
       .text(function (d) {
         if ((d.y1 - d.y0) > 10  && (d.value / totalPopulation) != 1
           && (d.x1 - d.x0) > 25 ) {
@@ -933,9 +930,11 @@ function parseTreeData(stadsdeel, data, dp) {
 
 // makes the barChart for the difference in men and women (biological)
 function informationGraph(data) {
-  if (d3.select("button#Age").attr("selected") === "false" ) {
-    d3.select("button#Age").attr("selected", true)
-  }
+  if (d3.select("button#Ratio").attr("selected") === "false" ) {
+    d3.selectAll("button").attr("selected", "false")
+    d3.select("button#Ratio").attr("selected", true)
+  };
+
   var stack = d3.stack().offset(d3.stackOffsetNone);
   var stackData = stack.keys(Object.keys(data.Ratio))([data.Ratio])
   const height = 150;

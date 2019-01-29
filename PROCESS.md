@@ -88,12 +88,16 @@ Verder is een interactie bijgemaakt bij de treemap dat men eroverheen gaat de ab
 
 
 ## Dag 4
+Hackaton
 
 ## Dag 5
-
+Vandaag is er de specifieke data grafiek gemaakt. Deze is nog niet helemaal af, want idee achter de stack is nog niet helemaal compleet.
 
 # Week 4
 ## Dag 1
+De specifieke grafiek is af en heeft selectmenu's waaruit de gebruiker kan kiezen welk stadsdeel hij wil kiezen.
+
+Vandaag zijn ook verschillende bugs eruitgewerkt.
 
 ## Dag 2
 
