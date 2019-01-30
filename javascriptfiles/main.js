@@ -2,7 +2,7 @@ function loadWebpageLayout() {
   d3.select("body")
     .append("div")
     .attr("class", "layout")
-  var navigationMenu = ["Home", "Specific", "About", "Sources"]
+  var navigationMenu = ["Home", "Specific", "About"]
   var navigation = d3.select("body")
                      .select("div.layout")
                      .append("div")

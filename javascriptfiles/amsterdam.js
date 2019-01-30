@@ -25,7 +25,7 @@ function layOutWebpage() {
   var head = d3.select("div.layout")
    .append("h1")
    .attr("id", "titleWebpage")
-   .text("Visualisatie van Amsterdam")
+   .text("Visualisation of Amsterdam")
 
   // makes div
   d3.select("body")
@@ -371,19 +371,19 @@ function makeLegendAmsterdam(color, population) {
   var height = 75;
 
   const svg = d3.select("div#mapid.amsterdam")
-                .append("svg")
-                .attr("id", "amsterdamLegenda")
-                .attr("width", width)
-                .attr("height", height);
+    .append("svg")
+    .attr("id", "amsterdamLegenda")
+    .attr("width", width)
+    .attr("height", height);
 
   var svgDefs = svg.append("defs")
   var legend = svgDefs.append("svg:linearGradient")
-                      .attr("id", "gradient")
-                      .attr("x1", "0%")
-                      .attr("y1", "100%")
-                      .attr("x2", "100%")
-                      .attr("y2", "100%")
-                      .attr("spreadMethod", "pad");
+    .attr("id", "gradient")
+    .attr("x1", "0%")
+    .attr("y1", "100%")
+    .attr("x2", "100%")
+    .attr("y2", "100%")
+    .attr("spreadMethod", "pad");
 
   var minPop = d3.min(population)
   var maxPop = d3.max(population)
@@ -428,7 +428,7 @@ function makeLegendAmsterdam(color, population) {
     .attr("text-anchor", "middle")
     .attr("id", "legendAmsterdam")
     .append("text")
-    .text("Bevolking (absolute aantal)")
+    .text("Population per Area (absolute)")
 
 };
 
@@ -446,6 +446,7 @@ function navBarInforGraph(data, stadsdeel) {
                     .attr("id", "container")
                     .attr("height", height)
                     .attr("width", width);
+    const properWord = ["Age groups", "Sexes", "Etnic groups"]
 
       // makes the visual area
       d3.select("div#container.areavisual")
@@ -471,8 +472,8 @@ function navBarInforGraph(data, stadsdeel) {
               .style("float", "left")
               .attr("id", function (dp) { return dp })
               .attr("selected", "false")
-              .text(function (dp) {
-                 return dp.charAt(0).toUpperCase() + dp.substr(1, 10)
+              .text(function (dp, i) {
+                return properWord[i];
                })
               .on("click", function (dp) {
                 d3.selectAll("button.barChart").attr("selected", "false")
@@ -504,9 +505,11 @@ function navBarInforGraph(data, stadsdeel) {
         if (d3.select(this).attr("selected") === "false") {
           d3.selectAll("button.visual")
             .attr("selected", "false")
+            .style("background-color", null)
 
           d3.select(this)
             .attr("selected", "true")
+            .style("background-color", "darkgrey")
 
           if (dp === navElements[0]) {
             makePieBev(data[dp], data.bevtotaal);
@@ -536,7 +539,13 @@ function makePieBev(data) {
         width = parseInt(svg.attr("width"))
         thickness = 60
         radius = (Math.max(height, width) - 100) / 2;
-        color = d3.scaleOrdinal(d3.schemeCategory10);
+
+  // makes the color scheme
+  const color = d3.scaleLinear()
+    .domain([0, Object.keys(data).length])
+    .interpolate(d3.interpolateRgb)
+    .range(["darkgrey", "	#7C0A02"])
+
 
   // makes a block of the svg
   svg.attr('height', Math.max(width, height))
@@ -654,8 +663,8 @@ function makePieBev(data) {
         .append("text")
         .attr("text-anchor", "middle")
         .text(function () {
-          return "Aantal mensen: " + data[d]
-        })
+          return "People: " + data[d]
+        });
 
       d3.select(this)
         .style("stroke", "black")
@@ -682,9 +691,11 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
     groupPopulation[i] = Number(d)
   });
 
-  const color = d3.scaleLinear()
-    .domain([0, Object.keys(sourceData[dp]).length])
-    .range(["lightgrey", "green"]);
+  const names = ["Antilleans", "Dutch", "Morrocans", "Non-western",
+    "Surinameses", "Turks", "Western"]
+
+  const color = TreeMapColor(["#568203", "#D8BFD8", "#9F8170",
+      "#F8DE7E", "#fc8eac", "#FFE5B4", "#FA8072"], Object.keys(sourceData[dp]));
 
   let data = parseTreeData(stadsdeel, sourceData, dp)
 
@@ -710,20 +721,16 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
     var title = svg.append("g")
       .attr("id", "title")
 
-    title.append("rect")
-      .attr("width", width)
-      .attr("height", 50)
-      .attr("fill", "#F8F8F8")
-
     title.append("text")
-      .attr("dy", 20)
-      .attr("dx", 150)
-      .text("Communities")
+      .attr("dy", 15)
+      .attr("dx", Number(d3.select("svg#visual").attr("width")) / 2)
+      .attr("text-anchor", "middle")
+      .text("Ethnic groups in Amsterdam")
 
     const treemap = svg.attr("width", width)
       .attr("height", height)
       .append("g")
-      .attr("transform", "translate(50, 50)")
+      .attr("transform", "translate(50, 25)")
       .attr("id", "treeMap");
 
     var rect = treemap.selectAll("g#rect")
@@ -744,7 +751,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
             return "#F8F8F8"
         }
         else {
-          return color(i)
+          return color[d.data.name]
         };
       });
 
@@ -758,13 +765,12 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       })
       .attr("text-anchor", "middle")
       .text(function (d) {
+
+        // will set the correct coordinates
         if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
           && (d.x1 - d.x0) > 10 )  {
           var percentage = parseInt((d.value / sourceData.bevtotaal) * 1000) /10;
           return percentage + "%";
-        }
-        else {
-          return "";
         };
       });
 
@@ -780,10 +786,10 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
         .attr("transform", function (d, i) {
           if ((i % 2) === 0) {
             currentDataLength = dataLength;
-            dataLength = dataLength + 90;
-          }
+            dataLength = dataLength + 110;
+          };
 
-          return "translate(" + currentDataLength + ", " + (((i % 2) * dataHeight) + height - 40) + ")";
+          return "translate(" + currentDataLength + ", " + (((i % 2) * dataHeight) + height - 65) + ")";
         });
 
       // makes the rectangles for legend
@@ -792,8 +798,8 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
         .attr("y", 0)
         .attr("height", 15)
         .attr("width", 15)
-        .attr("fill", function (d, i) {
-          return color(i);
+        .attr("fill", function (d) {
+          return color[d];
         })
         .attr("stroke", "black");
 
@@ -801,13 +807,11 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
       legendBar.append("text")
         .attr("x", 25)
         .attr("y", 15)
-        .text(function (d) {
-          return d[3] + d.substring(4).toLowerCase()
+        .text(function (d, i) {
+          return names[i]
         });
 
   }
-
-  // Dit nog nakijken naar de code
   else {
     updateTreeMap(rect, descendants, sourceData.bevtotaal, color)
   };
@@ -818,9 +822,10 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
      .data(descendants)
      .on("mouseover", function (d) {
 
-       // returns the absolute value
+       // returns the absolute value if the mouse hover
        d3.select(this)
           .select("text")
+          .attr("fill", "white")
           .text(function () {
             if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
               && (d.x1 - d.x0) > 10 )  {
@@ -835,7 +840,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
        if (d.parent != null) {
          d3.select(this)
            .select("rect")
-           .attr("fill", "pink")
+           .attr("fill", "	#960018")
        };
 
      })
@@ -844,14 +849,15 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
        // updates the text back to original
        d3.select(this)
           .select("text")
+          .attr("fill", "black")
           .text(function () {
+
+            /* set the text in the correct place and with the correct values */
             if ((d.y1 - d.y0) > 10  && (d.value / sourceData.bevtotaal) != 1
               && (d.x1 - d.x0) > 10 )  {
-              var percentage = parseInt((d.value / sourceData.bevtotaal) * 1000) /10
+              var percentage = parseInt((d.value / sourceData.bevtotaal)
+               * 1000) /10;
               return percentage + "%"
-            }
-            else {
-              return ""
             };
           });
 
@@ -864,7 +870,7 @@ function makeTreeAuto(sourceData , dp, stadsdeel) {
               return "#F8F8F8"
             }
             else {
-              return color(i)
+              return color[d.data.name]
             };
           });
         };
@@ -893,7 +899,7 @@ function updateTreeMap(rectangles, descendants, totalPopulation, color) {
             return "#F8F8F8"
           }
           else {
-            return color(i)
+            return color[d.data.name]
           };
         });
 
@@ -917,6 +923,15 @@ function updateTreeMap(rectangles, descendants, totalPopulation, color) {
       });
 };
 
+function TreeMapColor(color, keys) {
+  let dict = {};
+
+  color.forEach( function (dp, i) {
+    dict[keys[i]] = dp
+  })
+
+  return dict;
+}
 // change the data format for the treemap
 function parseTreeData(stadsdeel, data, dp) {
   let parseData = {name: "STAD", children: []}
@@ -932,7 +947,10 @@ function parseTreeData(stadsdeel, data, dp) {
 function informationGraph(data) {
   if (d3.select("button#Ratio").attr("selected") === "false" ) {
     d3.selectAll("button").attr("selected", "false")
-    d3.select("button#Ratio").attr("selected", true)
+
+    d3.select("button#Ratio")
+      .attr("selected", true)
+      .style("background-color", "grey");
   };
 
   var stack = d3.stack().offset(d3.stackOffsetNone);

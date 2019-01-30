@@ -35,7 +35,8 @@ function makeLineGraph (data, cityAreas) {
 
   var dataGraph = parseDataGraph(data, begin);
   const stack = d3.stack().offset(d3.stackOffsetExpand);
-  const color = d3.scaleOrdinal(d3.schemeCategory10);
+  const color = colorChose(begin[1], Object.values(data))
+
   var stackData = stack.keys(Object.keys(dataGraph[0]))(dataGraph)
 
   var svg = d3.select("div.lineGraph")
@@ -81,15 +82,15 @@ function makeLineGraph (data, cityAreas) {
       return color(i)
     })
     .on("mouseover", function (d, i) {
+      d3.selectAll("path")
+        .attr("opacity", 0.50);
+
       d3.select(this)
-        .attr("fill", "pink")
+        .attr("opacity", null);
     })
     .on("mouseout", function (d, i) {
-      d3.select(this)
-        .attr("fill", function() {
-          return color(i)
-
-        });
+      d3.selectAll("path")
+        .attr("opacity", null)
     });
 
   // calls X axis
@@ -156,6 +157,8 @@ function formatText(d) {
 };
 
 function updateGraph(data, updateValues) {
+  const color = colorChose(updateValues[1], Object.values(data))
+  console.log(color)
 
   let height = Number(d3.select("g#graph").attr("height"))
   let width = Number(d3.select("g#graph").attr("width"))
@@ -173,7 +176,7 @@ function updateGraph(data, updateValues) {
       .x(function (d, i) { return x(years[i]) })
       .curve(d3.curveBasis);
 
-  if (d3.select("button").text() === "Absoluut") {
+  if (d3.select("button").text() === "Percentage") {
     y.domain([0, formatScript(d3.max(popArray))])
 
     area.y0(function (d, i) {
@@ -202,7 +205,6 @@ function updateGraph(data, updateValues) {
   const dataGraph = parseDataGraph(data, updateValues);
 
   const stack = d3.stack().offset(d3.stackOffsetExpand);
-  const color = d3.scaleOrdinal(d3.schemeCategory10);
 
   const stackData = stack.keys(Object.keys(dataGraph[0]))(dataGraph)
 
@@ -238,18 +240,19 @@ function updateGraph(data, updateValues) {
         return d.key
       })
       .attr("fill", function (d, i) {
+        console.log(color(i))
         return color(i)
       })
       .on("mouseover", function (d, i) {
+        d3.selectAll("path")
+          .attr("opacity", 0.50);
+
         d3.select(this)
-          .attr("fill", "pink")
+          .attr("opacity", null);
       })
       .on("mouseout", function (d, i) {
-        d3.select(this)
-          .attr("fill", function() {
-            return color(i)
-
-          })
+        d3.selectAll("path")
+          .attr("opacity", null)
       });
 
     // updates the legend
@@ -291,6 +294,31 @@ function updateGraph(data, updateValues) {
   };
 };
 
+function colorChose(select, data) {
+  const keys = Object.values(data[0])[0]
+
+  if (select === "Age") {
+    // makes the color scheme
+    var color = d3.scaleLinear()
+      .domain([0, Object.keys(keys[select]).length])
+      .interpolate(d3.interpolateRgb)
+      .range(["darkgrey", "	#7C0A02"]);
+  }
+  else if (select === "Ratio") {
+    var color = d3.scaleLinear()
+              .range(["#87ceeb", "#FFB6C1"]);
+  }
+  else {
+    const colors = ["#568203", "#D8BFD8", "#9F8170",
+      "#F8DE7E", "#fc8eac", "#FFE5B4", "#FA8072"]
+
+    var color = d3.scaleLinear()
+      .domain(Array.from({length: colors.length}, (v, k) => k))
+      .range(colors)
+  };
+  console.log(color)
+  return color
+};
 
 // parse the years
 function parseYears (years) {
@@ -402,13 +430,13 @@ function makeButton(data, area) {
   // makes an button
   d3.select("div#selectMenu")
     .append("button")
-    .text("Absoluut")
+    .text("Percentage")
     .on("click", function () {
-      if (d3.select(this).text() === "Absoluut") {
-        d3.select(this).text("Percentage")
+      if (d3.select(this).text() === "Percentage") {
+        d3.select(this).text("Absoluut")
       }
       else {
-        d3.select(this).text("Absoluut")
+        d3.select(this).text("Percentage")
       };
       updateGraph(data, [d3.select("select#selectCityArea").property("value"),
         d3.select("select#selectVariable").property("value")])

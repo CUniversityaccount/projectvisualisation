@@ -50,13 +50,31 @@ div.layout div#container.areavisual svg#visual{
   text-align: center;
 }
 
+svg#visual {
+  margin-right: 25px;
+};
+
+/* Layout for the buttons */
+button.visual {
+  border: none;
+  color: black;
+  text-align: center;
+}
+
+button.visual:hover {
+  background-color: grey;
+}
+
+button.visual:active {
+  background-color: #CD5C5C;
+}
 /* Webpage title */
 h1#titleWebpage {
   margin: 0;
   text-align: center;
   width: 100%;
   height: 49px;
-  background-color: pink;
+  background-color: lightgrey;
   border-bottom-style: solid;
   border-bottom-color: black;
   border-bottom-width: medium;

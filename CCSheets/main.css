@@ -18,22 +18,21 @@ div.layout {
 div.navigation {
   position: fixed;
   height: 100%;
-  background-color: pink;
+  background-color: lightgrey;
   width: 90px;
   float: left;
-  border-right: 5px black solid;
   z-index: 1;
 
 }
 
 div.navigation a {
   display: block;
-  color: white;
+  color: black;
   padding: 15px;
   text-decoration: none;
   border-bottom: medium black solid;
 }
 
 div.navigation a:hover {
-  background-color: black;
+color: red;
 };
