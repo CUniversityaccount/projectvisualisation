@@ -17,11 +17,15 @@ function layOut() {
   var height = 600
   var width = 600
 
-  d3.select("div.layout")
-    .append("div")
+  const layout = d3.select("div.layout")
+
+  layout.append("div")
     .attr("class", "lineGraph")
     .attr("height", height)
     .attr("width", width)
+
+  layout.append("p")
+    .attr("id", "upper")
 };
 
 function makeLineGraph (data, cityAreas) {
@@ -135,11 +139,19 @@ function makeLineGraph (data, cityAreas) {
   legendBar.append("text")
     .attr("x", 25)
     .attr("y", 15)
-    .text(formatText);
+    .text(function (d, i) {
+      let text = formatText(d, i, begin[1])
+      return text
+    });
 
 };
 
-function formatText(d) {
+function formatText(d, i, value) {
+  if (value === "background") {
+    const names = ["Antilleans", "Dutch", "Morrocans", "Non-western",
+      "Surinameses", "Turks", "Western"];
+    return names[i]
+  }
 
   // formats the text to the correct format
   if (d.key.toLowerCase().includes("plus")) {
@@ -158,7 +170,6 @@ function formatText(d) {
 
 function updateGraph(data, updateValues) {
   const color = colorChose(updateValues[1], Object.values(data))
-  console.log(color)
 
   let height = Number(d3.select("g#graph").attr("height"))
   let width = Number(d3.select("g#graph").attr("width"))
@@ -240,7 +251,6 @@ function updateGraph(data, updateValues) {
         return d.key
       })
       .attr("fill", function (d, i) {
-        console.log(color(i))
         return color(i)
       })
       .on("mouseover", function (d, i) {
@@ -288,8 +298,10 @@ function updateGraph(data, updateValues) {
     legendBar.append("text")
       .attr("x", 25)
       .attr("y", 15)
-      .text(formatText);
-
+      .text(function (d, i) {
+        let text = formatText(d, i, updateValues[1])
+        return text
+      });
 
   };
 };
@@ -316,7 +328,6 @@ function colorChose(select, data) {
       .domain(Array.from({length: colors.length}, (v, k) => k))
       .range(colors)
   };
-  console.log(color)
   return color
 };
 
@@ -379,10 +390,12 @@ function makeSelectMenu(data, areas) {
   // makes a div for the navigationMenu
   const div = d3.select("div.lineGraph")
     .append("div")
-    .attr("id", "selectMenu")
+    .attr("id", "selectMenu");
 
   // make select menu for the stadsdeel
   var makeMenuCityArea = div
+    .append("div")
+      .attr("class", "selectMenu")
     .append("select")
     .attr("id", "selectCityArea")
     .on("change", function() {
@@ -403,6 +416,8 @@ function makeSelectMenu(data, areas) {
 
   // make select menu for the section
   var choiceVariable = div
+    .append("div")
+      .attr("class", "selectMenu")
     .append("select")
     .attr("id", "selectVariable")
     .on("change", function () {

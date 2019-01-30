@@ -35,6 +35,22 @@ function makeText() {
     + "districts and topics. You also can see the absolute changes and the perecentage changes \n"
     + "with the help of the button");
 
+  text.append("h2")
+    .text("Datasoures")
+
+  text.append("pre")
+    .text("Amsterdam Map: ")
+    .append("a")
+    .attr("href", "https://maps.amsterdam.nl/open_geodata/?LANG=en")
+    .text("GeoJSON 23 gebieden")
+
+  text.append("pre")
+    .text("Data Amsterdam: ")
+    .append("a")
+    .attr("href", "https://data.amsterdam.nl/datasets/G5JpqNbhweXZSw")
+    .text("Basisbestand Gebieden Amsterdam (BBGA)")
+
+
 
 
 };

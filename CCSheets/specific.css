@@ -1,9 +1,72 @@
+/* position the linegraph */
 div.lineGraph {
   float: left;
   margin-left: 95px;
   display: block;
+  transform: translate(25px, 60px);
+}
+
+button {
+  border: none;
+  color: black;
+  text-align: center;
+  height: 20px;
+  width: 100px;
+  background-color: lightgrey;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+button:active {
+  background-color: #CD5C5C;
+}
+
+div#selectMenu {
+  cursor: pointer;
+  position: absolute;
+  border: none;
+}
+
+div.selectMenu {
+  float: left;
+  margin-right: 10px;
+  background-color: lightgrey;
+  overflow: hidden;
+}
+
+div.selectMenu select {
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-color: lightgrey;
+  cursor: pointer;
+  height: 20px;
+  width: 100%;
+}
+
+div.selectMenu option {
+  width: 100%;
+}
+
+div.selectMenu::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
 }
 
 svg#lineGraph {
-  margin-top: 50px
+  margin-top: 50px;
+}
+
+/* makes the balk on the top */
+p#upper {
+  margin: 0;
+  width: 100%;
+  height: 49px;
+  background-color: lightgrey;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  position: fixed;
 }

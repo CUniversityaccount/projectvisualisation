@@ -15,12 +15,15 @@ div.layout div#mapid.amsterdam svg.amsterdam g.zoomIn {
   stroke-width: 1.25px;
 }
 
-div.layout div#mapid.amsterdam p{
+/* district name */
+div.layout div#mapid.amsterdam h2 {
   display:  block;
   position: absolute;
   text-align: center;
   margin-top: 75px;
   width: 600px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
 }
 
 div.layout div#mapid.amsterdam svg#amsterdamLegenda {
@@ -68,8 +71,10 @@ button.visual:hover {
 button.visual:active {
   background-color: #CD5C5C;
 }
+
 /* Webpage title */
 h1#titleWebpage {
+  font-family: "Times New Roman", Times, serif;
   margin: 0;
   text-align: center;
   width: 100%;
