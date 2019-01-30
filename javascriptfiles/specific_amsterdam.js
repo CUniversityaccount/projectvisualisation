@@ -84,17 +84,6 @@ function makeLineGraph (data, cityAreas) {
     })
     .attr("fill", function (d, i) {
       return color(i)
-    })
-    .on("mouseover", function (d, i) {
-      d3.selectAll("path")
-        .attr("opacity", 0.50);
-
-      d3.select(this)
-        .attr("opacity", null);
-    })
-    .on("mouseout", function (d, i) {
-      d3.selectAll("path")
-        .attr("opacity", null)
     });
 
   // calls X axis

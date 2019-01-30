@@ -100,8 +100,23 @@ De specifieke grafiek is af en heeft selectmenu's waaruit de gebruiker kan kieze
 Vandaag zijn ook verschillende bugs eruitgewerkt.
 
 ## Dag 2
+Vandaag is de opmaakt van de webpagina's aangepast met behulp van de class
+De kleurenschema's zijn ook aangepast naar de wensten, zodat de data duidelijker is.
+Hierbij is insperiatie opgedaan bij de Grote Bosatlas.
+
+De knoppen voor het kiezen van de data wensen ook naar de wensen en laten zien welke knop jij hebt geselecteerd.
+Dit is ook het geval als er geen data beschikbaar is van het stadsdeel.
 
 ## Dag 3
+Dit is de laatste update voor de webpagina. Er zijn enkele comments toegevoegd, waardoor de code overzichtelijker is geworden.
+Er zijn ook een aantal functies herschreven en toegevoegd om de code overzichtelijker te maken.
+
+De laatste esthetische toevoegingen en details zijn ook nog doorgevoerd. Er is een enkele functionaliteit weggehaald bij de specific webpagina.
+Dit was de functionaliteit dat de visualisatie interactief werd als er over heen ging. Echter voegde dit niks extra's toe.
+Vandaag is ook de documentatie aangepast en begin gekomen aan de presentatie.
+
+Die worden morgen upgeload.
+
 
 ## Dag 4
 
