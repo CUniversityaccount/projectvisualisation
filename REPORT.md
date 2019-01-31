@@ -2,11 +2,12 @@
 ### Omschrijving van de datavisualisatie
 Dit is een datavisualisatie dat de verschillende visualisaties laten zien, die over de bevolking van Amsterdam gaat. Men kan op een stadsdeel kiezen en dan de verschillende aspecten van de data selecteren. Op de eerste webpagina is de interactieve kaart te zien. De tweede pagina is voor de specefieke data van de bevolking en kan de ontwikkeling zien van 2005 tot en met 2017. 
 
-<img src="Afbeeldingen/firefox_7umY7SGAeG.png" width="400px">
 1. Eerste webpagina met de interactive map
+<img src="Afbeeldingen/firefox_7umY7SGAeG.png" width="400px">
 
+2. Tweede pagina voor de specefieke data
 <img src="Afbeeldingen/firefox_1BN0qKWpqU.png" width="400px">
-2. Tweed pagina voor de specefieke data
+
 
 ### Technisch ontwerp
 Er zijn twee webpagina's die voor de visualisaties zorgen. De eerste (home.html) is de visualisatie van Amsterdam, waarbij de kaart het hoofdcomponent is. De tweede pagina wordt de data over het gehele tijdbestek in een area chart weergegeven. Deze pagina is ook specefieker en is trend in de bevolking.
