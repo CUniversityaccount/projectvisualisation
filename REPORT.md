@@ -25,23 +25,23 @@ Hierbij zijn twee menu's en een knop. Met de knop kan de de grafiek worden aange
 #### Problemen
 De eerste probleem was de data. Dit was zeer slordig geformatteerd door de gemeente, dus heb ik de eerste paar dagen de data redelijk geformatteerd. Dit kwam ook enkele keren voor dat ik de parser.py moest herschrijven om zo de data beter tot zijn rech te laten komen voor enkele keren. In het vervolg zou de eisen van data worden bijgesteld. Door dit probleem heb ik de gevisualiseerde data enkel gehouden op de bevolking en niet op de economische data. Deze economische data zou ook in andere grafieken worden weergegeven en dat zou extra tijd hebben gekost. 
 
-Verder was het probleem dat de kaart eerst op eigen formules waren gebaseerd gemaakt, vanwege te weinig kennis van geoJson. Deze kennis is door middel van medestudenten opgelost, waardoor er eerst een testpagina was gemaakt met de geojson om daarna toe te passen op de webpagina.
+Verder was het probleem dat de kaart eerst op eigen formules waren gebaseerd gemaakt, vanwege te weinig kennis over geoJson. Deze kennis is door hulp van medestudenten opgelost, waardoor er eerst een testpagina was gemaakt met de geojson om daarna het inladen van de geojson toe te passen op de webpagina.
 
 Verder was bij het teamoverleg dat de kaart van Amsterdam zelf geen informatie bevatte of verder niks toonde. Dit is dus met de visualisatie voor de bevolkingaantal. In de nabije toekomst zou ook de bevolkingsdichtheid worden toegevoegd of economische gegevens worden getoond.
 
 Een ander obstakel was de treemap. Hierbij was de format van de data niet geldig om de treemap tot zijn recht te laten komen. Dit moest in een aparte functie worden omgeschreven. In de toekomst zou het netter zijn om van tevoren de data beter te orderen.
 
-Als laatste zou het netter zijn in de toekomst alles na te lopen met iemand anders op het laatstste moment, vanwege dat ik bij de tweede webpagina de omschrijving van de x-as en de y-as ben vergeten. Dit kan met deze oplossing worden voorkomen.
+Als laatste zou het netter zijn in de toekomst alles na te lopen met een persoon voor de deadline, vanwege dat ik bij de tweede webpagina de omschrijving van de x-as en de y-as ben vergeten. Dit kan met deze oplossing worden voorkomen.
 
-#### In de nabije toekomst
+#### Verdere ontwikkelingen
 Als het project langer had geduurd, zou ik meer data hebben toegevoegd, waaraan meer grafieken worden verbonden, wat een duidelijker beeld geeft over andere aspecten die bezig of aanwezig zijn in Amsterdam, zoals de gemiddelde koopprijs per appartement of huis. Hierbij zouden de knoppen ook veranderen per thema. Er zou ook een functie komen waarmee je de gebieden kan vergelijken, bijvoorbeeld in een lijn grafiek. Verder zou de specifieke webpagina ook voor gedeelte gelinkt zijn met de hoofdpagima
 
-Voor de tweede pagina (specific.html) zou ik de webpagina uitgebreider maken, zodat tot zijn recht komt in de visualisatie. Ik zou ook graag willen dat je deze data kan vergelijken. Een extra functionaliteit die ik er zou willen in hebben, is dat mensen de data kunnen downloaden en erop verder kan bouwen. 
+Voor de tweede pagina (specific.html) zou ik de webpagina uitgebreider maken, zodat de data meer tot zijn recht komt in de visualisatie. Ik zou ook graag willen dat je deze data kan vergelijken, zoals bij de hoofdpagina. Een extra functionaliteit die ik er zou willen in hebben, is dat mensen de data kunnen downloaden en hun eigen visualisaties maken. 
 
-Als laatste zou ik beter nog naar data moeten zoeken, omdat het basis bestand van Amsterdam enkel gaat tot en met 2005. Ik zou de verschillende ontwikkeling over een langere tijdsperiode willen maken in plaats van 12 jaar.
+Als laatste zou ik beter nog naar data moeten zoeken, omdat het basis bestand van Amsterdam enkel gaat tot en met 2005. Ik zou de verschillende ontwikkeling over een langere tijdsperiode willen maken in plaats van 12 jaar. Hiermee kunnen ook belangrijke gebeurtenissen in Amsterdam aan stadsdelen, zoals de Bijlmer Ramp.
 
 #### Design keuzes
-Ik heb niet meer tijd vrijgemaakt voor de data, omdat ik verwachtte dat de tijd om de extra grafieken te maken met de bijhorende aspecten uiteindelijk teveel tijd zouden innemen over het bestek van het project, dus heb ik de data niet meer verwerkt. Dit is ook geldend voor de tijdsperiode voor Amsterdam  die nu wordt weergegeven. Voor een betere tijdbestek van Amsterdam had ik beter moeten zoeken en om het goed te verwerken had het ook veel tijd gekost.
+Ik heb niet meer tijd vrijgemaakt voor de data, omdat ik verwachtte dat de tijd om de extra grafieken te maken met de bijhorende aspecten uiteindelijk teveel tijd zouden innemen over het bestek van het project, dus heb ik de data niet meer verwerkt. Dit is ook geldend voor de tijdsperiode voor Amsterdam  die nu wordt weergegeven. Voor een betere tijdbestek van Amsterdam had ik beter moeten zoeken en om het goed te verwerken had het ook veel tijd gekost. Dit is ook besproken in de paragraaf over verdere ontwikkeling.
 
 Verder heb ik voor de knoppen gekozen om zo de website zo overzichtelijk te houden. Ik ben van mening als er teveel elementen en/of visualisaties maken de website onoverzichtelijk, waardoor de ontworpen visualisaties niet meer worden bekeken. Daarom kan de gebruiker ook de verschillende knoppen gebruiken om de data te bekijken.
 
