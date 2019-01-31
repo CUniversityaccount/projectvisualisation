@@ -2,7 +2,7 @@
 ### Omschrijving van de datavisualisatie
 Dit is een datavisualisatie dat de verschillende visualisaties laten zien, die over de bevolking van Amsterdam gaat. Men kan op een stadsdeel kiezen en dan de verschillende aspecten van de data selecteren.
 
-![](projectvisualisation/Afbeeldingen/firefox_1BN0qKWpqU.png)
+![](Afbeeldingen/firefox_1BN0qKWpqU.png)
 
 ### Technisch ontwerp
 Er zijn twee webpagina's die voor de visualisaties zorgen. De eerste (home.html) is de visualisatie met Amsterdam als hoofdcomponent. In deze pagina zitten vier belangrijke componenten. De tijdlijn, de knoppen , de grafieken en de kaart van Amsterdam. De kaart is afhankelijk van de tijdlijn ,vanwege dat de tijdlijn de data voor de map verzorgd (de data die later ook voor grafieken wordt gebruikt).
