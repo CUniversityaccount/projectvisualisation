@@ -5,6 +5,7 @@ Dit is een datavisualisatie dat de verschillende visualisaties laten zien, die o
 1. Eerste webpagina met de interactive map
 <img src="Afbeeldingen/firefox_7umY7SGAeG.png" width="400px">
 
+
 2. Tweede pagina voor de specefieke data
 <img src="Afbeeldingen/firefox_1BN0qKWpqU.png" width="400px">
 
