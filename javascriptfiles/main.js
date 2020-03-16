@@ -13,7 +13,7 @@ function loadWebpageLayout() {
             .enter()
             .append("a")
             .attr("href", function (dp) {
-              return document.URL + "/" + dp.toLowerCase() + ".html";
+              return window.location.hostname + "/" + dp.toLowerCase() + ".html";
             })
             .text(function (dp) {
               if (dp === "Specific") {
