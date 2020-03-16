@@ -1,4 +1,5 @@
 function loadWebpageLayout() {
+  var mainUrl = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"))
   d3.select("body")
     .append("div")
     .attr("class", "layout")
@@ -13,7 +14,7 @@ function loadWebpageLayout() {
             .enter()
             .append("a")
             .attr("href", function (dp) {
-              return "/projectvisualisation/" + dp.toLowerCase() + ".html";
+              return window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/")) + "/" + dp.toLowerCase() + ".html";
             })
             .text(function (dp) {
               if (dp === "Specific") {
