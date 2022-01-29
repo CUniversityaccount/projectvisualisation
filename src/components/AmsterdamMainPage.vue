@@ -7,7 +7,7 @@
             </b-navbar-nav>
             </b-collapse>
     </b-navbar>
-    <AmsterdamVisualization></AmsterdamVisualization>
+    <AmsterdamVisualization/>
     </div>
 </template>
 
